@@ -4,11 +4,13 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { CreerCompteComponent } from './authentification/creer-compte/creer-compte.component';
 import { ErreurComponent } from './authentification/erreur/erreur.component';
 import { LoginComponent } from './authentification/login/login.component';
+import { ListeEtudiantsComponent } from './uniteStage/liste-etudiants/liste-etudiants.component';
 
 const routes: Routes = [
   {path:'accueil', component:AccueilComponent},
   {path:'login', component:LoginComponent},
   {path:'signUp', component:CreerCompteComponent},
+  {path:'listeEtudiant',component:ListeEtudiantsComponent},
 {path:'', redirectTo:'accueil', pathMatch:'full'},
 {path:'**',component:ErreurComponent}
 ];

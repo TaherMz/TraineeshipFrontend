@@ -1,0 +1,59 @@
+<h1 [ngStyle]="{'margin':'30px','font-weight':'bold'}">Liste des Etudiants </h1>
+<div class="card" [ngStyle]="{'margin':'30px'}">     
+ <div class="content-section implementation" >
+  
+      <p-table [value]="customers" sortField="representative.name" sortMode="single" (onSort)="onSort()" dataKey="representative.name">
+       <ng-template pTemplate="header" let-columns>
+        <tr>
+         <th [ngStyle]="{'width':'40px'}"></th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Mail</th>                    
+            <th>Niveau</th>
+            <th>Status</th>
+        </tr>
+
+                           
+    </ng-template>
+    <ng-template pTemplate="body" let-customer let-rowIndex="rowIndex" let-expanded="expanded">
+        <tr *ngIf="rowGroupMetadata[customer.representative.name].index === rowIndex">
+            <td  colspan="6"> 
+                <a href="#" [pRowToggler]="customer">
+                <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+                </a>
+                <span>{{customer.name}}</span>
+                </td>              
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="rowexpansion" let-customer>
+        <tr>
+            <td>
+            </td>
+            <td>
+                {{customer.name}}
+            </td>
+            <td>
+                {{customer.status}}
+            </td>
+            <td>
+                <span class="image-text">{{customer.company}}</span>
+            </td>
+            <td>
+                {{customer.date}}
+            </td>
+            <td>
+                <span [class]="'customer-badge status-' + customer.status">{{customer.status}}</span>
+            </td>
+            
+        </tr>
+    </ng-template>
+     
+     </p-table>
+   </div>
+</div>
+ 
+               
+         
+
+
+
