@@ -1,0 +1,307 @@
+<!--div style="margin-left:350px">
+  
+   <div class="contact-section">
+   <div class="container">
+    
+       <table style="margin:70px">
+           <tr>
+               
+               <td>
+                <div class="form-group">
+                    <a  style="margin-left:170px ;font-weight: bold;color: blue  " href=""> Avez vous déja un compte ?  </a> </div>
+                   <form name="f"  #f="ngForm">
+                    <div class="row">
+                        <div class="col-md-6 form-line">
+                            
+                       <div class="form-group">
+                        <label class="block text-center text-gray-500 text-sm  mb-2" for="name">
+                            Nom de la famille
+                        </label>
+                        <input  type="text" id="name" name="name"  [(ngModel)]="name" #no="ngModel"
+                         class="form-control" pattern="[A-Z][a-zA-Z]+"required placeholder="Nom de la famille" >
+                    </div>
+                    <div *ngIf="no.errors?.pattern && no.dirty" class="alert alert-danger">
+                     Le nom doit commencer par une majuscule suivie d'au moins 1 caractère 
+                 </div> 
+
+                 <div class="form-group">
+                    <label class="block text-center text-gray-500 text-sm  mb-2" for="pre">
+                        Prenom
+                    </label>
+                    <input  type="text" id="prenom" name="prenom"  [(ngModel)]="prenom" #pre="ngModel"
+                     class="form-control" pattern="[A-Z][a-zA-Z]+"required placeholder="Prenom" >
+                </div>
+                <div *ngIf="pre.errors?.pattern && pre.dirty" class="alert alert-danger">
+                 Le prenom doit commencer par une majuscule suivie d'au moins 1 caractère 
+             </div>
+
+
+                       
+                       <div class="form-group">
+                           <label class="block text-center text-gray-500 text-sm  mb-2" for="username">
+                               Nom d'utilisateur
+                           </label>
+                           <input  type="text" id="username" name="username"  [(ngModel)]="username" #nom="ngModel"
+                            class="form-control" pattern="[A-Z][a-zA-Z]+"required placeholder="LogIn" >
+                       </div>
+                       <div *ngIf="nom.errors?.pattern && nom.dirty" class="alert alert-danger">
+                        Le login doit commencer par une majuscule suivie d'au moins 1 caractère 
+                    </div>
+                       
+                       <div class="form-group">
+                           <label class=" block text-center text-gray-500 text-sm mb-2" for="password">
+                               Mot de passe
+                           </label>
+                           <input type="password"  id="password" name="_password" [(ngModel)]="password" #pass="ngModel"
+                           class="form-control" pattern="[A-Z][a-zA-Z]+"required  placeholder="......">
+                       </div>
+                       <div *ngIf="pass.errors?.pattern && pass.dirty" class="alert alert-danger">
+                        Le mots de passe doit commencer par une majuscule suivie d'au moins 1 caractère 
+                    </div>
+                   
+                    <div >
+                        <label style="margin-left: 20px" >
+                           
+                             Question de sécurité 
+                             
+                        </label> <br>
+                        <input style="margin-left:50px" type="checkbox" id="scales" name="scales"
+                        checked>  
+                        
+                        <label for="scales" style="margin-left:20px"> je ne suis pas un robot </label> <br>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/RecaptchaLogo.svg/1200px-RecaptchaLogo.svg.png" style="width: 100px;height: 100px;margin-left: 20px"/> 
+                    </div>
+                
+                 
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class=" block text-center text-gray-500 text-sm mb-2" for="mail">
+                            Mail
+                        </label>
+                        <input type="email"  id="mail" name="mail" [(ngModel)]="mail" #m="ngModel"
+                        class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required  placeholder="...@gmail.com">
+                    </div>
+                    <div *ngIf="m.errors?.pattern && m.dirty" class="alert alert-danger">
+                    Le mail doit contenir @  
+                 </div>
+                <div class="form-group">
+                    <label class=" block text-center text-gray-500 text-sm mb-2" for="n">
+                         Numéro de téléphone 
+                    </label>
+                    <input type="tel"  id="numtel" name="numtel" [(ngModel)]="numtel" #n="ngModel"
+                    class="form-control" pattern="[0-9]{8}" required  placeholder=" +216">
+                </div>
+                <div *ngIf="n.errors?.pattern && n.dirty" class="alert alert-danger">
+                   le numéro  est composé de 8 chiffres  
+                </div>
+                <div class="form-group">
+                    <label class=" block text-center text-gray-500 text-sm mb-2" for="cin">
+                         Numéro de la carte d'identité nationale 
+                    </label>
+                    <input type="string"  id="cin" name="cin" [(ngModel)]="cin" #c="ngModel"
+                    class="form-control" pattern="[0-9]{8}" required  placeholder=" num CIN">
+                </div>
+                <div *ngIf="c.errors?.pattern && c.dirty" class="alert alert-danger">
+                   le CIN est composé de 8 chiffres  
+                </div>
+
+                <div class="form-group">
+                    <label class=" block text-center text-gray-500 text-sm mb-2" for="code">
+                         Code  
+                    </label>
+                    <input type="text"  id="code" name="code" [(ngModel)]="code" #n="ngModel"
+                    class="form-control"  required  placeholder="......">
+                </div>
+                <div class="form-group">
+                    <label class=" block text-center text-gray-500 text-sm mb-2" for="niveau">
+                         Niveau 
+                    </label>
+                    <input type="number"  id="niveau" name="niveau" [(ngModel)]="code" #niv="ngModel"
+                    class="form-control"  required pattern="[1-3]{1}" placeholder="1">
+                </div>
+                <div *ngIf="niv.errors?.pattern && niv.dirty" class="alert alert-danger">
+                    le niveau doit etre soit 1 (1er) soit 2 (2emme) soit 3 (3emme)
+                 </div>
+            </div>
+        </div>
+                
+               
+
+            
+
+                 
+                
+
+                
+
+                       <div >
+                           <button type="submit" style="width: 300px;margin-left: 120px" class="text-center bg-teal-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                               Connexion
+                           </button>
+                       </div><br>
+                      
+                   </form>
+               </td>
+
+           </tr>
+       </table>
+
+   </div>
+</div>
+
+</div!-->
+
+
+
+<div style="margin-left:350px">
+  
+    <div class="contact-section">
+    <div class="container">
+     
+        <table style="margin:70px">
+            <tr>
+                
+                <td>
+                 <div class="form-group">
+                     <a  style="margin-left:170px ;font-weight: bold;color: blue  " href=""> Avez vous déja un compte ?  </a> </div>
+                    <form name="f"  #f="ngForm">
+                     <div class="row">
+                         <div class="col-md-6 form-line">
+                             
+                        
+ 
+                  
+                        
+                        <div class="form-group">
+                            <label class="block text-center text-gray-500 text-sm  mb-2" for="nameE">
+                                Nom de l'entreprise
+                            </label>
+                            <input  type="text" id="nameE" name="nameE"  [(ngModel)]="nameE" #nomE="ngModel"
+                             class="form-control" pattern="[A-Z][a-zA-Z]+"required placeholder="LogIn" >
+                        </div>
+                        <div *ngIf="nomE.errors?.pattern && nomE.dirty" class="alert alert-danger">
+                         Le nom de l'entreprise doit commencer par une majuscule suivie d'au moins 1 caractère 
+                     </div>
+                        
+                        <div class="form-group">
+                            <label class=" block text-center text-gray-500 text-sm mb-2" for="password">
+                                Mot de passe
+                            </label>
+                            <input type="password"  id="password" name="_password" [(ngModel)]="password" #pass="ngModel"
+                            class="form-control" pattern="[A-Z][a-zA-Z]+"required  placeholder="......">
+                        </div>
+                        <div *ngIf="pass.errors?.pattern && pass.dirty" class="alert alert-danger">
+                         Le mots de passe doit commencer par une majuscule suivie d'au moins 1 caractère 
+                     </div>
+                     <div class="form-group">
+                         <label class=" block text-center text-gray-500 text-sm mb-2" for="mail">
+                             Mail
+                         </label>
+                         <input type="email"  id="mail" name="mail" [(ngModel)]="mail" #m="ngModel"
+                         class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required  placeholder="...@gmail.com">
+                     </div>
+                     <div *ngIf="m.errors?.pattern && m.dirty" class="alert alert-danger">
+                     Le mail doit contenir @  
+                  </div>
+                  <div class="form-group">
+                     <label class=" block text-center text-gray-500 text-sm mb-2" for="secteur">
+                         Secteur de l'activité
+                     </label>
+                     <input type="text"  id="secteur" name="secteur" [(ngModel)]="secteur" #s="ngModel"
+                     class="form-control" pattern="[A-Z][a-zA-Z]+" required  placeholder="Dévelloper un site web">
+                 </div>
+                 <div class="form-group">
+                     <label class=" block text-center text-gray-500 text-sm mb-2" for="attest">
+                         Attestation Juridique 
+                     </label>
+                     <input type="text"  id="attest" name="attest" [(ngModel)]="attest" #a="ngModel"
+                     class="form-control"  required  >
+                 </div>
+                 
+ 
+                 
+                 
+                     <div>
+                         <label style="margin-left: 20px" >
+                            
+                              Question de sécurité 
+                              
+                         </label> <br>
+                         <input style="margin-left:20px" type="checkbox" id="scales" name="scales"
+                         checked>  
+                         
+                         <label for="scales" style="margin-left:20px"> je ne suis pas un robot </label> <br>
+                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/RecaptchaLogo.svg/1200px-RecaptchaLogo.svg.png" style="width: 100px;height: 100px;margin-left: 20px"/> 
+                     </div>
+                 
+                  
+                 </div>
+                 <div class="col-md-6">
+                    
+                 <div class="form-group">
+                     <label class=" block text-center text-gray-500 text-sm mb-2" for="n">
+                          Numéro de téléphone 
+                     </label>
+                     <input type="tel"  id="numtel" name="numtel" [(ngModel)]="numtel" #nu="ngModel"
+                     class="form-control" pattern="[0-9]{8}" required  placeholder=" +216">
+                 </div>
+                 <div *ngIf="nu.errors?.pattern && nu.dirty" class="alert alert-danger">
+                    le numéro  est composé de 8 chiffres  
+                 </div>
+                 <div class="form-group">
+                     <label class=" block text-center text-gray-500 text-sm mb-2" for="cin">
+                          Description textuelle
+                     </label>
+                     <textarea class="form-control" id="description" placeholder="Entrer votre description"></textarea>
+                 </div>
+                
+ 
+                 <div class="form-group">
+                     <label class=" block text-center text-gray-500 text-sm mb-2" for="emplc">
+                          Emplacement
+                     </label>
+                     <input type="text"  id="emplc" name="emplc" [(ngModel)]="code" #emp="ngModel"
+                     class="form-control"  required  placeholder="Arianna,charguia2,rue des entrepreneurs">
+                 </div>
+                 <div class="form-group">
+                     <label class=" block text-center text-gray-500 text-sm mb-2" for="matricule">
+                          Matricule Fiscale 
+                     </label>
+                     <input type="number"  id="matricule" name="matricule" [(ngModel)]="matricule" #mat="ngModel"
+                     class="form-control"  required pattern="[0-9]{8}" placeholder="000000000">
+                 </div>
+                 <div *mat="mat.errors?.pattern && mat.dirty" class="alert alert-danger">
+                     la matricule fiscale est composée de 8 chiffres
+                  </div>
+             </div>
+         </div>
+                 
+                
+ 
+             
+ 
+                  
+                 
+ 
+                 
+ 
+                        <div >
+                            <button type="submit" style="width: 300px;margin-left: 120px" class="text-center bg-teal-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                                Connexion
+                            </button>
+                        </div><br>
+                       
+                    </form>
+                </td>
+ 
+            </tr>
+        </table>
+ 
+    </div>
+ </div>
+ 
+ </div>
+ 
+ 
+ 

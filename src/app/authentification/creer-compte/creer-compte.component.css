@@ -1,0 +1,19 @@
+input.ng-valid{
+    border-left: 2px solid green;
+}
+
+input.ng-invalid{
+    border-left: 2px solid red;
+}
+.c1{
+    margin-left: 300px;
+    width: 100%;
+    height: 200px;
+}
+.c4{
+    justify-content: center;
+}
+.center {
+    text-align: center;
+  }
+
