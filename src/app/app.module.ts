@@ -15,6 +15,7 @@ import { ListeOffresComponent } from './uniteStage/liste-offres/liste-offres.com
 import { HttpClientModule } from "@angular/common/http";
 import { DataService } from './uniteStage/data.service';
 import { TableModule } from 'primeng/table';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { TableModule } from 'primeng/table';
     NavbarComponent,
     FooterComponent
   ],
-  imports: [HttpClientModule,
+  imports: [HttpClientModule,FormsModule,
     BrowserModule,BrowserAnimationsModule,
     AppRoutingModule,TableModule
   ],

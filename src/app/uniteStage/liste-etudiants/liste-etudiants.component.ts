@@ -15,7 +15,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 export class ListeEtudiantsComponent implements OnInit  {
 
   customers: any[];
-
+unite:any[]=["DSI","RSI","SEM"];
   rowGroupMetadata: any;
 etudiants:any[];
   constructor(private customerService: DataService) { }
@@ -25,7 +25,7 @@ etudiants:any[];
       this.customerService.getCustomersMedium().then(data => {
           this.customers = data;
           console.log(this.customers);
-          this.updateRowGroupMetaData();
+         // this.updateRowGroupMetaData();
       });
   }
 
