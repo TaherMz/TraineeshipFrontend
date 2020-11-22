@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-creer-compte',
@@ -6,7 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./creer-compte.component.css']
 })
 export class CreerCompteComponent implements OnInit {
-
+  username:string; 
+  password:string;
+  mail:string;
+  cin:number;
+  name:string;
+  prenom:string;
+  numtel:number; 
+  code:string;
+  niveau:number;
+  nameE:string;
+  mailE:string;
+  passwordE:string;
+  description:string;
+  emplc:string;
+  matricule:number;
+  secteur:string;
+  attest:string;
   constructor() { }
 
   ngOnInit(): void {
