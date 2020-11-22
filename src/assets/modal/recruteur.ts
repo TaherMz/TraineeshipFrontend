@@ -1,6 +1,6 @@
 export interface Recruteur{
-    matriculeFiscale?:any,
-    mail?:any,
+    mf?:any,
+    email?:any,
     password?:any,
     description?:any,
     nomEntreprise?:any,
@@ -8,5 +8,6 @@ export interface Recruteur{
     emplacement?:any,
     secteurActivite?:any,
     attestationJuridique?:any,
-    status?:any
+    status?:any,
+    enabled?:any,
 }
