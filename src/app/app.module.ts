@@ -16,6 +16,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { DataService } from './uniteStage/data.service';
 import { TableModule } from 'primeng/table';
 import {FormsModule} from '@angular/forms';
+import {TabMenuModule} from 'primeng/tabmenu';
+import {StepsModule} from 'primeng/steps';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 @NgModule({
   declarations: [
@@ -27,9 +30,9 @@ import {FormsModule} from '@angular/forms';
     NavbarComponent,
     FooterComponent
   ],
-  imports: [HttpClientModule,FormsModule,
-    BrowserModule,BrowserAnimationsModule,
-    AppRoutingModule,TableModule
+  imports: [HttpClientModule,FormsModule,StepsModule,
+    BrowserModule,BrowserAnimationsModule,RadioButtonModule,
+    AppRoutingModule,TableModule,TabMenuModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

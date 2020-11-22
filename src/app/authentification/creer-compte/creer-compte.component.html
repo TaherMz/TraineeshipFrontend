@@ -191,7 +191,7 @@
 
 
 <div style="margin-left:350px">
-  
+    
     <div class="contact-section">
     <div class="container">
      
@@ -199,6 +199,18 @@
             <tr>
                 
                 <td>
+                    <div class="p-field-radiobutton">
+                        <p-radioButton name="groupname" value="val1" [(ngModel)]="selectedValue" inputId="groupname"></p-radioButton>
+                        <label for="groupname">Etudiant</label>
+                    </div>
+                    <div class="p-field-radiobutton">
+                        <p-radioButton name="groupname" value="val2" [(ngModel)]="selectedValue" inputId="x"></p-radioButton>
+                        <label for="x">Recruteur</label>
+                    </div>
+                    <div class="p-field-radiobutton">
+                        <p-radioButton name="groupname" value="val3" [(ngModel)]="selectedValue" inputId="c"></p-radioButton>
+                        <label for="c">Unité de stage</label>
+                    </div>
                  <div class="form-group">
                      <a  style="margin-left:170px ;font-weight: bold;color: blue  " href=""> Avez vous déja un compte ?  </a> </div>
                     <form name="f"  #f="ngForm">
