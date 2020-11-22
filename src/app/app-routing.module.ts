@@ -10,7 +10,7 @@ const routes: Routes = [
   {path:'accueil', component:AccueilComponent},
   {path:'login', component:LoginComponent},
   {path:'signUp', component:CreerCompteComponent},
-  {path:'listeEtudiant',component:ListeEtudiantsComponent},
+  {path:'listeEtudiants',component:ListeEtudiantsComponent},
 {path:'', redirectTo:'accueil', pathMatch:'full'},
 {path:'**',component:ErreurComponent}
 ];
