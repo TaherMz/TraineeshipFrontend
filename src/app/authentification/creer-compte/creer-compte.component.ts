@@ -24,6 +24,8 @@ export class CreerCompteComponent implements OnInit {
   matricule:number;
   secteur:string;
   attest:string;
+  selectedValue: string = 'val1';
+
   constructor() { }
 
   ngOnInit(): void {
