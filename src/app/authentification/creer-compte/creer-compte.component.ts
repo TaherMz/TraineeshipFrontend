@@ -19,6 +19,9 @@ export class CreerCompteComponent implements OnInit {
   code?:any="";
   password?:any="";
   numtel?:any="";
+  cin?:any="";
+  prenom?:any="";
+  niveau?:any="";
   status?:any="en attente";
   role?:any="E";
   enabled?:boolean=false;
