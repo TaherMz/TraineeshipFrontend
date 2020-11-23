@@ -25,8 +25,6 @@ export class CreerCompteComponent implements OnInit {
   status?:any="en attente";
   role?:any="E";
   enabled?:boolean=false;
-isSelected=true;
-
 
   constructor(private messageService:MessageService,private dataService:DataService,private router:Router,private http:HttpClient) { }
 
@@ -34,11 +32,9 @@ isSelected=true;
     console.log(this.role);
   }
   Submit(form) {
-   // console.log ("form.value", form.value)
+   console.log ("form.value", form.value)
    // if (form.valid) {
-      //console.log ("form.value", form.value)
-
-        let addedData = JSON.stringify(form.value);
+       /* let addedData = JSON.stringify(form.value);
         console.log ("addedData", addedData);
        this.http.post(environment.api+"/auth/signup", addedData).subscribe((res) => {
           this.messageService.add({severity:'success', summary: 'Message', detail:'Succes'});  
@@ -47,7 +43,7 @@ isSelected=true;
           error => {
             this.messageService.add({severity:'error', summary: ' Message', detail:'Erreur'});
           })
-      ;
+      ;*/
     //}
   }
 }
