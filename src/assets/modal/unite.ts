@@ -1,8 +1,10 @@
 export interface Unite{
-    typeUnite?:any,
-    mail?:any,
+    name?:any,
+    email?:any,
     code?:any,
     password?:any,
-    numTel?:any,
-    status?:any
+    numtel?:any,
+    status?:any,
+    role?:any,
+    enabled?:any
 }

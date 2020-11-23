@@ -19,6 +19,16 @@ import {FormsModule} from '@angular/forms';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {StepsModule} from 'primeng/steps';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import {InputTextModule} from 'primeng/inputtext';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+//import {ConfirmationService} from 'primeng/api';
+import {ToastModule} from 'primeng/toast';
+import {MessagesModule} from 'primeng/messages';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {  ReactiveFormsModule } from '@angular/forms';
+import {InputSwitchModule} from 'primeng/inputswitch';
 
 @NgModule({
   declarations: [
@@ -30,9 +40,11 @@ import {RadioButtonModule} from 'primeng/radiobutton';
     NavbarComponent,
     FooterComponent
   ],
-  imports: [HttpClientModule,FormsModule,StepsModule,
-    BrowserModule,BrowserAnimationsModule,RadioButtonModule,
-    AppRoutingModule,TableModule,TabMenuModule
+  exports:[MatFormFieldModule],
+  imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,InputSwitchModule,
+    BrowserModule,BrowserAnimationsModule,RadioButtonModule,MatTabsModule,
+    AppRoutingModule,TableModule,TabMenuModule,MessagesModule,MatFormFieldModule,
+    ConfirmDialogModule,InputTextModule,MultiSelectModule,ReactiveFormsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

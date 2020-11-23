@@ -1,11 +1,13 @@
 export interface Etudiant{
     cin?:any,
-    mail?:any,
-    username?:any,
+    email?:any,
     password?:any,
-    nom?:any,
+    name?:any,
+    numtel?:any,
     prenom?:any,
     niveau?:any,
     code?:any,
-    status?:any
+    enabled?:any,
+    status?:any,
+    role?:any
 }
