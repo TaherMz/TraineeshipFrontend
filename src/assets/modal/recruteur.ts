@@ -1,13 +1,14 @@
 export interface Recruteur{
-    mf?:any,
+    mfisc?:any,
     email?:any,
     password?:any,
     description?:any,
-    nomEntreprise?:any,
-    numTel?:any,
+    name?:any,
+    numtel?:any,
     emplacement?:any,
-    secteurActivite?:any,
-    attestationJuridique?:any,
+    secteuractivite?:any,
+    attestationjuridique?:any,
     status?:any,
     enabled?:any,
+    role?:any
 }
