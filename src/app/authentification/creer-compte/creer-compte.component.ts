@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { ViewEncapsulation } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import {Validators,FormControl,FormGroup,FormBuilder, NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
@@ -6,7 +7,7 @@ import { MessageService } from 'primeng/api';
 import { DataService } from 'src/app/uniteStage/data.service';
 import { environment } from 'src/environments/environment';
 
-@Component({
+@Component({  encapsulation: ViewEncapsulation.None,
   selector: 'app-creer-compte',
   templateUrl: './creer-compte.component.html',
   styleUrls: ['./creer-compte.component.css'],  
@@ -34,16 +35,16 @@ export class CreerCompteComponent implements OnInit {
   Submit(form) {
    console.log ("form.value", form.value)
    // if (form.valid) {
-       /* let addedData = JSON.stringify(form.value);
+        let addedData = JSON.stringify(form.value);
         console.log ("addedData", addedData);
-       this.http.post(environment.api+"/auth/signup", addedData).subscribe((res) => {
+       this.http.post(environment.api+"auth/signup", addedData).subscribe((res) => {
           this.messageService.add({severity:'success', summary: 'Message', detail:'Succes'});  
           this.router.navigate(['/accueil']);
         },
           error => {
             this.messageService.add({severity:'error', summary: ' Message', detail:'Erreur'});
           })
-      ;*/
+      ;
     //}
   }
 }
