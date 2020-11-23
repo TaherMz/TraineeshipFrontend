@@ -28,6 +28,7 @@ import {MessagesModule} from 'primeng/messages';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {  ReactiveFormsModule } from '@angular/forms';
+import {InputSwitchModule} from 'primeng/inputswitch';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import {  ReactiveFormsModule } from '@angular/forms';
     FooterComponent
   ],
   exports:[MatFormFieldModule],
-  imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,
+  imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,InputSwitchModule,
     BrowserModule,BrowserAnimationsModule,RadioButtonModule,MatTabsModule,
     AppRoutingModule,TableModule,TabMenuModule,MessagesModule,MatFormFieldModule,
     ConfirmDialogModule,InputTextModule,MultiSelectModule,ReactiveFormsModule

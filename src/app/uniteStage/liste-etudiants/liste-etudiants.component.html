@@ -11,6 +11,7 @@
             <th>Mail</th>                    
             <th>Niveau</th>
             <th>Status</th>
+            <th>Action</th>
         </tr>
 
                            
@@ -44,7 +45,8 @@
             <td>
                 <span [class]="'customer-badge status-' + customer.status">{{customer.status}}</span>
             </td>
-            
+            <td><p-inputSwitch  size="small"   [disabled]=" customer.status=='PENDING' "
+                (click)="onChangeStatus($event, customer)"></p-inputSwitch></td>
         </tr>
     </ng-template>
      
