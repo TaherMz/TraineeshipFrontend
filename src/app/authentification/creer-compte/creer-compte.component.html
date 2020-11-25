@@ -60,7 +60,7 @@
                                                 <i class="pi pi-user"></i>
                                             </span>
                                             <span class="p-float-label">
-                                                <input type="text" id="pass" pInputText [(ngModel)]="password" name="password" #vle="ngModel" required > 
+                                                <input type="password" id="pass" pInputText [(ngModel)]="password" name="password" #vle="ngModel" required > 
                                                 <label for="pass">password</label>
                                             </span>
                                         </div>
@@ -175,10 +175,8 @@
                     </form> </mat-tab>
             
                    <mat-tab label="Recruteur">
-                       <form #f="ngForm"  (ngSubmit)="Submit(f)"> 
-                        <div class="p-field-radiobutton">
-                            <p-radioButton name="role" value="S" [hidden]="true" [(ngModel)]="role" inputId="groupname" #rl="ngModel"></p-radioButton>
-                        </div>        
+                       <form #f1="ngForm"  (ngSubmit)="Submit(f1)"> 
+                        <input type="hidden" pInputText [(ngModel)]="role1" name="role"  required #rl="ngModel">         
                         <input type="hidden" pInputText [(ngModel)]="status" name="status"  required #st="ngModel"> 
                         <input type="hidden" pInputText [(ngModel)]="enabled" name="enabled"  required #en="ngModel"> 
                     <div class="  row" >
@@ -214,7 +212,7 @@
                                               <i class="pi pi-user"></i>
                                           </span>
                                           <span class="p-float-label">
-                                              <input type="text" id="pass" pInputText [(ngModel)]="password" name="password" #vle="ngModel" required > 
+                                              <input type="password" id="pass" pInputText [(ngModel)]="password" name="password" #vle="ngModel" required > 
                                               <label for="pass">password</label>
                                           </span>
                                       </div>
@@ -343,12 +341,12 @@
                                                   <i class="pi pi-user"></i>
                                               </span>
                                               <span class="p-float-label">
-                                                  <input type="text" id="mat" pInputText  [(ngModel)]="mfisc" name="mfisc" #mat="ngModel" required> 
-                                                  <label for="mat">matricule Fiscale </label>
+                                                  <input type="text" id="ma" pInputText  [(ngModel)]="mfisc" name="mfisc" #mat="ngModel" required> 
+                                                  <label for="ma">matricule Fiscale </label>
                                               </span>
                                           </div>
                                       </div>
-                                       <div [hidden]="!desc.errors?.required || desc.pristine"
+                                       <div [hidden]="!mat.errors?.required || mat.pristine"
                                        class="alert alert-danger">
                                        La matricule est un champ obligatoire
                                        </div>
@@ -363,10 +361,8 @@
                   </form> </mat-tab>
             
                    <mat-tab label="unite de stage">
-                     <form #f="ngForm"  (ngSubmit)="Submit(f)"> 
-                        <div class="p-field-radiobutton">
-                            <p-radioButton name="role" value="US" [hidden]="true" [(ngModel)]="role" inputId="groupname" #rl="ngModel"></p-radioButton>
-                        </div>        
+                     <form #f2="ngForm"  (ngSubmit)="Submit(f2)">    
+                        <input type="hidden" pInputText [(ngModel)]="role2" name="role"  required #x="ngModel">     
                         <input type="hidden" pInputText [(ngModel)]="status" name="status"  required #st="ngModel"> 
                         <input type="hidden" pInputText [(ngModel)]="enabled" name="enabled"  required #en="ngModel"> 
                       <div class="  row" >
@@ -402,7 +398,7 @@
                                                 <i class="pi pi-user"></i>
                                             </span>
                                             <span class="p-float-label">
-                                                <input type="text" id="pass" pInputText [(ngModel)]="password" name="password" #vle="ngModel" required > 
+                                                <input type="password" id="pass" pInputText [(ngModel)]="password" name="password" #vle="ngModel" required > 
                                                 <label for="pass">password</label>
                                             </span>
                                         </div>

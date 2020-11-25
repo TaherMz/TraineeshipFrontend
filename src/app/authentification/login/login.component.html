@@ -8,24 +8,24 @@
         <table style="margin:20px">
             <tr>
                 <td>
-                    <form  method="post" action="" style="height: 452px;width: 400px" class="bg-white shadow-md  rounded px-8 pt-6">
+                    <form  #f="ngForm"  (ngSubmit)="Submit(f)" style="height: 452px;width: 400px" class="bg-white shadow-md  rounded px-8 pt-6">
                         <h1 class="text-center text-teal-600">Login
                         </h1>
                         <div class="mb-4">
                             <label class="block text-center text-gray-500 text-sm  mb-2" for="username">
                                 Pseudo
                             </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" name="_username" type="text" placeholder="Pseudo">
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" [(ngModel)]="email" name="email"  required type="mail" placeholder="email or username">
                         </div>
                         <div class="mb-6">
                             <label class=" block text-center text-gray-500 text-sm mb-2" for="password">
                                 Mot de passe
                             </label>
-                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" name="_password" type="password" placeholder="******************">
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" [(ngModel)]="password" name="password" required type="password" placeholder="******************">
                         </div>
 
                         <div class="flex items-center justify-between">
-                            <button type="submit" style="width: 300px;margin-left: 120px" class="text-center bg-teal-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                            <button type="submit" style="width: 300px;margin-left: 120px" class="text-center bg-teal-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                                 Connexion
                             </button>
                         </div><br>
