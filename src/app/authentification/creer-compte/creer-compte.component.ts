@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ViewEncapsulation } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import {Validators,FormControl,FormGroup,FormBuilder, NgForm} from '@angular/forms';
@@ -23,23 +23,35 @@ export class CreerCompteComponent implements OnInit {
   cin?:any="";
   prenom?:any="";
   niveau?:any="";
+  mfisc?:any="";
+  secteuractivite?:any="";
+  emplacement?:any="";
+  attestationjuridique?:any="";
+  description?="";
   status?:any="en attente";
   role?:any="E";
+  role1?:any="S";
+  role2?:any="US";
   enabled?:boolean=false;
-
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    })
+  }
   constructor(private messageService:MessageService,private dataService:DataService,private router:Router,private http:HttpClient) { }
 
   ngOnInit(): void {
     console.log(this.role);
   }
   Submit(form) {
+    
    console.log ("form.value", form.value)
    // if (form.valid) {
         let addedData = JSON.stringify(form.value);
         console.log ("addedData", addedData);
-       this.http.post(environment.api+"auth/signup", addedData).subscribe((res) => {
+       this.http.post(environment.api+"auth/signup", addedData,this.httpOptions).subscribe((res) => {
           this.messageService.add({severity:'success', summary: 'Message', detail:'Succes'});  
-          this.router.navigate(['/accueil']);
+          this.router.navigate(['/login']);
         },
           error => {
             this.messageService.add({severity:'error', summary: ' Message', detail:'Erreur'});

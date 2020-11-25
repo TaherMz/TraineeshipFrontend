@@ -29,6 +29,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {  ReactiveFormsModule } from '@angular/forms';
 import {InputSwitchModule} from 'primeng/inputswitch';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import {InputSwitchModule} from 'primeng/inputswitch';
   ],
   exports:[MatFormFieldModule],
   imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,InputSwitchModule,
-    BrowserModule,BrowserAnimationsModule,RadioButtonModule,MatTabsModule,
+    BrowserModule,BrowserAnimationsModule,RadioButtonModule,MatTabsModule,FontAwesomeModule,
     AppRoutingModule,TableModule,TabMenuModule,MessagesModule,MatFormFieldModule,
     ConfirmDialogModule,InputTextModule,MultiSelectModule,ReactiveFormsModule
   ],
