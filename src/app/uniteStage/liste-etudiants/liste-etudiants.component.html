@@ -2,14 +2,16 @@
 <div class="card" [ngStyle]="{'margin':'30px'}">     
  <div class="content-section implementation" >
   
-      <p-table [value]="customers" sortField="representative.name" sortMode="single" (onSort)="onSort()" dataKey="representative.name">
+      <p-table [value]="customers" sortField="niveau" sortMode="single" (onSort)="onSort()" dataKey="cin">
        <ng-template pTemplate="header" let-columns>
         <tr>
          <th [ngStyle]="{'width':'40px'}"></th>
             <th>Nom</th>
             <th>Prenom</th>
-            <th>Mail</th>                    
+            <th>cin</th>
+            <th>Mail</th>   
             <th>Niveau</th>
+            <th>etat</th>
             <th>Status</th>
             <th>Action</th>
         </tr>
@@ -34,14 +36,22 @@
                 {{customer.name}}
             </td>
             <td>
-                {{customer.status}}
+                {{customer.prenom}}
             </td>
             <td>
-                <span class="image-text">{{customer.company}}</span>
+                {{customer.cin}}
             </td>
             <td>
-                {{customer.date}}
+                <span class="image-text">{{customer.email}}</span>
             </td>
+            <td>
+                {{customer.niveau}}
+            </td>
+            <td>                      
+                <span class="badge text-white"
+                  [ngClass]="{' bg-danger  mr-1' : customer.etat.trim() == 'non affecte' ,
+                'bg-success ': customer.etat.trim() == 'affecte'}">{{customer.etat}}</span>
+                 </td>
             <td>                      
               <span class="badge text-white"
                 [ngClass]="{' bg-danger  mr-1' : customer.status.trim() == 'inactif' ,  ' bg-warning ': customer.status.trim() == 'en attente', 
