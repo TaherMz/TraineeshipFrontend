@@ -16,7 +16,7 @@
 
                            
     </ng-template>
-    <ng-template pTemplate="body" let-customer let-rowIndex="rowIndex" let-expanded="expanded">
+   <!--<ng-template pTemplate="body" let-customer let-rowIndex="rowIndex" let-expanded="expanded">
         <tr *ngIf="rowGroupMetadata[customer.representative.name].index === rowIndex">
             <td  colspan="6"> 
                 <a href="#" [pRowToggler]="customer">
@@ -25,8 +25,8 @@
                 <span>{{customer.name}}</span>
                 </td>              
         </tr>
-    </ng-template>
-    <ng-template pTemplate="rowexpansion" let-customer>
+    </ng-template>-->
+    <ng-template pTemplate="body" let-customer>
         <tr>
             <td>
             </td>
@@ -42,10 +42,12 @@
             <td>
                 {{customer.date}}
             </td>
-            <td>
-                <span [class]="'customer-badge status-' + customer.status">{{customer.status}}</span>
-            </td>
-            <td><p-inputSwitch  size="small"   [disabled]=" customer.status=='PENDING' "
+            <td>                      
+              <span class="badge text-white"
+                [ngClass]="{' bg-danger  mr-1' : customer.status.trim() == 'inactif' ,  ' bg-warning ': customer.status.trim() == 'en attente', 
+              'bg-success ': customer.status.trim() == 'actif'}">{{customer.status}}</span>
+               </td>
+            <td><p-inputSwitch  size="small"   [disabled]=" customer.status=='en attente' "
                 (click)="onChangeStatus($event, customer)"></p-inputSwitch></td>
         </tr>
     </ng-template>

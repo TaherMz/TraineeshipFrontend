@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api';
+import { IconProp } from '@fortawesome/fontawesome-svg-core'; 
 
 @Component({
   selector: 'app-accueil',

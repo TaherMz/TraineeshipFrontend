@@ -9,7 +9,7 @@
       },
       "company": "Benton, John B Jr",
       "date": "2015-09-13",
-      "status": "unqualified",
+      "status": "inactif",
       "activity": 17,
       "representative": {
         "name": "Ioni Bowcher",
@@ -25,7 +25,7 @@
       },
       "company": "Chanay, Jeffrey A Esq",
       "date": "2019-02-09",
-      "status": "proposal",
+      "status": "en attente",
       "activity": 0,
       "representative": {
         "name": "Amy Elsner",
@@ -41,7 +41,7 @@
       },
       "company": "Chemel, James L Cpa",
       "date": "2017-05-13",
-      "status": "qualified",
+      "status": "en attente",
       "activity": 63,
       "representative": {
         "name": "Asiya Javayant",
@@ -57,7 +57,7 @@
       },
       "company": "Feltz Printing Service",
       "date": "2020-09-15",
-      "status": "new",
+      "status": "inactif",
       "activity": 37,
       "representative": {
         "name": "Xuxue Feng",
@@ -73,7 +73,7 @@
       },
       "company": "Printing Dimensions",
       "date": "2016-05-20",
-      "status": "proposal",
+      "status": "en attente",
       "activity": 33,
       "representative": {
         "name": "Asiya Javayant",
@@ -89,7 +89,7 @@
       },
       "company": "Chapman, Ross E Esq",
       "date": "2018-02-16",
-      "status": "qualified",
+      "status": "en attente",
       "activity": 68,
       "representative": {
         "name": "Ivan Magalhaes",
@@ -105,7 +105,7 @@
       },
       "company": "Morlong Associates",
       "date": "2018-02-19",
-      "status": "renewal",
+      "status": "inactif",
       "activity": 54,
       "representative": {
         "name": "Ivan Magalhaes",
@@ -121,7 +121,7 @@
       },
       "company": "Commercial Press",
       "date": "2019-08-13",
-      "status": "renewal",
+      "status": "inactif",
       "activity": 69,
       "representative": {
         "name": "Onyama Limba",
@@ -137,7 +137,7 @@
       },
       "company": "Truhlar And Truhlar Attys",
       "date": "2018-11-21",
-      "status": "unqualified",
+      "status": "inactif",
       "activity": 76,
       "representative": {
         "name": "Ivan Magalhaes",
@@ -153,7 +153,7 @@
       },
       "company": "King, Christopher A Esq",
       "date": "2015-07-07",
-      "status": "proposal",
+      "status": "en attente",
       "activity": 3,
       "representative": {
         "name": "Onyama Limba",
@@ -169,7 +169,7 @@
       },
       "company": "Dorl, James J Esq",
       "date": "2018-11-07",
-      "status": "qualified",
+      "status": "en attente",
       "activity": 38,
       "representative": {
         "name": "Anna Fali",
@@ -185,7 +185,7 @@
       },
       "company": "Rangoni Of Florence",
       "date": "2017-03-11",
-      "status": "qualified",
+      "status": "en attente",
       "activity": 87,
       "representative": {
         "name": "Bernardo Dominic",
@@ -201,7 +201,7 @@
       },
       "company": "Feiner Bros",
       "date": "2015-10-20",
-      "status": "unqualified",
+      "status": "inactif",
       "activity": 80,
       "representative": {
         "name": "Onyama Limba",
@@ -217,7 +217,7 @@
       },
       "company": "Buckley Miller \u0026 Wright",
       "date": "2016-07-25",
-      "status": "negotiation",
+      "status": "en attente",
       "activity": 59,
       "representative": {
         "name": "Amy Elsner",
@@ -233,7 +233,7 @@
       },
       "company": "Rousseaux, Michael Esq",
       "date": "2019-06-25",
-      "status": "new",
+      "status": "inactif",
       "activity": 90,
       "representative": {
         "name": "Asiya Javayant",
@@ -249,7 +249,7 @@
       },
       "company": "Century Communications",
       "date": "2017-12-12",
-      "status": "negotiation",
+      "status": "en attente",
       "activity": 52,
       "representative": {
         "name": "Anna Fali",
@@ -265,7 +265,7 @@
       },
       "company": "Bolton, Wilbur Esq",
       "date": "2018-07-04",
-      "status": "unqualified",
+      "status": "inactif",
       "activity": 31,
       "representative": {
         "name": "Ivan Magalhaes",
@@ -281,7 +281,7 @@
       },
       "company": "T M Byxbee Company Pc",
       "date": "2020-02-27",
-      "status": "renewal",
+      "status": "inactif",
       "activity": 48,
       "representative": {
         "name": "Stephen Shaw",
@@ -297,7 +297,7 @@
       },
       "company": "Farmers Insurance Group",
       "date": "2017-12-21",
-      "status": "negotiation",
+      "status": "en attente",
       "activity": 16,
       "representative": {
         "name": "Bernardo Dominic",
@@ -313,7 +313,7 @@
       },
       "company": "Post Box Services Plus",
       "date": "2016-01-04",
-      "status": "renewal",
+      "status": "inactif",
       "activity": 19,
       "representative": {
         "name": "Xuxue Feng",
@@ -329,7 +329,7 @@
       },
       "company": "Sport En Art",
       "date": "2016-10-21",
-      "status": "renewal",
+      "status": "inactif",
       "activity": 100,
       "representative": {
         "name": "Onyama Limba",
@@ -345,7 +345,7 @@
       },
       "company": "C 4 Network Inc",
       "date": "2017-03-24",
-      "status": "renewal",
+      "status": "inactif",
       "activity": 72,
       "representative": {
         "name": "Ioni Bowcher",
@@ -361,7 +361,7 @@
       },
       "company": "Ingalls, Donald R Esq",
       "date": "2017-04-15",
-      "status": "renewal",
+      "status": "inactif",
       "activity": 94,
       "representative": {
         "name": "Asiya Javayant",
@@ -377,7 +377,7 @@
       },
       "company": "Franklin, Peter L Esq",
       "date": "2017-03-11",
-      "status": "qualified",
+      "status": "en attente",
       "activity": 56,
       "representative": {
         "name": "Elwin Sharvill",
@@ -393,7 +393,7 @@
       },
       "company": "Wtlz Power 107 Fm",
       "date": "2018-03-27",
-      "status": "qualified",
+      "status": "en attente",
       "activity": 7,
       "representative": {
         "name": "Stephen Shaw",
@@ -409,7 +409,7 @@
       },
       "company": "Ledecky, David Esq",
       "date": "2016-02-20",
-      "status": "qualified",
+      "status": "en attente",
       "activity": 1,
       "representative": {
         "name": "Ivan Magalhaes",
@@ -425,7 +425,7 @@
       },
       "company": "Professional Image Inc",
       "date": "2018-06-24",
-      "status": "new",
+      "status": "inactif",
       "activity": 26,
       "representative": {
         "name": "Ioni Bowcher",
@@ -441,7 +441,7 @@
       },
       "company": "Sider, Donald C Esq",
       "date": "2016-09-24",
-      "status": "new",
+      "status": "inactif",
       "activity": 76,
       "representative": {
         "name": "Amy Elsner",
@@ -457,7 +457,7 @@
       },
       "company": "U Pull It",
       "date": "2020-04-11",
-      "status": "qualified",
+      "status": "en attente",
       "activity": 7,
       "representative": {
         "name": "Onyama Limba",
@@ -473,7 +473,7 @@
       },
       "company": "Clark, Richard Cpa",
       "date": "2018-04-11",
-      "status": "renewal",
+      "status": "inactif",
       "activity": 81,
       "representative": {
         "name": "Ioni Bowcher",
@@ -489,7 +489,7 @@
       },
       "company": "Moskowitz, Barry S",
       "date": "2016-06-11",
-      "status": "negotiation",
+      "status": "en attente",
       "activity": 56,
       "representative": {
         "name": "Asiya Javayant",
@@ -505,7 +505,7 @@
       },
       "company": "Cascade Realty Advisors Inc",
       "date": "2017-08-02",
-      "status": "qualified",
+      "status": "en attente",
       "activity": 94,
       "representative": {
         "name": "Ioni Bowcher",
@@ -519,9 +519,9 @@
         "name": "Australia",
         "code": "au"
       },
-      "company": "Knwz Newsradio",
+      "company": "Knwz inactifsradio",
       "date": "2018-06-06",
-      "status": "renewal",
+      "status": "inactif",
       "activity": 68,
       "representative": {
         "name": "Xuxue Feng",
@@ -537,7 +537,7 @@
       },
       "company": "Giampetro, Anthony D",
       "date": "2019-08-08",
-      "status": "proposal",
+      "status": "en attente",
       "activity": 85,
       "representative": {
         "name": "Bernardo Dominic",
@@ -553,7 +553,7 @@
       },
       "company": "Milford Enterprises Inc",
       "date": "2018-05-19",
-      "status": "negotiation",
+      "status": "en attente",
       "activity": 46,
       "representative": {
         "name": "Ivan Magalhaes",
@@ -569,7 +569,7 @@
       },
       "company": "Mosocco, Ronald A",
       "date": "2015-02-12",
-      "status": "qualified",
+      "status": "en attente",
       "activity": 32,
       "representative": {
         "name": "Onyama Limba",
@@ -585,7 +585,7 @@
       },
       "company": "Tri State Refueler Co",
       "date": "2018-04-25",
-      "status": "qualified",
+      "status": "en attente",
       "activity": 77,
       "representative": {
         "name": "Amy Elsner",
@@ -601,7 +601,7 @@
       },
       "company": "Parkway Company",
       "date": "2016-02-27",
-      "status": "unqualified",
+      "status": "inactif",
       "activity": 66,
       "representative": {
         "name": "Amy Elsner",
@@ -617,7 +617,7 @@
       },
       "company": "Fbs Business Finance",
       "date": "2019-09-17",
-      "status": "qualified",
+      "status": "en attente",
       "activity": 25,
       "representative": {
         "name": "Bernardo Dominic",
@@ -633,7 +633,7 @@
       },
       "company": "Eder Assocs Consltng Engrs Pc",
       "date": "2016-12-03",
-      "status": "renewal",
+      "status": "inactif",
       "activity": 51,
       "representative": {
         "name": "Ioni Bowcher",
@@ -649,7 +649,7 @@
       },
       "company": "Tri M Tool Inc",
       "date": "2017-12-15",
-      "status": "negotiation",
+      "status": "en attente",
       "activity": 49,
       "representative": {
         "name": "Xuxue Feng",
@@ -665,7 +665,7 @@
       },
       "company": "International Eyelets Inc",
       "date": "2017-02-02",
-      "status": "qualified",
+      "status": "en attente",
       "activity": 5,
       "representative": {
         "name": "Amy Elsner",
@@ -681,7 +681,7 @@
       },
       "company": "Rapid Trading Intl",
       "date": "2018-12-25",
-      "status": "unqualified",
+      "status": "inactif",
       "activity": 100,
       "representative": {
         "name": "Anna Fali",
@@ -697,7 +697,7 @@
       },
       "company": "Abc Enterprises Inc",
       "date": "2018-04-10",
-      "status": "qualified",
+      "status": "en attente",
       "activity": 71,
       "representative": {
         "name": "Stephen Shaw",
@@ -713,7 +713,7 @@
       },
       "company": "Cindy Turner Associates",
       "date": "2018-05-06",
-      "status": "unqualified",
+      "status": "inactif",
       "activity": 54,
       "representative": {
         "name": "Amy Elsner",
@@ -729,7 +729,7 @@
       },
       "company": "Stanton, James D Esq",
       "date": "2019-07-10",
-      "status": "renewal",
+      "status": "inactif",
       "activity": 93,
       "representative": {
         "name": "Onyama Limba",
@@ -745,7 +745,7 @@
       },
       "company": "Grace Pastries Inc",
       "date": "2018-02-19",
-      "status": "unqualified",
+      "status": "inactif",
       "activity": 97,
       "representative": {
         "name": "Xuxue Feng",
@@ -761,7 +761,7 @@
       },
       "company": "Schroer, Gene E Esq",
       "date": "2019-11-27",
-      "status": "new",
+      "status": "inactif",
       "activity": 80,
       "representative": {
         "name": "Xuxue Feng",
@@ -777,7 +777,7 @@
       },
       "company": "Knights Inn",
       "date": "2018-11-24",
-      "status": "new",
+      "status": "inactif",
       "activity": 63,
       "representative": {
         "name": "Stephen Shaw",
@@ -793,7 +793,7 @@
       },
       "company": "Bollinger Mach Shp \u0026 Shipyard",
       "date": "2018-04-19",
-      "status": "new",
+      "status": "inactif",
       "activity": 92,
       "representative": {
         "name": "Asiya Javayant",
