@@ -34,6 +34,8 @@ import { VerifListeoffresComponent } from './uniteStage/verif-listeoffres/verif-
 import { ProfileEtudiantComponent } from './authentification/profil/profile-etudiant/profile-etudiant.component';
 import { ProfileSocieteComponent } from './authentification/profil/profile-societe/profile-societe.component';
 import { ProfileUnitestageComponent } from './authentification/profil/profile-unitestage/profile-unitestage.component';
+import { ModifierOffreComponent } from './recruteur/modifier-offre/modifier-offre.component';
+import { PostulerInOffreComponent } from './etudiant/postuler-in-offre/postuler-in-offre.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { ProfileUnitestageComponent } from './authentification/profil/profile-un
     ProfileEtudiantComponent,
     ProfileSocieteComponent,
     ProfileUnitestageComponent,
+    ModifierOffreComponent,
+    PostulerInOffreComponent,
   ],
   exports:[MatFormFieldModule],
   imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,InputSwitchModule,
