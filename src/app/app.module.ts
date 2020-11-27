@@ -11,7 +11,6 @@ import { NavbarComponent } from './accueil/navbar/navbar.component';
 import { FooterComponent } from './accueil/footer/footer.component';
 import { PrimeNGConfig } from 'primeng/api';
 import { ListeEtudiantsComponent } from './uniteStage/liste-etudiants/liste-etudiants.component';
-import { ListeOffresComponent } from './uniteStage/liste-offres/liste-offres.component';
 import { HttpClientModule } from "@angular/common/http";
 import { DataService } from './uniteStage/data.service';
 import { TableModule } from 'primeng/table';
@@ -29,17 +28,31 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {  ReactiveFormsModule } from '@angular/forms';
 import {InputSwitchModule} from 'primeng/inputswitch';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PostulerOffreComponent } from './recruteur/postuler-offre/postuler-offre.component';
+import { VerifListeoffresComponent } from './uniteStage/verif-listeoffres/verif-listeoffres.component';
+import { ProfileEtudiantComponent } from './authentification/profil/profile-etudiant/profile-etudiant.component';
+import { ProfileSocieteComponent } from './authentification/profil/profile-societe/profile-societe.component';
+import { ProfileUnitestageComponent } from './authentification/profil/profile-unitestage/profile-unitestage.component';
+import { ModifierOffreComponent } from './recruteur/modifier-offre/modifier-offre.component';
+import { PostulerInOffreComponent } from './etudiant/postuler-in-offre/postuler-in-offre.component';
 
 @NgModule({
   declarations: [
     AppComponent,ListeEtudiantsComponent,
-    CreerCompteComponent,ListeOffresComponent,
+    CreerCompteComponent,
     LoginComponent,
     AccueilComponent,
     ErreurComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    PostulerOffreComponent,
+    VerifListeoffresComponent,
+    ProfileEtudiantComponent,
+    ProfileSocieteComponent,
+    ProfileUnitestageComponent,
+    ModifierOffreComponent,
+    PostulerInOffreComponent,
   ],
   exports:[MatFormFieldModule],
   imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,InputSwitchModule,

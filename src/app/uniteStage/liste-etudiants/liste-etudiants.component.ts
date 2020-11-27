@@ -21,12 +21,17 @@ etudiants:any[];
   constructor(private customerService: DataService) { }
 
   ngOnInit() {
-   
-      this.customerService.getCustomersMedium().then(data => {
+   this.customerService.getAllEtudiants().subscribe(data=>{
+     this.customers=data;
+     console.log(this.customers);
+
+   });
+     /* this.customerService.getCustomersMedium().then(data => {
           this.customers = data;
           console.log(this.customers);
          // this.updateRowGroupMetaData();
-      });
+      });*/
+      
   }
   onChangeStatus(e, userRestaurant) {
     
@@ -38,7 +43,7 @@ etudiants:any[];
   updateRowGroupMetaData() {
     this.rowGroupMetadata = {};
 
-    if (this.customers) {
+   /* if (this.customers) {
         for (let i = 0; i < this.customers.length; i++) {
             let rowData = this.customers[i];
             let representativeName = rowData.representative.name;
@@ -55,7 +60,7 @@ etudiants:any[];
                     this.rowGroupMetadata[representativeName] = { index: i, size: 1 };
             }
         }
-    }
+    }*/
 }
  /* getAllEtud(c:any){
     let e:any[];
