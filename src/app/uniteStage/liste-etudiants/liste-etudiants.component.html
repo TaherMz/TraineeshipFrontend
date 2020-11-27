@@ -1,8 +1,7 @@
 <h1 [ngStyle]="{'margin':'30px','font-weight':'bold'}">Liste des Etudiants </h1>
 <div class="card" [ngStyle]="{'margin':'30px'}">     
  <div class="content-section implementation" >
-  
-      <p-table [value]="customers" sortField="niveau" sortMode="single" (onSort)="onSort()" dataKey="cin">
+    <p-table [value]="etudiants" dataKey="id"><!--sortField="niveau" sortMode="single" (onSort)="onSort()"-->
        <ng-template pTemplate="header" let-columns>
         <tr>
          <th [ngStyle]="{'width':'40px'}"></th>
@@ -18,47 +17,48 @@
 
                            
     </ng-template>
-   <!--<ng-template pTemplate="body" let-customer let-rowIndex="rowIndex" let-expanded="expanded">
-        <tr *ngIf="rowGroupMetadata[customer.representative.name].index === rowIndex">
+   <!--<ng-template pTemplate="body" let-etudiant let-rowIndex="rowIndex" let-expanded="expanded">
+        <tr *ngIf="rowGroupMetadata[etudiant.representative.name].index === rowIndex">
             <td  colspan="6"> 
-                <a href="#" [pRowToggler]="customer">
+                <a href="#" [pRowToggler]="etudiant">
                 <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
                 </a>
-                <span>{{customer.name}}</span>
+                <span>{{etudiant.name}}</span>
                 </td>              
         </tr>
     </ng-template>-->
-    <ng-template pTemplate="body" let-customer>
+    <ng-template pTemplate="body" let-etudiant>
         <tr>
             <td>
             </td>
             <td>
-                {{customer.name}}
+                {{etudiant.name}}
             </td>
             <td>
-                {{customer.prenom}}
+                {{etudiant.prenom}}
             </td>
             <td>
-                {{customer.cin}}
+                {{etudiant.cin}}
             </td>
             <td>
-                <span class="image-text">{{customer.email}}</span>
+                <span class="image-text">{{etudiant.email}}</span>
             </td>
             <td>
-                {{customer.niveau}}
+                {{etudiant.niveau}}
             </td>
-            <td>                      
+            <td></td>
+            <!--<td>                      
                 <span class="badge text-white"
-                  [ngClass]="{' bg-danger  mr-1' : customer.etat.trim() == 'non affecte' ,
-                'bg-success ': customer.etat.trim() == 'affecte'}">{{customer.etat}}</span>
-                 </td>
+                  [ngClass]="{' bg-danger  mr-1' : etudiant.etat.trim() == 'non affecte' ,
+                'bg-success ': etudiant.etat.trim() == 'affecte'}">{{etudiant.etat}}</span>
+                 </td>-->
             <td>                      
-              <span class="badge text-white"
-                [ngClass]="{' bg-danger  mr-1' : customer.status.trim() == 'inactif' ,  ' bg-warning ': customer.status.trim() == 'en attente', 
-              'bg-success ': customer.status.trim() == 'actif'}">{{customer.status}}</span>
-               </td>
-            <td><p-inputSwitch  size="small"   [disabled]=" customer.status=='en attente' "
-                (click)="onChangeStatus($event, customer)"></p-inputSwitch></td>
+              <span class="badge "
+                [ngClass]="{' bg-danger  mr-1' : etudiant.status.trim() == 'inactif' ,  ' bg-warning ': etudiant.status.trim() == 'en Attente', 
+              'bg-success ': etudiant.status.trim() == 'actif'}">{{etudiant.status}}</span>
+              </td>
+            <td><p-inputSwitch  size="small"   [disabled]=" etudiant.status=='en attente' "
+                (click)="onChangeStatus($event, etudiant)"></p-inputSwitch></td>
         </tr>
     </ng-template>
      

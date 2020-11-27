@@ -6,6 +6,7 @@ import {DataService} from '../data.service';
 import { TableModule } from 'primeng/table';
 import { NgModule } from '@angular/core';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-liste-etudiants',
@@ -17,24 +18,48 @@ export class ListeEtudiantsComponent implements OnInit  {
   customers: any[];
 unite:any[]=["DSI","RSI","SEM"];
   rowGroupMetadata: any;
-etudiants:any[];
-  constructor(private customerService: DataService) { }
+etudiants:any[]=[];
+  constructor(private dataService: DataService,private http:HttpClient) { }
 
   ngOnInit() {
-   this.customerService.getAllEtudiants().subscribe(data=>{
-     this.customers=data;
-     console.log(this.customers);
-
+   this.dataService.getAllEtudiants().subscribe(data=>{
+    console.log(data['data']);
+     for(let i=0;i<data['data'].length;i++)
+     {
+       if(data['data'][i].role=='E')
+       this.etudiants.push(data['data'][i]);
+     }
+//this.etudiants=data['data'];
+console.log(this.etudiants);
    });
-     /* this.customerService.getCustomersMedium().then(data => {
+   
+      this.dataService.getCustomersSmall().then(data => {
           this.customers = data;
           console.log(this.customers);
          // this.updateRowGroupMetaData();
-      });*/
+      });
       
   }
-  onChangeStatus(e, userRestaurant) {
-    
+  onChangeStatus(e, etudiant) {
+    let object = {
+      id: etudiant.id,
+      enabled: e ? true : false
+  }
+  console.log(object);
+  /*this.http.patch(environment.api+"/users/", object).subscribe(result => {
+   console.log('Le statut a été modifié avec succès');
+
+    etudiant.enabled = !etudiant.enabled;
+    if (etudiant.enabled == false)  { etudiant.status = 'inactif'; 
+    //this.msgs = [{severity:'info', summary:'Le restaurant n est plus actif', detail:''}];
+  }
+    else if (etudiant.enabled == true) { etudiant.status = 'actif';
+    //this.msgs = [{severity:'info', summary:'Le restaurant est actif', detail:''}];
+  }
+}, err => {console.log('Erreur');
+//this.msgs = [{severity:'error', summary:'Erreur lors de la modification du status', detail:''}];
+
+});*/
   }
   onSort() {
       this.updateRowGroupMetaData();

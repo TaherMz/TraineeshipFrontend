@@ -30,7 +30,8 @@ export class LoginComponent implements OnInit {
     // if (form.valid) {
          let addedData = JSON.stringify(form.value);
          console.log ("addedData", addedData);
-        this.http.post(environment.api+"auth/login", addedData,this.httpOptions).subscribe((res) => {
+        this.http.post(environment.api+"auth/login", addedData,this.httpOptions).subscribe((res:any) => {
+          localStorage.setItem("token",res.token)
            this.messageService.add({severity:'success', summary: 'Message', detail:'Succes'});  
            this.router.navigate(['/accueil']);
          },

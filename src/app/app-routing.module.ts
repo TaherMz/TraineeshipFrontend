@@ -4,6 +4,10 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { CreerCompteComponent } from './authentification/creer-compte/creer-compte.component';
 import { ErreurComponent } from './authentification/erreur/erreur.component';
 import { LoginComponent } from './authentification/login/login.component';
+import { ProfileEtudiantComponent } from './authentification/profil/profile-etudiant/profile-etudiant.component';
+import { ProfileSocieteComponent } from './authentification/profil/profile-societe/profile-societe.component';
+import { ProfileUnitestageComponent } from './authentification/profil/profile-unitestage/profile-unitestage.component';
+import { ListeOffresComponent } from './recruteur/liste-offres/liste-offres.component';
 import { ListeEtudiantsComponent } from './uniteStage/liste-etudiants/liste-etudiants.component';
 
 const routes: Routes = [
@@ -11,6 +15,10 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'signUp', component:CreerCompteComponent},
   {path:'listeEtudiants',component:ListeEtudiantsComponent},
+  {path:'listeOffres',component:ListeOffresComponent},
+  {path:'profilEtudiant',component:ProfileEtudiantComponent},
+  {path:'profilSociete',component:ProfileSocieteComponent},
+  {path:'profilUnite',component:ProfileUnitestageComponent},
 {path:'', redirectTo:'accueil', pathMatch:'full'},
 {path:'**',component:ErreurComponent}
 ];
