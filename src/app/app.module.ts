@@ -11,8 +11,9 @@ import { NavbarComponent } from './accueil/navbar/navbar.component';
 import { FooterComponent } from './accueil/footer/footer.component';
 import { PrimeNGConfig } from 'primeng/api';
 import { ListeEtudiantsComponent } from './uniteStage/liste-etudiants/liste-etudiants.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { DataService } from './uniteStage/data.service';
+import {GlobalHttpInterceptorService} from "./GlobalHttpInterceptorService";
 import { TableModule } from 'primeng/table';
 import {FormsModule} from '@angular/forms';
 import {TabMenuModule} from 'primeng/tabmenu';
@@ -36,11 +37,14 @@ import { ProfileSocieteComponent } from './authentification/profil/profile-socie
 import { ProfileUnitestageComponent } from './authentification/profil/profile-unitestage/profile-unitestage.component';
 import { ModifierOffreComponent } from './recruteur/modifier-offre/modifier-offre.component';
 import { PostulerInOffreComponent } from './etudiant/postuler-in-offre/postuler-in-offre.component';
+import {SidebarModule} from 'primeng/sidebar';
+import { ListeOffresComponent } from './recruteur/liste-offres/liste-offres.component';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent,ListeEtudiantsComponent,
-    CreerCompteComponent,
+    CreerCompteComponent,ListeOffresComponent,
     LoginComponent,
     AccueilComponent,
     ErreurComponent,
@@ -54,13 +58,13 @@ import { PostulerInOffreComponent } from './etudiant/postuler-in-offre/postuler-
     ModifierOffreComponent,
     PostulerInOffreComponent,
   ],
-  exports:[MatFormFieldModule],
+  exports:[MatFormFieldModule,MatInputModule],
   imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,InputSwitchModule,
     BrowserModule,BrowserAnimationsModule,RadioButtonModule,MatTabsModule,FontAwesomeModule,
-    AppRoutingModule,TableModule,TabMenuModule,MessagesModule,MatFormFieldModule,
-    ConfirmDialogModule,InputTextModule,MultiSelectModule,ReactiveFormsModule
+    AppRoutingModule,TableModule,TabMenuModule,MessagesModule,MatFormFieldModule,SidebarModule,
+    ConfirmDialogModule,InputTextModule,MultiSelectModule,ReactiveFormsModule,MatInputModule
   ],
-  providers: [DataService],
+  providers: [DataService, { provide: HTTP_INTERCEPTORS, useClass: GlobalHttpInterceptorService, multi: true  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { constructor(private primengConfig: PrimeNGConfig) {}

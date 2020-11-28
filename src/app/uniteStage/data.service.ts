@@ -17,9 +17,10 @@ constructor(private http: HttpClient) { }
 
 getAllEtudiants(): Observable<any[]> {
     return this.http.get<any[]>(environment.api+"/users");
+
 }
 getCustomersSmall() {
-        return this.http.get<any>('assets/showcase/data/customers-small.json')
+        return this.http.get<any>('assets/showcase/customers-medium.json')
             .toPromise()
             .then(res => <any[]>res.data)
             .then(data => { return data; });

@@ -1,1 +1,145 @@
-<p>profile-societe works!</p>
+<p-toast position="top-right"></p-toast>
+<div style="background-color: rgb(243, 218, 186);">
+<div class="container add">
+
+   <mat-tab-group class="card wizard-card" mat-stretch-tabs>
+       <mat-tab label="Mes parametres de connexion" >
+      <form #f="ngForm" (ngSubmit)="Submit(f)"> 
+      
+          <div class="  row" >
+            <div class="card-header container">
+            <h4 class="card-title text-dark text-center">
+                Pour modifier le mot de passe actuel, saisissez le nouveau mot de passe dans les deux champs de texte.
+            </h4>
+            </div>
+            <div class="card-body ">
+              <div class=" col-g-5" >
+                <div class="form-group" >
+                    <div class="p-field p-col-12 p-md-4">
+                        <div class="p-inputgroup">
+                           
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Adresse Mail</mat-label>
+                                <input type="text" matInput ><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    </div>
+                         
+                  <div class="form-group" >
+                    <div class="p-field p-col-12 p-md-4">
+                        <div class="p-inputgroup">
+                           
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Mot de passe</mat-label>
+                                <input type="password" matInput ><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    </div>
+
+                  <div class="form-group" >
+                    <div class="p-field p-col-12 p-md-4">
+                        <div class="p-inputgroup">
+                           
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Confirmer mot de passe</mat-label>
+                                <input type="password" matInput ><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                            </mat-form-field>
+                        </div>
+                    </div>
+                   </div>
+
+                </div>
+                <div  [ngStyle]="{'float':'right','margin':'20px'}">
+               <button type="submit" pButton  label="Enregistrer" class="ui-button-success"></button>
+             </div>
+              </div>
+          </div> 
+        </form> </mat-tab>
+
+       <mat-tab label="Information Personnel">
+           <form #f1="ngForm"  (ngSubmit)="Submit(f1)"> 
+            <div class="  row" >
+          <div class="card-header container">
+          <h4 class="card-title text-dark text-center">
+          INFORMATIONS DU RECRUTEUR 
+          </h4>
+          </div>
+          <div class="card-body ">
+            <div class=" col-g-5" >
+                
+                <div class="form-group" >
+                    <div class="p-field p-col-12 p-md-4">
+                        <div class="p-inputgroup">
+                           
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Nom</mat-label>
+                                <input type="text" matInput required><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                            </mat-form-field>
+                        </div>
+                    </div>
+                   </div>
+                       
+                   <div class="form-group" >
+                    <div class="p-field p-col-12 p-md-4">
+                        <div class="p-inputgroup">
+                           
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Prenom</mat-label>
+                                <input type="text" matInput required><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                            </mat-form-field>
+                        </div>
+                    </div>
+                   </div>
+     
+                   <div class="form-group" >
+                    <div class="p-field p-col-12 p-md-4">
+                        <div class="p-inputgroup">
+                           
+                            <mat-form-field class="example-full-width">
+                                <mat-label>Cin</mat-label>
+                                <input type="text" matInput required><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                            </mat-form-field>
+                        </div>
+                    </div>
+                   </div>
+
+            </div> 
+          </div>
+          <div class="card-body ">
+              <div class=" col-g-12 ">
+                <div class="form-group" >
+                    <div class="p-field p-col-12 p-md-4">
+                        <div class="p-inputgroup">
+                            
+                <mat-form-field class="example-full-width">
+                    <mat-label>Niveau d'études</mat-label>
+                    <input type="text" matInput ><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                </mat-form-field>
+            </div>
+        </div>
+       </div>
+
+       <div class="form-group" >
+        <div class="p-field p-col-12 p-md-4">
+            <div class="p-inputgroup">
+                
+                <mat-form-field class="example-full-width">
+                    <mat-label>Num tel</mat-label>
+                    <input type="text" matInput ><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                </mat-form-field>
+            </div>
+        </div>
+       </div>
+
+              </div>
+              <div  [ngStyle]="{'float':'right','margin':'20px'}"><!--[disabled]="f.invalid"-->
+             <button type="submit"  pButton  label="Enregistrer" class="ui-button-success"></button>
+           </div>
+            </div>
+        </div> 
+      </form> </mat-tab>
+
+     </mat-tab-group>
+</div></div>
