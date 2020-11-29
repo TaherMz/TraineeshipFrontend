@@ -20,7 +20,7 @@
                            
                             <mat-form-field class="example-full-width">
                                 <mat-label>Adresse Mail</mat-label>
-                                <input type="text" matInput ><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                                <input type="text" matInput name="email" [(ngModel)]="etudiant.email"><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
                             </mat-form-field>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                            
                             <mat-form-field class="example-full-width">
                                 <mat-label>Mot de passe</mat-label>
-                                <input type="password" matInput ><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                                <input type="password" matInput name="password" [(ngModel)]="etudiant.password"><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
                             </mat-form-field>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                            
                             <mat-form-field class="example-full-width">
                                 <mat-label>Nom</mat-label>
-                                <input type="text" matInput required><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                                <input type="text" matInput name="name" [(ngModel)]="etudiant.name"><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
                             </mat-form-field>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                            
                             <mat-form-field class="example-full-width">
                                 <mat-label>Prenom</mat-label>
-                                <input type="text" matInput required><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                                <input type="text" matInput name="prenom" [(ngModel)]="etudiant.prenom"><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
                             </mat-form-field>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                            
                             <mat-form-field class="example-full-width">
                                 <mat-label>Cin</mat-label>
-                                <input type="text" matInput required><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                                <input type="text" matInput name="cin" [(ngModel)]="etudiant.cin"><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
                             </mat-form-field>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                             
                 <mat-form-field class="example-full-width">
                     <mat-label>Niveau d'études</mat-label>
-                    <input type="text" matInput ><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                    <input type="text" matInput name="niveau" [(ngModel)]="etudiant.niveau"><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
                 </mat-form-field>
             </div>
         </div>
@@ -127,7 +127,7 @@
                 
                 <mat-form-field class="example-full-width">
                     <mat-label>Num tel</mat-label>
-                    <input type="text" matInput ><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                    <input type="text" name="numtel" [(ngModel)]="etudiant.numtel" matInput ><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
                 </mat-form-field>
             </div>
         </div>

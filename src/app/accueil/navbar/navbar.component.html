@@ -8,17 +8,17 @@
         -->
   
   <div class="box bg-teal-500 p-6">
-    <p-sidebar [(visible)]="display">
+    <p-sidebar [(visible)]="display" [style]="{'backgroundColor':'cadetblue'}">
       <a [routerLink]="['accueil']" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
         Accueil
     </a>
-  <!--<a [hidden]=unite [routerLink]="['login']" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+  <a [hidden]=unite [routerLink]="['login']" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
     Liste Etudiant
   </a>
  
-    <a  (click)="verifprofil(id)" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+    <a  (click)="verifprofil()" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
         Mon Profil
-    </a> -->
+    </a> -
      </p-sidebar>
     
     <p-button type="text"  (click)="display = true" icon="pi pi-plus" label="Show"></p-button>

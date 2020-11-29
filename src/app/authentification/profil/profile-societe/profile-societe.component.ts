@@ -13,18 +13,22 @@ import { DataService } from 'src/app/uniteStage/data.service';
 })
 export class ProfileSocieteComponent implements OnInit {
   identifiant:any;
-  etudiant?:any;
+  societe?:any;
   constructor(private activatedRoute:ActivatedRoute,private messageService:MessageService,private dataService:DataService,private router:Router,private http:HttpClient) { }
 
   ngOnInit(): void {
-    this.identifiant = this.activatedRoute.snapshot.params['id'];
-    this.dataService.getAllEtudiants().subscribe(data=>{
-      for(let i=0;i<data['data'].length;i++)
-      {
-        if(data['data'][i].id==this.identifiant)
-        this.etudiant=data['data'][i];
-      }
-    });
+    this.societe=this.dataService.user;
+    console.log(this.societe);
   }
-
-}
+  Submit(f){
+   /* return this.dataService.editProfile(f.value).subscribe(
+      (Response) => {
+        console.log(f.value);
+        console.log("success");
+        this.router.navigate(['/accueil']);
+      },
+        (error) =>{
+      console.log("error");
+    });*/
+  }
+    }
