@@ -20,7 +20,7 @@
                            
                             <mat-form-field class="example-full-width">
                                 <mat-label>Adresse Mail</mat-label>
-                                <input type="text" matInput ><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                                <input type="text" matInput name="email" [(ngModel)]="unite.email"><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
                             </mat-form-field>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                            
                             <mat-form-field class="example-full-width">
                                 <mat-label>Mot de passe</mat-label>
-                                <input type="password" matInput ><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                                <input type="password" matInput name="password" [(ngModel)]="unite.password"><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant.email"-->
                             </mat-form-field>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
             <div class="  row" >
           <div class="card-header container">
           <h4 class="card-title text-dark text-center">
-          INFORMATIONS DE L'ETUDIANT 
+          INFORMATIONS DE L'UNITE DE STAGE 
           </h4>
           </div>
           <div class="card-body ">
@@ -74,8 +74,8 @@
                         <div class="p-inputgroup">
                            
                             <mat-form-field class="example-full-width">
-                                <mat-label>Nom</mat-label>
-                                <input type="text" matInput required><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                                <mat-label>Nom de l'unité</mat-label>
+                                <input type="text" matInput name="name" [(ngModel)]="unite.name" ><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
                             </mat-form-field>
                         </div>
                     </div>
@@ -86,48 +86,24 @@
                         <div class="p-inputgroup">
                            
                             <mat-form-field class="example-full-width">
-                                <mat-label>Prenom</mat-label>
-                                <input type="text" matInput required><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                                <mat-label>Code</mat-label>
+                                <input type="text" matInput name="code" [(ngModel)]="unite.code"><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
                             </mat-form-field>
                         </div>
                     </div>
                    </div>
      
-                   <div class="form-group" >
-                    <div class="p-field p-col-12 p-md-4">
-                        <div class="p-inputgroup">
-                           
-                            <mat-form-field class="example-full-width">
-                                <mat-label>Cin</mat-label>
-                                <input type="text" matInput required><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
-                            </mat-form-field>
-                        </div>
-                    </div>
-                   </div>
-
             </div> 
           </div>
           <div class="card-body ">
               <div class=" col-g-12 ">
-                <div class="form-group" >
-                    <div class="p-field p-col-12 p-md-4">
-                        <div class="p-inputgroup">
-                            
-                <mat-form-field class="example-full-width">
-                    <mat-label>Niveau d'études</mat-label>
-                    <input type="text" matInput ><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
-                </mat-form-field>
-            </div>
-        </div>
-       </div>
-
        <div class="form-group" >
         <div class="p-field p-col-12 p-md-4">
             <div class="p-inputgroup">
                 
                 <mat-form-field class="example-full-width">
                     <mat-label>Num tel</mat-label>
-                    <input type="text" matInput ><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
+                    <input type="text" matInput name="numtel" [(ngModel)]="unite.numtel"><!--[placeholder]="etudiant.email" [(ngModel)]="etudiant?.email"-->
                 </mat-form-field>
             </div>
         </div>

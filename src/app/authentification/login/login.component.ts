@@ -20,25 +20,18 @@ export class LoginComponent implements OnInit {
       'Content-Type': 'application/json',
     })
   }
+  id:any;
+  user:any;
   constructor(private messageService:MessageService,private dataService:DataService,private router:Router,private http:HttpClient) { }
 
   ngOnInit(): void {
   }
   Submit(form) {
-    
-    console.log ("form.value", form.value)
-    // if (form.valid) {
-         let addedData = JSON.stringify(form.value);
-         console.log ("addedData", addedData);
-        this.http.post(environment.api+"auth/login", addedData,this.httpOptions).subscribe((res:any) => {
-          localStorage.setItem("token",res.token)
-           this.messageService.add({severity:'success', summary: 'Message', detail:'Succes'});  
-           this.router.navigate(['/accueil']);
-         },
-           error => {
-             this.messageService.add({severity:'error', summary: ' Message', detail:'Erreur'});
-           })
-       ;
+        // if (form.valid) {
+       this.dataService.getCurrentUser(form);
+       this.router.navigate(['/accueil']);
+       this.messageService.add({severity:'success', summary: 'Message', detail:'Succes'});  
+       
      //}
    }
 }
