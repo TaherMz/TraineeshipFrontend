@@ -2,8 +2,12 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
-
+text-decoration: none;
   }
   .push {
       margin-left: auto;
   }
+  .x {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;}

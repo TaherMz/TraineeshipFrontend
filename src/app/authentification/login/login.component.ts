@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   Submit(form) {
         // if (form.valid) {
        this.dataService.getCurrentUser(form);
-       this.router.navigate(['/accueil']);
+       this.router.navigate(['/listeOffres']);
        this.messageService.add({severity:'success', summary: 'Message', detail:'Succes'});  
        
      //}

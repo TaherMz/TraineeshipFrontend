@@ -46,12 +46,11 @@
             <td>
                 {{etudiant.niveau}}
             </td>
-            <td></td>
-            <!--<td>                      
+            <td>                      
                 <span class="badge text-white"
-                  [ngClass]="{' bg-danger  mr-1' : etudiant.etat.trim() == 'non affecte' ,
+                  [ngClass]="{' bg-danger  mr-1' : etudiant.etat.trim() == 'Non Affecté' ,
                 'bg-success ': etudiant.etat.trim() == 'affecte'}">{{etudiant.etat}}</span>
-                 </td>-->
+                 </td>
             <td>                      
               <span class="badge "
                 [ngClass]="{' bg-danger  mr-1' : etudiant.status.trim() == 'inactif' ,  ' bg-warning ': etudiant.status.trim() == 'en Attente', 

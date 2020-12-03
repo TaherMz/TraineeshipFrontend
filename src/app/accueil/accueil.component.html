@@ -3,17 +3,24 @@
   <div class="container">
     <div class="row">
       <div class="col-xl-9 mx-auto">
-        <h1 class="mb-5">Trouvez les meilleurs services de Stage pour votre business</h1>
+        <h1 class="mb-5">Trouvez les meilleurs services de Stage qui reponds a vos Besoins!</h1>
       </div>
       <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
         <form>
           <div class="form-row">
+           
             <div class="col-12 col-md-9 mb-2 mb-md-0">
               <input type="text" class="form-control form-control-lg" placeholder="Chercher un stage...">
             </div>
             <div class="col-12 col-md-3">
               <button type="submit" class="btn btn-block btn-lg btn-primary">Valider!</button>
             </div>
+            <a [hidden]=unite [routerLink]="['listeEtudiants']" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+              Liste Etudiant
+            </a>
+            <a  (click)="verifprofil()" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+              Mon Profil
+          </a> 
           </div>
         </form>
       </div>
