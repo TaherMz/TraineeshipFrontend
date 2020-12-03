@@ -14,6 +14,7 @@ import { DataService } from 'src/app/uniteStage/data.service';
 export class ProfileSocieteComponent implements OnInit {
   identifiant:any;
   societe?:any;
+  notSame:boolean=false;
   constructor(private activatedRoute:ActivatedRoute,private messageService:MessageService,private dataService:DataService,private router:Router,private http:HttpClient) { }
 
   ngOnInit(): void {
@@ -30,5 +31,14 @@ export class ProfileSocieteComponent implements OnInit {
         (error) =>{
       console.log("error");
     });*/
+  }
+
+  onKeyUpEvent(confirmPass:any){
+    console.log(confirmPass.target.value);
+    if(confirmPass.target.value!=this.societe.password)
+    {this.notSame=true;}
+    else
+    this.notSame=false;
+    //return this.societe.password === confirmPass.target.value ? null : { notSame: true }  
   }
     }

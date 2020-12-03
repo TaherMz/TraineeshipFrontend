@@ -25,7 +25,7 @@ getAllEtudiants(): Observable<any[]> {
 getCurrentUser(f:any){
   let addedData = JSON.stringify(f.value);
          console.log ("addedData", addedData);
-        this.http.post(environment.api+"auth/login", addedData,this.httpOptions).subscribe((res:any) => {
+    return this.http.post(environment.api+"auth/login", addedData,this.httpOptions).subscribe((res:any) => {
           localStorage.setItem("token",res.token)
           this.id=res.user;
           console.log(this.id);
@@ -38,7 +38,7 @@ getCurrentUser(f:any){
        verify(id){
         this.http.get(environment.api+"users" +`/${id}`) .subscribe((res)=>{
           this.user=res['data'];
-          this.user.status="actif";
+          //this.user.status="actif";
           console.log(this.user);
         }) 
        }

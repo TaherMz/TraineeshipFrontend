@@ -8,29 +8,23 @@
         -->
   
   <div class="box bg-teal-500 p-6">
-    <p-sidebar [(visible)]="display" [style]="{'backgroundColor':'cadetblue'}">
-      <a [routerLink]="['accueil']" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+    <p-sidebar [(visible)]="display" [style]="{'backgroundColor':'rgb(15, 155, 155)'}">
+      <a [routerLink]="['accueil']" class="x" style="font-size: 1.5em;" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white ">
         Accueil
     </a>
-  <a [hidden]=unite [routerLink]="['login']" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-    Liste Etudiant
+    <a [routerLink]="['listeOffres']" style="font-size: 1.5em;" class="block mt-4 lg:mt-0 text-teal-200 hover:text-white ">
+      Liste Des Offres
   </a>
- 
-    <a  (click)="verifprofil()" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-        Mon Profil
-    </a> -
      </p-sidebar>
-    
-    <p-button type="text"  (click)="display = true" icon="pi pi-plus" label="Show"></p-button>
+    <i class="pi pi-list " (click)="display = true" style="font-size: 2em;cursor: pointer;color:floralwhite"></i>
     
     <div class="push"><div class="text-sm lg:flex-grow">
-      <a [routerLink]="['accueil']" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-          Accueil
-      </a>
+      <a  (click)="verifprofil()" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+        Mon Profil
+    </a> 
     <a [routerLink]="['login']" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
       S'authentifier
     </a>
-   
       <a [routerLink]="['signUp']" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
           Creer un compte
       </a>

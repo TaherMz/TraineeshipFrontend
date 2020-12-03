@@ -10,7 +10,6 @@ import { DataService } from 'src/app/uniteStage/data.service';
 export class NavbarComponent implements OnInit {
   visibleSidebar1;
   user:any;
-  uniteStage:boolean=true;
   constructor(private dataService:DataService,private router:Router) { }
 verifprofil(){
   if (this.user.role=='US')
@@ -24,10 +23,7 @@ verifprofil(){
 }
 
   ngOnInit(): void {
-    this.user=this.dataService.user;
-    console.log(this.user);
-    if (this.user.role=='US')
-    this.uniteStage=false;
+   
    //ken l user unite de stage
   /* this.dataService.getAllEtudiants().subscribe(data=>{
      for(let i=0;i<data['data'].length;i++)
