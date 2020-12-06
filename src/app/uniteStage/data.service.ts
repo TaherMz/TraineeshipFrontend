@@ -17,9 +17,7 @@ user:any;
 constructor(private http: HttpClient) { }
 
 getAllEtudiants(): Observable<any[]> {
-  
     return this.http.get<any[]>(environment.api+"users");
-
 }
 
 getCurrentUser(f:any){
@@ -35,6 +33,7 @@ getCurrentUser(f:any){
              //this.messageService.add({severity:'error', summary: ' Message', detail:'Erreur'});
            })
        ;}
+
        verify(id){
         this.http.get(environment.api+"users" +`/${id}`) .subscribe((res)=>{
           this.user=res['data'];
@@ -42,6 +41,11 @@ getCurrentUser(f:any){
           console.log(this.user);
         }) 
        }
+
+editProfile(f,id){
+ return this.http.patch(environment.api+"users" +`/${id}`, f);
+}
+
 getCustomersSmall() {
         return this.http.get<any>('assets/showcase/customers-medium.json')
             .toPromise()
