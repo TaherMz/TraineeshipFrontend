@@ -34,14 +34,9 @@ etudiants:any[]=[];
 console.log(this.etudiants);
    });
    
-      this.dataService.getCustomersSmall().then(data => {
-          this.customers = data;
-          console.log(this.customers);
-         // this.updateRowGroupMetaData();
-      });
-      
   }
   onChangeStatus(e, etudiant) {
+    
     let object = {
       cin:etudiant.cin,
       code:etudiant.code,
@@ -57,6 +52,7 @@ console.log(this.etudiants);
       role:"E",
       status:etudiant.status
     }
+    etudiant.enabled= e ? true : false
    this.http.patch(environment.api+"users" +`/${etudiant.id}`, object).subscribe(data=>{
     
   console.log("success"+etudiant.enabled);
