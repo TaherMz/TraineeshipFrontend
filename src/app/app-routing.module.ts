@@ -10,6 +10,8 @@ import { ProfileUnitestageComponent } from './authentification/profil/profile-un
 import { ListeOffresComponent } from './recruteur/liste-offres/liste-offres.component';
 import { PostulerOffreComponent } from './recruteur/postuler-offre/postuler-offre.component';
 import { ListeEtudiantsComponent } from './uniteStage/liste-etudiants/liste-etudiants.component';
+import {PostulerInOffreComponent} from './etudiant/postuler-in-offre/postuler-in-offre.component';
+
 
 const routes: Routes = [
   {path:'accueil', component:AccueilComponent},
@@ -19,6 +21,7 @@ const routes: Routes = [
   {path:'postuler-offre',component:PostulerOffreComponent},
   {path:'listeOffres',component:ListeOffresComponent},
   {path:'profilEtudiant',component:ProfileEtudiantComponent},
+  {path:'postulerInOffre', component:PostulerInOffreComponent},
   {path:'profilSociete',component:ProfileSocieteComponent},
   {path:'profilUnite',component:ProfileUnitestageComponent},
 {path:'', redirectTo:'accueil', pathMatch:'full'},

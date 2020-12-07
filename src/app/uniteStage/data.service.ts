@@ -20,6 +20,7 @@ getAllEtudiants(): Observable<any[]> {
     return this.http.get<any[]>(environment.api+"users");
 }
 
+
 getCurrentUser(f:any){
   let addedData = JSON.stringify(f.value);
          console.log ("addedData", addedData);

@@ -1,2 +1,132 @@
-<p>postuler-in-offre works!</p>
-<h1> sssssss</h1>
+
+<div class="container add">
+   
+    <div class='c'>
+    <div class="row" >
+       
+       <div class="card-header container a">
+          <h1 class="card-title text-dark text-center">
+          FORMULAIRE DE CANDIDATURE DE STAGE 
+          </h1>
+          </div>
+    </div>
+    
+    <div class=" d-flex justify-content-center">
+    
+        <form class="example-form" #f="ngForm"  (ngSubmit)="Submit(f)">
+          
+                
+          <mat-form-field class="full-width" appearance="outline">
+             <mat-label>Mission </mat-label>
+             
+    <input  matInput  placeholder="offre.mission"   id="mission" name="mission"  #no="ngModel" pattern="[A-Z][a-zA-Z]+"  required disabled>
+    
+    </mat-form-field> 
+           <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Nom </mat-label>
+                  
+    <input  matInput  placeholder="etudiant.nom"   id="nom" name="nom"  #no="ngModel"   >
+       <i class="pi pi-user"></i>
+    
+    </mat-form-field>
+    
+    
+               
+               <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Prénom</mat-label>
+                  <input  matInput  placeholder="etudiant.prenom" id="prenom" name="prenom"   #pree="ngModel" >
+             
+                   <i class="pi pi-user"></i>
+                
+                </mat-form-field>
+               
+            <p>
+               <mat-form-field class="full-width" appearance="outline">
+                
+                   
+          
+                  <mat-label>Télèphone</mat-label>
+                 
+                  <input  matInput  placeholder="+216" id="telephone" name="telephone" [(ngModel)]="telephone" #tele="ngModel" required>
+                
+                   <i class="pi pi-phone"></i>
+                
+                </mat-form-field>
+                
+                </p>
+               <div  [hidden]="!tele.errors?.required || tele.pristine" class="alert alert-danger">
+                Le téléphone est un champ obligatoire
+            </div> 
+          
+               <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input  matInput  placeholder="etudiant.email" id="email" name="email"  #mail="ngModel"  >
+                   <i class="pi pi-Email"></i>
+             
+                </mat-form-field>
+               
+            
+              <div class="full-width" appearance="outline">
+                  <label>Niveau d'étude</label>
+                  
+                  <div class="funkyradio">
+                    <div class="funkyradio-success">
+                        <input type="radio" name="niveau" id="radio1" value="1" [(ngModel)]="n1"/>
+                        <label for="radio1">1er année </label>
+                    </div>
+                    <div class="funkyradio-success">
+                      <input type="radio" name="niveau" id="radio2"  value="2" [(ngModel)]="n2" />
+                      <label for="radio2">2émme année</label>
+                  </div>
+                  <div class="funkyradio-success">
+                    <input type="radio" name="niveau" id="radio3"  value="3" [(ngModel)]="n3" />
+                    <label for="radio3">3emme année</label>
+                </div>
+              </div>
+              </div>
+             
+               <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Spécialité</mat-label>
+                <input  matInput  placeholder="DSI" id="specialite" name="specialite" [(ngModel)]="specialite" #spec="ngModel" required>
+                
+             </mat-form-field>
+             <div  [hidden]="!spec.errors?.required || spec.pristine" class="alert alert-danger">
+                La spécialite est un champ obligatoire
+            </div> 
+    
+             
+            
+            
+        
+             <div class="card">
+                <h5>CV</h5>
+    <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
+            multiple="multiple" accept="image/*" maxFileSize="1000000" [(ngModel)]="cv">
+            <ng-template pTemplate="content">
+                <ul *ngIf="uploadedFiles.length">
+                    <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
+                </ul>
+            </ng-template>
+    </p-fileUpload>
+            
+             </div>
+             <mat-form-field class="full-width" appearance="outline">
+                <mat-label>Lettre de motivation</mat-label>
+                <textarea matInput placeholder="Votre lettre" id="motiv" name="lettre_motivation" [(ngModel)]="motiv" #mo="ngModel" required></textarea>
+              </mat-form-field>
+              <div  [hidden]="!mo.errors?.required || mo.pristine" class="alert alert-danger">
+                La lettre de motivation est un champ obligatoire
+            </div> 
+             
+             <div  [ngStyle]="{'float':'right','margin':'20px'}">
+                <button type="submit"  pButton  label="Envoyer" class="ui-button-success"></button>
+              </div>
+        </form>
+        
+    
+      
+    </div>
+    </div>
+    </div>
+    
+    
