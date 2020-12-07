@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs/internal/Observable';
 import { DataService } from 'src/app/uniteStage/data.service';
 
 
@@ -9,14 +11,21 @@ import { DataService } from 'src/app/uniteStage/data.service';
   styleUrls: ['./liste-offres.component.css']
 })
 export class ListeOffresComponent implements OnInit {
-  productList= [ 
-   ];
+  etudiant:boolean=false;
+  test:Observable<any[]>;
+  user:any;
+orders=[];
+selDmn : string='';
+prc=0;
  
   offers:any[]=[];
 
-  constructor(private dataService: DataService, private http:HttpClient) { }
+  constructor(private dataService: DataService, private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
+
+
+      
     this.dataService.getAllOffers().subscribe(data=>{
       console.log(data['data']);
        for(let i=0;i<data['data'].length;i++)
@@ -27,7 +36,15 @@ export class ListeOffresComponent implements OnInit {
   
   console.log(this.offers);
   
-     })
+     });
+     this.user=this.dataService.user;
+     console.log(this.user)
+     if (this.user.role=='E')
+      {this.etudiant=false;}
+     
   }
+  
+  onClick(offer)
+  {this.router.navigate(['/postulerInOffre',offer.id]);}
 
 }
