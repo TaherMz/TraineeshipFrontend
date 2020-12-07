@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-//import {DataService} from '../uniteStage/data.service';
+import { DataService } from 'src/app/uniteStage/data.service';
+
 
 @Component({
   selector: 'app-liste-offres',
@@ -8,36 +9,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./liste-offres.component.css']
 })
 export class ListeOffresComponent implements OnInit {
-  productList= [ {name: 'Article 1', price: 8799 , image:"../../assets/img/b.jpg", description : "Descrption de l article ici" , },
-  {name: 'Article 2', price: 8799 , image:"../../assets/img/b.jpg", description : "Descrption de l article ici" , },
-  {name: 'Article 3', price: 8799 , image:"../../assets/img/b.jpg", description : "Descrption de l article ici" , },
-  {name: 'Article 4', price: 8799 , image:"../../assets/img/b.jpg", description : "Descrption de l article ici" , },
-  {name: 'Article 5', price: 8799 , image:"../../assets/img/b.jpg", description : "Descrption de l article ici" , },
-  {name: 'Article 6', price: 8799 , image:"../../assets/img/b.jpg", description : "Descrption de l article ici" , },
-  {name: 'Article 7', price: 8799 , image:"../../assets/img/b.jpg", description : "Descrption de l article ici" , },
-  {name: 'Article 8', price: 8799 , image:"../../assets/img/b.jpg", description : "Descrption de l article ici" , },
-  {name: 'Article 9', price: 8799 , image:"../../assets/img/b.jpg", description : "Descrption de l article ici" , },
-  {name: 'Article 10', price: 8799 , image:"../../assets/img/b.jpg", description : "Descrption de l article ici" , },
-  
+  productList= [ 
    ];
  
-  dataService: any;
-  offers:[ ];
+  offers:any[]=[];
 
-  constructor(/*private dataService: DataService,*/ private http:HttpClient) { }
+  constructor(private dataService: DataService, private http:HttpClient) { }
 
   ngOnInit(): void {
-    /*
     this.dataService.getAllOffers().subscribe(data=>{
       console.log(data['data']);
        for(let i=0;i<data['data'].length;i++)
        {
-         if(data['data'][i].role=='E')
+        // if(data['data'][i].status=="actif")
          this.offers.push(data['data'][i]);
        }
   
   console.log(this.offers);
-     })*/
+  
+     })
   }
 
 }
