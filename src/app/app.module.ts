@@ -22,6 +22,8 @@ import {RadioButtonModule} from 'primeng/radiobutton';
 import {InputTextModule} from 'primeng/inputtext';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {MatIconModule} from '@angular/material/icon';
+import {FileUploadModule} from 'primeng/fileupload';
 //import {ConfirmationService} from 'primeng/api';
 import {ToastModule} from 'primeng/toast';
 import {MessagesModule} from 'primeng/messages';
@@ -58,11 +60,12 @@ import {MatInputModule} from '@angular/material/input';
     ModifierOffreComponent,
     PostulerInOffreComponent,
   ],
-  exports:[MatFormFieldModule,MatInputModule],
+  exports:[MatFormFieldModule,MatInputModule,],
   imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,InputSwitchModule,
     BrowserModule,BrowserAnimationsModule,RadioButtonModule,MatTabsModule,FontAwesomeModule,
     AppRoutingModule,TableModule,TabMenuModule,MessagesModule,MatFormFieldModule,SidebarModule,
-    ConfirmDialogModule,InputTextModule,MultiSelectModule,ReactiveFormsModule,MatInputModule
+    ConfirmDialogModule,InputTextModule,MultiSelectModule,ReactiveFormsModule,MatInputModule,
+    FileUploadModule,
   ],
   providers: [DataService, { provide: HTTP_INTERCEPTORS, useClass: GlobalHttpInterceptorService, multi: true  }],
   bootstrap: [AppComponent]

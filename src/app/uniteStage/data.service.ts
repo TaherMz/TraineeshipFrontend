@@ -20,6 +20,7 @@ getAllEtudiants(): Observable<any[]> {
     return this.http.get<any[]>(environment.api+"users");
 }
 
+
 getAllOffers(): Observable<any[]> {
   return this.http.get<any[]>(environment.api+"offers");
 }

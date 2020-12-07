@@ -1,1 +1,188 @@
-<p>postuler-offre works!</p>
+
+<p-toast position="top-right"></p-toast>
+
+<div [ngStyle]="{backgroundImage:'url(../assets/img/a.jpg)'}" style="background-repeat: no-repeat;background-size: cover;">
+  
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+              <!-- Tabs Titles -->
+            
+             
+    <form #f="ngForm"  (ngSubmit)="Submit(f)"> 
+
+
+                     <input type="hidden" pInputText [(ngModel)]="status" name="status"  required #st="ngModel"> 
+                    <input type="hidden" pInputText [(ngModel)]="enabled" name="enabled"  required #en="ngModel"> 
+        
+            <div class="card-header container">
+            <h1 class="card-title text-dark text-center">
+            Publier une Offre
+            </h1>
+            </div>
+        
+            <div class="form-group">
+                <div class="p-field p-col-12 p-md-4">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon">
+                            <i class="pi pi-user"></i>
+                        </span>
+                        <span class="p-float-label">
+                            <input type="mail" id="mail" pInputText  [(ngModel)]="societe.email" name="email" #ml="ngModel" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">  
+                            <label for="mail">Email</label>
+                        </span>
+                    </div>
+                </div>
+              <div [hidden]="!ml.errors?.required || ml.pristine"
+              class="alert alert-danger">
+              EMAIL est un champ obligatoire
+              </div>
+              <div *ngIf="ml.errors?.pattern" class="alert alert-danger">
+                La forme du email doit etre valide
+              </div></div>
+
+
+              <div class="form-group">
+                <div class="p-field p-col-12 p-md-4">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon">
+                            <i class="pi pi-user"></i>
+                        </span>
+                        <span class="p-float-label">
+                            <input type="text" id="c" pInputText [(ngModel)]="societe.name" name="nomsociete" #na="ngModel" required> 
+                            <label for="c">Nom de la Societe</label>
+                        </span>
+                    </div>
+                </div>
+                <div [hidden]="!na.errors?.required || na.pristine"
+                class="alert alert-danger">
+                Le nom est un champ obligatoire
+                </div></div>
+                
+        
+                  
+                    <div class="form-group">
+                        <div class="p-field p-col-12 p-md-4">
+                            <div class="p-inputgroup">
+                                <span class="p-inputgroup-addon">
+                                    <i class="pi pi-user"></i>
+                                </span>
+                                <span class="p-float-label">
+                                    <input type="text" id="tel" pInputText [(ngModel)]="societe.numtel" name="tel" #tl="ngModel" required pattern="[0-9]+"> 
+                                    <label for="tel">Telephone</label>
+                                </span>
+                            </div>
+                        </div>
+                      <div [hidden]="!tl.errors?.required || tl.pristine"
+                      class="alert alert-danger">
+                      Le telephone est un champ obligatoire
+                      </div>
+                      <div *ngIf="tl.errors?.pattern && tl.dirty" class="alert alert-danger">
+                      Le numero de telephone doit être un nombre
+                      </div></div>
+
+                      <div class="form-group">
+                        <div class="p-field p-col-12 p-md-4">
+                            <div class="p-inputgroup">
+                                <span class="p-inputgroup-addon">
+                                    <i class="pi pi-user"></i>
+                                </span>
+                                <span class="p-float-label">
+                                    <input type="text" id="cat" pInputText [(ngModel)]="categories" name="categories" #ct="ngModel" required> 
+                                    <label for="cat">Categorie de l'offre</label>
+                                </span>
+                            </div>
+                        </div>
+                         <div [hidden]="!ct.errors?.required || ct.pristine"
+                         class="alert alert-danger">
+                         La Categorie de l'offre est un champ obligatoire
+                         </div></div>
+
+                
+
+                    <!--  <div class="form-group">
+                        <div class="p-field p-col-12 p-md-4">
+                            <div class="p-inputgroup">
+                                <span class="p-inputgroup-addon">
+                                    <i class="pi pi-user"></i>
+                                </span>
+                                <span class="p-float-label">
+                                    <input type="text" id="des" pInputText [(ngModel)]="descoffre" name="mission" #de="ngModel" required> 
+                                    <label for="cod">Mission de l'offre</label>
+                                </span>
+                            </div>
+                        </div>
+                         <div [hidden]="!de.errors?.required || de.pristine"
+                         class="alert alert-danger">
+                         LA Mission de l'offre est un champ obligatoire
+                         </div></div>
+-->
+                         <div class="form-group">
+                            <div class="p-field p-col-12 p-md-4">
+                                <div class="p-inputgroup">
+                                    <span class="p-inputgroup-addon">
+                                        <i class="pi pi-user"></i>
+                                    </span>
+                                    <span class="p-float-label">
+                                        <input type="text" id="per" pInputText [(ngModel)]="periode" name="periode" #pr="ngModel" required placeholder="de ../../.... à ../../...."> 
+                                        <label for="per">Periode de Stage en mois</label>
+                                    </span>
+                                </div>
+                            </div>
+                             <div [hidden]="!pr.errors?.required || pr.pristine"
+                             class="alert alert-danger">
+                             La periode de stage est un champ obligatoire
+                             </div></div>
+
+                           
+
+                             <div class="form-group">
+                                <div class="p-field p-col-12 p-md-4">
+                                    <div class="p-inputgroup">
+                                        <span class="p-inputgroup-addon">
+                                            <i class="pi pi-user"></i>
+                                        </span>
+                                        <span class="p-float-label">
+                                            <textarea pInputTextarea [(ngModel)]="description" id="mission" #de="ngModel" name="mission"></textarea> 
+                                        <label for="des">Description</label>
+                                        </span>
+                                    </div>
+                                </div>
+                                 <div [hidden]="!de.errors?.required || de.pristine"
+                                 class="alert alert-danger">
+                                 La description est un champ obligatoire
+                                 </div></div>
+
+                             <div class="form-group">
+                                    <div class="p-field p-col-12 p-md-4">
+                                        <div class="p-inputgroup">
+                                            <span class="p-inputgroup-addon">
+                                                <i class="pi pi-user"></i>
+                                            </span>
+                                            <span class="p-float-label">
+                                                <textarea pInputTextarea [(ngModel)]="profil" id="pr" #po="ngModel" name="profil"></textarea> 
+                                            <label for="pr">Profil Demandé</label>
+                                            </span>
+                                        </div>
+                                    </div>
+                                     <div [hidden]="!po.errors?.required || po.pristine"
+                                     class="alert alert-danger">
+                                     Le Profil Demandé est un champ obligatoire
+                                     </div></div> 
+                            
+                                
+                                  
+                   
+               
+                <div  [ngStyle]="{'float':'right','margin':'20px'}">
+               <button type="submit"  pButton  label="Confirmer" class="ui-button-success"></button>
+                </div>
+         
+        </form> 
+    
+    </div>
+</div>
+   
+    </div>
+
+
+

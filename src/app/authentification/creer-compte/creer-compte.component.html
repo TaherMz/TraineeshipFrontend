@@ -7,7 +7,9 @@
                   <form #f="ngForm"  (ngSubmit)="Submit(f)"> 
                     <div class="p-field-radiobutton">
                         <p-radioButton name="role" value="E" [hidden]="true" [(ngModel)]="role" inputId="groupname" #rl="ngModel"></p-radioButton>
-                    </div>        
+                    </div>      
+                    <input type="hidden" pInputText [(ngModel)]="cin" name="code"  required #t="ngModel">  
+                    <input type="hidden" pInputText [(ngModel)]="cin" name="mfisc"  required #t="ngModel">        
                     <input type="hidden" pInputText [(ngModel)]="status" name="status"  required #st="ngModel"> 
                     <input type="hidden" pInputText [(ngModel)]="enabled" name="enabled"  required #en="ngModel"> 
             
@@ -176,7 +178,9 @@
             
                    <mat-tab label="Recruteur">
                        <form #f1="ngForm"  (ngSubmit)="Submit(f1)"> 
-                        <input type="hidden" pInputText [(ngModel)]="role1" name="role"  required #rl="ngModel">         
+                        <input type="hidden" pInputText [(ngModel)]="role1" name="role"  required #rl="ngModel">  
+                        <input type="hidden" pInputText [(ngModel)]="mfisc" name="cin"  required #t="ngModel">  
+                        <input type="hidden" pInputText [(ngModel)]="mfisc" name="code"  required #t="ngModel">               
                         <input type="hidden" pInputText [(ngModel)]="status" name="status"  required #st="ngModel"> 
                         <input type="hidden" pInputText [(ngModel)]="enabled" name="enabled"  required #en="ngModel"> 
                     <div class="  row" >
@@ -362,7 +366,9 @@
             
                    <mat-tab label="unite de stage">
                      <form #f2="ngForm"  (ngSubmit)="Submit(f2)">    
-                        <input type="hidden" pInputText [(ngModel)]="role2" name="role"  required #x="ngModel">     
+                        <input type="hidden" pInputText [(ngModel)]="role2" name="role"  required #x="ngModel"> 
+                        <input type="hidden" pInputText [(ngModel)]="code" name="cin"  required #t="ngModel">  
+                        <input type="hidden" pInputText [(ngModel)]="code" name="mfisc"  required #t="ngModel">        
                         <input type="hidden" pInputText [(ngModel)]="status" name="status"  required #st="ngModel"> 
                         <input type="hidden" pInputText [(ngModel)]="enabled" name="enabled"  required #en="ngModel"> 
                       <div class="  row" >

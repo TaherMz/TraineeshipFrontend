@@ -28,6 +28,7 @@ etudiants:any[]=[];
      {
        if(data['data'][i].role=='E')
        this.etudiants.push(data['data'][i]);
+       console.log(this.etudiants);
      }
 //this.etudiants=data['data'];
 console.log(this.etudiants);
@@ -42,10 +43,42 @@ console.log(this.etudiants);
   }
   onChangeStatus(e, etudiant) {
     let object = {
+      cin:etudiant.cin,
+      code:etudiant.code,
+      email:etudiant.email,
+      enabled: e ? true : false,
+      etat:etudiant.etat,
+      mfisc:etudiant.mfisc,
+      name:etudiant.name,
+      niveau:etudiant.niveau,
+      numtel:etudiant.numtel,
+      password:etudiant.password,
+      prenom:etudiant.prenom,
+      role:"E",
+      status:etudiant.status
+    }
+   this.http.patch(environment.api+"users" +`/${etudiant.id}`, object).subscribe(data=>{
+    
+  console.log("success"+etudiant.enabled);
+    //etudiant.enabled= e ? true : false
+   /* etudiant.enabled = !etudiant.enabled;
+  if (etudiant.enabled == false)  { etudiant.status = 'inactif'; }
+  else if (etudiant.enabled == true) { etudiant.status = 'actif';}*/
+    etudiant.enabled = !etudiant.enabled;
+  if (etudiant.enabled == false)  { etudiant.status = 'inactif'; }
+  else if (etudiant.enabled == true) { etudiant.status = 'actif';}
+  
+    },
+      (error) =>{
+    console.log("error");
+  });
+  
+    /*let object = {
       id: etudiant.id,
       enabled: e ? true : false
-  }
-  console.log(object);
+  }*/
+ 
+  //console.log(object);
   /*this.http.patch(environment.api+"/users/", object).subscribe(result => {
    console.log('Le statut a été modifié avec succès');
 

@@ -8,15 +8,20 @@ import { ProfileEtudiantComponent } from './authentification/profil/profile-etud
 import { ProfileSocieteComponent } from './authentification/profil/profile-societe/profile-societe.component';
 import { ProfileUnitestageComponent } from './authentification/profil/profile-unitestage/profile-unitestage.component';
 import { ListeOffresComponent } from './recruteur/liste-offres/liste-offres.component';
+import { PostulerOffreComponent } from './recruteur/postuler-offre/postuler-offre.component';
 import { ListeEtudiantsComponent } from './uniteStage/liste-etudiants/liste-etudiants.component';
+import {PostulerInOffreComponent} from './etudiant/postuler-in-offre/postuler-in-offre.component';
+
 
 const routes: Routes = [
   {path:'accueil', component:AccueilComponent},
   {path:'login', component:LoginComponent},
   {path:'signUp', component:CreerCompteComponent},
   {path:'listeEtudiants',component:ListeEtudiantsComponent},
+  {path:'postuler-offre',component:PostulerOffreComponent},
   {path:'listeOffres',component:ListeOffresComponent},
   {path:'profilEtudiant',component:ProfileEtudiantComponent},
+  {path:'postulerInOffre', component:PostulerInOffreComponent},
   {path:'profilSociete',component:ProfileSocieteComponent},
   {path:'profilUnite',component:ProfileUnitestageComponent},
 {path:'', redirectTo:'accueil', pathMatch:'full'},
