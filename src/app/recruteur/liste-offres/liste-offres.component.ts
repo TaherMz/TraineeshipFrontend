@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { DataService } from 'src/app/uniteStage/data.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -23,9 +24,8 @@ prc=0;
   constructor(private dataService: DataService, private http:HttpClient,private router:Router) { }
 
   ngOnInit(): void {
-
-
-      
+    this.user=this.dataService.user;
+    console.log(this.user);
     this.dataService.getAllOffers().subscribe(data=>{
       console.log(data['data']);
        for(let i=0;i<data['data'].length;i++)
@@ -33,18 +33,18 @@ prc=0;
         // if(data['data'][i].status=="actif")
          this.offers.push(data['data'][i]);
        }
-  
   console.log(this.offers);
   
      });
-     this.user=this.dataService.user;
-     console.log(this.user)
+    
      if (this.user.role=='E')
       {this.etudiant=false;}
      
   }
   
   onClick(offer)
-  {this.router.navigate(['/postulerInOffre',offer.id]);}
+  {
+    console.log(offer)
+    this.router.navigate(['../postulerInOffre',offer.id]);}
 
 }
