@@ -1,1 +1,67 @@
-<p>liste-offres works!</p>
+<section>
+    
+  <div class="search-container" style="margin-top: 10px; padding: 10px;">
+      <input type="text" id="search-bar" placeholder="Cherchez le stage souhaiter" (input)="tt.filterGlobal($event.target.value, 'contains')">
+      <a href="#" class="search-icon">
+          <i class="fa fa-search"></i>
+      </a>
+  </div> 
+  
+  <div class="wrapper" style="margin-top: 20px;">
+  <div class="box">
+      <div>
+      <div class="text-center" style="border: 2px solid rgb(215, 227, 248);margin: 20px;width:220px;">
+          <h3 style="background-color: rgb(215, 227, 248);padding: 10px;">Filtrage :</h3>
+          <div style="padding: 10px;">
+              Nom de la Société
+              <select class="form-control" (change)="tt.filterGlobal($event.target.value, 'contains')" [(ngModel)]="selDmn" >
+                  <option *ngFor="let product of offers" [selected]="product.nomsociete" value="{{product.nomsociete}}" style="width: 450px;">{{product.nomsociete}}</option>
+              </select>       
+              <hr class="hr-light">
+              Catégorie
+              <select class="form-control" (change)="tt.filterGlobal($event.target.value, 'contains')" [(ngModel)]="prc">
+                  <option [selected]="product.categories" *ngFor="let product of offers" value="{{product.mission}}" style="width: 450px;" >{{ product.mission }}</option>
+              </select> 
+          </div>
+      </div>
+      </div>
+  
+      <div>
+          <div style=" margin: 20px;width:720px;padding: 20px;border-radius:50px;">
+              <div style="display:flex">        
+                 <p class="text-success flex-item bd">Tout les Stages</p>  
+                 <p style="padding-left: 10px; font-size: 20px;" class="flex-item">
+                 </p>  
+              </div>
+          <hr class="hr-light">
+          <h4 class="flex-item" style="margin-left: 25px;">Found {{offers.length}} offers</h4>  
+          <p-table #tt [columns]="cols" [value]="offers" [globalFilterFields]="['title','domaine.dmn','price']" [paginator]="true" [rows]="5"  [totalRecords]="120" [rowsPerPageOptions]="[5,10,25,50,100]" [showCurrentPageReport]="true">
+              <ng-template pTemplate="body" let-offer let-expanded="expanded" let-columns="columns"  style="border: 1px solid rgb(215, 227, 248);margin: 20px;padding: 20px;border-radius: 20px;">
+                  <tr>
+                    <td style="margin: 20px;padding: 20px;">
+                      <h5 class="text-primary"> {{offer.nomsociete}} </h5>
+                      <p style="margin-top: 20px;">
+                           <span class="bg-success text-white" style="border-radius: 4px; padding: 5px; color: black;" >{{offer.periode}}</span>
+                      </p>
+                      <p>{{ offer.mission }}</p>
+                      <h5>Profil demandé:</h5>
+                      <p>{{ offer.profil }}</p>
+
+                      <strong style="font-size: 15px;padding: 10px;border-right: 2px solid rgb(215, 227, 248);color:gray;">
+                          <i style="font-size: 20px;padding: 10px;" class="fas fa-briefcase"></i>{{offer.tel}}
+                      </strong>
+                      <strong style="font-size: 15px;padding: 10px;border-right: 2px solid rgb(215, 227, 248);color:gray;">
+                          <i style="font-size: 20px;padding: 10px;" class="far fa-clock"></i>{{offer.email}}
+                      </strong>
+                      <strong style="font-size: 15px;padding: 10px;color:gray;"><i style="font-size: 20px;padding: 10px;" class=" fas fa-calendar-alt"></i> {{offer.categories}} </strong>
+                      <button class="btn btn-default text-primary" style="float: right;border: 1px solid gray;" [hidden]=etudiant (click)="onClick(offer)">Open</button>
+                    </td>
+                  </tr>
+              </ng-template> 
+          </p-table> 
+          </div>
+      </div>
+      
+  </div>
+  </div>
+  </section>

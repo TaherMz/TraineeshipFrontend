@@ -21,6 +21,10 @@ getAllEtudiants(): Observable<any[]> {
 }
 
 
+getAllOffers(): Observable<any[]> {
+  return this.http.get<any[]>(environment.api+"offers");
+}
+
 getCurrentUser(f:any){
   let addedData = JSON.stringify(f.value);
          console.log ("addedData", addedData);
@@ -46,6 +50,7 @@ getCurrentUser(f:any){
 editProfile(f,id){
  return this.http.patch(environment.api+"users" +`/${id}`, f);
 }
+
 
 getCustomersSmall() {
         return this.http.get<any>('assets/showcase/customers-medium.json')
