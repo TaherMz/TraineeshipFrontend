@@ -42,6 +42,24 @@ console.log(this.etudiants);
   }
   onChangeStatus(e, etudiant) {
     let object = {
+
+      id: etudiant.id,
+      enabled: e ? true : false
+  }
+   this.http.patch(environment.api+"users" +`/${etudiant.id}`, object).subscribe(data=>{
+    
+  console.log("success"+etudiant.enabled);
+    //etudiant.enabled= e ? true : false
+    etudiant.enabled = !etudiant.enabled;
+  if (etudiant.enabled == false)  { etudiant.status = 'inactif'; }
+  else if (etudiant.enabled == true) { etudiant.status = 'actif';}
+  
+    },
+      (error) =>{
+    console.log("error");
+  });
+  
+    /*let object = {
       id: etudiant.id,
       enabled: e ? true : false
   }

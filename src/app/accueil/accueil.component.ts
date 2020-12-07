@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 export class AccueilComponent implements OnInit {
 unite:boolean=true;
 user:any;
+societe:boolean=true;
+
   constructor(private dataService:DataService,private router:Router) { }
 
   items: MenuItem[];
@@ -20,6 +22,9 @@ user:any;
       console.log(this.user);
       if (this.user.role=='US')
       {this.unite=false;}
+
+      if (this.user.role=='S')
+      {this.societe=false;}
       
         this.items = [
             {label: 'Home', icon: 'pi pi-fw pi-home'},
