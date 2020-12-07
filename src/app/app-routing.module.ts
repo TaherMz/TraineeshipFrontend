@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:'postuler-offre',component:PostulerOffreComponent},
   {path:'listeOffres',component:ListeOffresComponent},
   {path:'profilEtudiant',component:ProfileEtudiantComponent},
-  {path:'postulerInOffre', component:PostulerInOffreComponent},
+  {path:'postulerInOffre/:id', component:PostulerInOffreComponent},
   {path:'profilSociete',component:ProfileSocieteComponent},
   {path:'profilUnite',component:ProfileUnitestageComponent},
 {path:'', redirectTo:'accueil', pathMatch:'full'},

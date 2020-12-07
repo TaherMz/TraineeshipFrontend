@@ -51,7 +51,6 @@ editProfile(f,id){
  return this.http.patch(environment.api+"users" +`/${id}`, f);
 }
 
-
 getCustomersSmall() {
         return this.http.get<any>('assets/showcase/customers-medium.json')
             .toPromise()
