@@ -12,36 +12,37 @@
     </div>
     
     <div class=" d-flex justify-content-center">
-    
+      <div class="full-width" appearance="outline">
+         <h3>Mission </h3>
+         
+<input  matInput  [(ngModel)]="offre.mission" >
+
+</div> 
         <form class="example-form" #f="ngForm"  (ngSubmit)="Submit(f)">
-          
-                
-          <mat-form-field class="full-width" appearance="outline">
-             <mat-label>Mission </mat-label>
-             
-    <input  matInput  placeholder="offre.mission"   id="mission" name="mission"  #no="ngModel" pattern="[A-Z][a-zA-Z]+"  required disabled>
-    
-    </mat-form-field> 
+         
            <mat-form-field class="full-width" appearance="outline">
                   <mat-label>Nom </mat-label>
                   
-    <input  matInput  placeholder="etudiant.nom"   id="nom" name="nom"  #no="ngModel"   >
+    <input  matInput  [(ngModel)]="etudiant.name"   id="nom" name="nom"   >
        <i class="pi pi-user"></i>
     
     </mat-form-field>
-    
-    
-               
-               <mat-form-field class="full-width" appearance="outline">
-                  <mat-label>Prénom</mat-label>
-                  <input  matInput  placeholder="etudiant.prenom" id="prenom" name="prenom"   #pree="ngModel" >
-             
-                   <i class="pi pi-user"></i>
-                
-                </mat-form-field>
-               
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Prenom </mat-label>
+      
+<input  matInput  [(ngModel)]="etudiant.prenom"  name="prenom"   >
+<i class="pi pi-user"></i>
+
+</mat-form-field>
             <p>
+              
                <mat-form-field class="full-width" appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input  matInput  [(ngModel)]="etudiant.email" id="email" name="email" >
+                   <i class="pi pi-Email"></i>
+             
+                </mat-form-field>
+                <mat-form-field class="full-width" appearance="outline">
                 
                    
           
@@ -58,13 +59,6 @@
                 Le téléphone est un champ obligatoire
             </div> 
           
-               <mat-form-field class="full-width" appearance="outline">
-                  <mat-label>Email</mat-label>
-                  <input  matInput  placeholder="etudiant.email" id="email" name="email"  #mail="ngModel"  >
-                   <i class="pi pi-Email"></i>
-             
-                </mat-form-field>
-               
             
               <div class="full-width" appearance="outline">
                   <label>Niveau d'étude</label>
@@ -100,8 +94,8 @@
         
              <div class="card">
                 <h5>CV</h5>
-    <p-fileUpload name="demo[]" url="./upload.php" (onUpload)="onUpload($event)"
-            multiple="multiple" accept="image/*" maxFileSize="1000000" [(ngModel)]="cv">
+    <p-fileUpload name="cv" url="./upload.php" (onUpload)="onUpload($event)"
+            multiple="multiple" accept="image/*" maxFileSize="1000000" [(ngModel)]="uploadedFiles">
             <ng-template pTemplate="content">
                 <ul *ngIf="uploadedFiles.length">
                     <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
