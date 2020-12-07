@@ -1,11 +1,13 @@
 .search-container{
-    width: 80%;
+    width: 70%;
     display: block;
     margin: 0 auto;
     background-color: rgb(215, 227, 248);
+    margin-top:50%;
   }
 
   input#search-bar{
+   
     margin: 0 auto;
     width: 98%;
     height: 45px;
@@ -17,6 +19,7 @@
    }
 
   .search-icon .fa-search{
+      margin-top: 250px;
       position: relative;
       float: right;
       width: 75px !important;

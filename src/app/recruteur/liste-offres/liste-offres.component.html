@@ -1,7 +1,7 @@
 <section>
     
   <div class="search-container" style="margin-top: 10px; padding: 10px;">
-      <input type="text" id="search-bar" placeholder="Find an order" (input)="tt.filterGlobal($event.target.value, 'contains')">
+      <input type="text" id="search-bar" placeholder="Cherchez le stage souhaiter" (input)="tt.filterGlobal($event.target.value, 'contains')">
       <a href="#" class="search-icon">
           <i class="fa fa-search"></i>
       </a>
@@ -11,7 +11,7 @@
   <div class="box">
       <div>
       <div class="text-center" style="border: 2px solid rgb(215, 227, 248);margin: 20px;width:220px;">
-          <h3 style="background-color: rgb(215, 227, 248);padding: 10px;">For only pro</h3>
+          <h3 style="background-color: rgb(215, 227, 248);padding: 10px;">Filtrage :</h3>
           <div style="padding: 10px;">
               Nom de la Société
               <select class="form-control" (change)="tt.filterGlobal($event.target.value, 'contains')" [(ngModel)]="selDmn" >
@@ -29,9 +29,8 @@
       <div>
           <div style=" margin: 20px;width:720px;padding: 20px;border-radius:50px;">
               <div style="display:flex">        
-                 <p class="text-success flex-item bd">All Tasks And Jobs</p>  
+                 <p class="text-success flex-item bd">Tout les Stages</p>  
                  <p style="padding-left: 10px; font-size: 20px;" class="flex-item">
-                      <a style="color: darkgrey;" [routerLink]="['/addOrders']">add Orders</a>
                  </p>  
               </div>
           <hr class="hr-light">
