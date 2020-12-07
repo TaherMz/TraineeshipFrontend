@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MessageService } from 'primeng/api';
+import { Message, MessageService } from 'primeng/api';
 import { DataService } from 'src/app/uniteStage/data.service';
 import { environment } from 'src/environments/environment';
 
@@ -12,7 +12,8 @@ import { environment } from 'src/environments/environment';
   providers:[MessageService]
 })
 export class ProfileEtudiantComponent implements OnInit {
- 
+  msgs: Message[] = [];
+
   etudiant?:any;
   httpOptions = {
     headers: new HttpHeaders({
@@ -24,12 +25,19 @@ export class ProfileEtudiantComponent implements OnInit {
   ngOnInit(): void {
    this.etudiant =this.dataService.user;
   }
-  Submit(form) {
-    
-   console.log ("form.value", form.value)
-   // if (form.valid) {
-        
-    //}
+  Submit(f){
+    return this.dataService.editProfile(f.value,this.etudiant.id).subscribe(
+      (Response) => {
+            this.msgs = [{severity:'info', summary:'Succés de modification', detail:''}];
+        console.log(f.value);
+        console.log("success");
+        this.router.navigate(['/accueil']);
+      },
+        (error) =>{
+                this.msgs = [{severity:'error', summary:'Erreur lors de la modification du restaurant', detail:''}];
+
+      console.log("error");
+    });
   }
 
 }
