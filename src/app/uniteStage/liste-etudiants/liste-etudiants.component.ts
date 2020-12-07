@@ -56,8 +56,7 @@ console.log(this.etudiants);
       prenom:etudiant.prenom,
       role:"E",
       status:etudiant.status
-  }
-  
+    }
    this.http.patch(environment.api+"users" +`/${etudiant.id}`, object).subscribe(data=>{
     
   console.log("success"+etudiant.enabled);
@@ -65,6 +64,9 @@ console.log(this.etudiants);
    /* etudiant.enabled = !etudiant.enabled;
   if (etudiant.enabled == false)  { etudiant.status = 'inactif'; }
   else if (etudiant.enabled == true) { etudiant.status = 'actif';}*/
+    etudiant.enabled = !etudiant.enabled;
+  if (etudiant.enabled == false)  { etudiant.status = 'inactif'; }
+  else if (etudiant.enabled == true) { etudiant.status = 'actif';}
   
     },
       (error) =>{
