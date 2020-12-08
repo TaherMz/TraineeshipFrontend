@@ -24,9 +24,11 @@ export class ProfileEtudiantComponent implements OnInit {
 
   ngOnInit(): void {
    this.etudiant =this.dataService.user;
+   console.log(this.etudiant);
   }
   Submit(f){
-    return this.dataService.editProfile(f.value,this.etudiant.id).subscribe(
+    let addedData = JSON.stringify(f.value);
+    return  this.http.patch(environment.api+"users" +`/${this.etudiant.id}`, addedData,this.httpOptions).subscribe(
       (Response) => {
             this.msgs = [{severity:'info', summary:'Succés de modification', detail:''}];
         console.log(f.value);

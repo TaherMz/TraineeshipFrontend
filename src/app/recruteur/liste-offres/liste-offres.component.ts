@@ -45,6 +45,6 @@ prc=0;
   onClick(offer)
   {
     console.log(offer)
-    this.router.navigate(['../postulerInOffre',offer.id]);}
+    this.router.navigate(['postulerInOffre',offer.id]);}
 
 }

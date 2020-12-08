@@ -42,7 +42,6 @@ getCurrentUser(f:any){
        verify(id){
         this.http.get(environment.api+"users" +`/${id}`) .subscribe((res)=>{
           this.user=res['data'];
-          //this.user.status="actif";
           console.log(this.user);
         }) 
        }
