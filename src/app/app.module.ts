@@ -42,6 +42,7 @@ import { PostulerInOffreComponent } from './etudiant/postuler-in-offre/postuler-
 import {SidebarModule} from 'primeng/sidebar';
 import { ListeOffresComponent } from './recruteur/liste-offres/liste-offres.component';
 import {MatInputModule} from '@angular/material/input';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
