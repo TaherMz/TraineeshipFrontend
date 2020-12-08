@@ -56,7 +56,7 @@
                 [ngClass]="{' bg-danger  mr-1' : etudiant.status.trim() == 'inactif' ,  ' bg-warning ': etudiant.status.trim() == 'en Attente', 
               'bg-success ': etudiant.status.trim() == 'actif'}">{{etudiant.status}}</span>
               </td>
-            <td><p-inputSwitch  size="small"   [disabled]=" etudiant.status=='en attente' "
+            <td><p-inputSwitch  size="small"   
                 (click)="onChangeStatus($event, etudiant)"></p-inputSwitch></td>
         </tr>
     </ng-template>
