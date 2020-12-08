@@ -49,7 +49,6 @@ export class LoginComponent implements OnInit {
           console.log(this.user);
         }) */
         this.dataService.getCurrentUser(form);
-       this.router.navigate(['/listeOffres']);
        this.messageService.add({severity:'success', summary: 'Message', detail:'Succes'});  
       }
         // if (form.valid) {

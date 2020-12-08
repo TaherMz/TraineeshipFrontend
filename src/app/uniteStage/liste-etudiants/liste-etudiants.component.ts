@@ -19,6 +19,7 @@ export class ListeEtudiantsComponent implements OnInit  {
 unite:any[]=["DSI","RSI","SEM"];
   rowGroupMetadata: any;
 etudiants:any[]=[];
+
   constructor(private dataService: DataService,private http:HttpClient) { }
 
   ngOnInit() {
@@ -30,101 +31,29 @@ etudiants:any[]=[];
        this.etudiants.push(data['data'][i]);
        console.log(this.etudiants);
      }
-//this.etudiants=data['data'];
 console.log(this.etudiants);
    });
    
   }
   onChangeStatus(e, etudiant) {
-    
-    let object = {
-      cin:etudiant.cin,
-      code:etudiant.code,
-      email:etudiant.email,
-      enabled: e ? true : false,
-      etat:etudiant.etat,
-      mfisc:etudiant.mfisc,
-      name:etudiant.name,
-      niveau:etudiant.niveau,
-      numtel:etudiant.numtel,
-      password:etudiant.password,
-      prenom:etudiant.prenom,
-      role:"E",
-      status:etudiant.status
-    }
-    etudiant.enabled= e ? true : false
-   this.http.patch(environment.api+"users" +`/${etudiant.id}`, object).subscribe(data=>{
-    
-  console.log("success"+etudiant.enabled);
-    //etudiant.enabled= e ? true : false
-   /* etudiant.enabled = !etudiant.enabled;
-  if (etudiant.enabled == false)  { etudiant.status = 'inactif'; }
-  else if (etudiant.enabled == true) { etudiant.status = 'actif';}*/
+    console.log(etudiant);
     etudiant.enabled = !etudiant.enabled;
-  if (etudiant.enabled == false)  { etudiant.status = 'inactif'; }
-  else if (etudiant.enabled == true) { etudiant.status = 'actif';}
-  
+    if (etudiant.enabled == false)  { etudiant.status = 'inactif'; etudiant.enabled=false; }
+    else if (etudiant.enabled == true) { etudiant.status = 'actif';etudiant.enabled=true;}
+   this.http.patch(environment.api+"users" +`/${etudiant._id}`, etudiant).subscribe(data=>{
+  console.log("success"+etudiant.enabled);    
     },
       (error) =>{
     console.log("error");
   });
-  
-    /*let object = {
-      id: etudiant.id,
-      enabled: e ? true : false
-  }*/
- 
-  //console.log(object);
-  /*this.http.patch(environment.api+"/users/", object).subscribe(result => {
-   console.log('Le statut a été modifié avec succès');
+  }
 
-    etudiant.enabled = !etudiant.enabled;
-    if (etudiant.enabled == false)  { etudiant.status = 'inactif'; 
-    //this.msgs = [{severity:'info', summary:'Le restaurant n est plus actif', detail:''}];
-  }
-    else if (etudiant.enabled == true) { etudiant.status = 'actif';
-    //this.msgs = [{severity:'info', summary:'Le restaurant est actif', detail:''}];
-  }
-}, err => {console.log('Erreur');
-//this.msgs = [{severity:'error', summary:'Erreur lors de la modification du status', detail:''}];
-
-});*/
-  }
   onSort() {
       this.updateRowGroupMetaData();
   }
 
   updateRowGroupMetaData() {
     this.rowGroupMetadata = {};
-
-   /* if (this.customers) {
-        for (let i = 0; i < this.customers.length; i++) {
-            let rowData = this.customers[i];
-            let representativeName = rowData.representative.name;
-            
-            if (i == 0) {
-                this.rowGroupMetadata[representativeName] = { index: 0, size: 1 };
-            }
-            else {
-                let previousRowData = this.customers[i - 1];
-                let previousRowGroup = previousRowData.representative.name;
-                if (representativeName === previousRowGroup)
-                    this.rowGroupMetadata[representativeName].size++;
-                else
-                    this.rowGroupMetadata[representativeName] = { index: i, size: 1 };
-            }
-        }
-    }*/
 }
- /* getAllEtud(c:any){
-    let e:any[];
-    for (let i = 0; i < this.etudiants.length; i++) {
-      let rowData = this.etudiants[i];
-      let etud = rowData.code;
-      if(c.code==etud.code)
-      e.push(this.etudiants[i]);
-    }
-    console.log(e);
-    return e;
-  }*/
+ 
 }

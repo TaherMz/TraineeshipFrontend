@@ -27,8 +27,7 @@ export class ProfileEtudiantComponent implements OnInit {
    console.log(this.etudiant);
   }
   Submit(f){
-    let addedData = JSON.stringify(f.value);
-    return  this.http.patch(environment.api+"users" +`/${this.etudiant.id}`, addedData,this.httpOptions).subscribe(
+    return  this.http.patch(environment.api+"users" +`/${this.etudiant._id}`, f.value).subscribe(
       (Response) => {
             this.msgs = [{severity:'info', summary:'Succés de modification', detail:''}];
         console.log(f.value);
