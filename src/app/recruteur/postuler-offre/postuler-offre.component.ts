@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 
 
 
+
 @Component({
   selector: 'app-postuler-offre',
   templateUrl: './postuler-offre.component.html',
@@ -23,8 +24,11 @@ export class PostulerOffreComponent implements OnInit {
 
 nomsociete?:any="";
 tel?:any="";
+
 datedeb?:any;
 datefin?:any;
+
+
 mission?:any="";
 categories?:any="";
 profil?:any="";
@@ -47,6 +51,7 @@ httpOptions = {
     
    }
 
+
   ngOnInit(): void {
     this.societe =this.dataService.user;
   }
@@ -66,6 +71,8 @@ httpOptions = {
        ;
     // }
    }
+
+  
 
   /* onKeyUpEvent(confirmPass:any){
     console.log(confirmPass.target.value);
