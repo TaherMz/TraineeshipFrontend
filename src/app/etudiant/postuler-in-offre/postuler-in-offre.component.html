@@ -10,16 +10,20 @@
           </h1>
           </div>
     </div>
+    <div class="card-header container ">
+      
+        <mat-label class="b">Votre sujet choisi :</mat-label>
+        
+<input  matInput  [(ngModel)]="offre.mission"  disabled>
+
+      
+      </div>
+
     
     <div class=" d-flex justify-content-center">
      
         <form class="example-form" #f="ngForm"  (ngSubmit)="Submit(f)">
-         <div class="full-width" appearance="outline">
-            <h3>Mission </h3>
-            
-   <input  matInput  [(ngModel)]="offre.mission" >
-   
-   </div> 
+          
            <mat-form-field class="full-width" appearance="outline">
                   <mat-label>Nom </mat-label>
                   
@@ -38,7 +42,7 @@
               
                <mat-form-field class="full-width" appearance="outline">
                   <mat-label>Email</mat-label>
-                  <input  matInput  [(ngModel)]="etudiant.email" id="email" name="email" >
+                  <input  matInput  [(ngModel)]="etudiant.email" id="email" name="email"  >
                    <i class="pi pi-Email"></i>
              
                 </mat-form-field>
@@ -95,7 +99,7 @@
              <div class="card">
                 <h5>CV</h5>
     <p-fileUpload name="cv" url="./upload.php" (onUpload)="onUpload($event)"
-            multiple="multiple" accept="image/*" maxFileSize="1000000" [(ngModel)]="uploadedFiles">
+            multiple="multiple"  maxFileSize="1000000" [(ngModel)]="uploadedFiles">
             <ng-template pTemplate="content">
                 <ul *ngIf="uploadedFiles.length">
                     <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
