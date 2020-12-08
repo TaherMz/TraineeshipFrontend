@@ -117,14 +117,15 @@
                          </div></div>
 -->
                          <div class="form-group">
+                            <p>Date debut de Stage</p>
                             <div class="p-field p-col-12 p-md-4">
                                 <div class="p-inputgroup">
                                     <span class="p-inputgroup-addon">
                                         <i class="pi pi-user"></i>
                                     </span>
                                     <span class="p-float-label">
-                                        <input type="text" id="per" pInputText [(ngModel)]="periode" name="periode" #pr="ngModel" required placeholder="de ../../.... à ../../...."> 
-                                        <label for="per">Periode de Stage en mois</label>
+                                        <input type="date" id="per" pInputText [(ngModel)]="datedeb" name="datedeb" #pr="ngModel" required> 
+                                       
                                     </span>
                                 </div>
                             </div>
@@ -132,6 +133,24 @@
                              class="alert alert-danger">
                              La periode de stage est un champ obligatoire
                              </div></div>
+
+                             <div class="form-group">
+                                 <p>Date Fin de Stage</p>
+                                <div class="p-field p-col-12 p-md-4">
+                                    <div class="p-inputgroup">
+                                        <span class="p-inputgroup-addon">
+                                            <i class="pi pi-user"></i>
+                                        </span>
+                                        <span class="p-float-label">
+                                            <input type="date" id="per" pInputText [(ngModel)]="datefin" name="datefin" #pr="ngModel" required> 
+                                            
+                                        </span>
+                                    </div>
+                                </div>
+                                 <div [hidden]="!pr.errors?.required || pr.pristine"
+                                 class="alert alert-danger">
+                                 La periode de stage est un champ obligatoire
+                                 </div></div>
 
                            
 
@@ -142,7 +161,7 @@
                                             <i class="pi pi-user"></i>
                                         </span>
                                         <span class="p-float-label">
-                                            <textarea pInputTextarea [(ngModel)]="description" id="mission" #de="ngModel" name="mission"></textarea> 
+                                            <textarea pInputTextarea [(ngModel)]="description" id="mission" #de="ngModel" name="mission" rows=5 cols=50 maxlength=250 required></textarea> 
                                         <label for="des">Description</label>
                                         </span>
                                     </div>
@@ -159,7 +178,7 @@
                                                 <i class="pi pi-user"></i>
                                             </span>
                                             <span class="p-float-label">
-                                                <textarea pInputTextarea [(ngModel)]="profil" id="pr" #po="ngModel" name="profil"></textarea> 
+                                                <textarea pInputTextarea [(ngModel)]="profil" id="pr" #po="ngModel" name="profil" rows=5 cols=50 maxlength=250 required></textarea> 
                                             <label for="pr">Profil Demandé</label>
                                             </span>
                                         </div>
