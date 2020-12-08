@@ -11,6 +11,8 @@ import { ListeOffresComponent } from './recruteur/liste-offres/liste-offres.comp
 import { PostulerOffreComponent } from './recruteur/postuler-offre/postuler-offre.component';
 import { ListeEtudiantsComponent } from './uniteStage/liste-etudiants/liste-etudiants.component';
 import {PostulerInOffreComponent} from './etudiant/postuler-in-offre/postuler-in-offre.component';
+import { VerifListeoffresComponent } from './uniteStage/verif-listeoffres/verif-listeoffres.component';
+import { ListeRecruteursComponent } from './uniteStage/liste-recruteurs/liste-recruteurs.component';
 
 
 const routes: Routes = [
@@ -18,6 +20,8 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'signUp', component:CreerCompteComponent},
   {path:'listeEtudiants',component:ListeEtudiantsComponent},
+  {path:'VerifOffres',component:VerifListeoffresComponent},
+  {path:'listeRecruteurs',component:ListeRecruteursComponent},
   {path:'postuler-offre',component:PostulerOffreComponent},
   {path:'listeOffres',component:ListeOffresComponent},
   {path:'profilEtudiant',component:ProfileEtudiantComponent},
