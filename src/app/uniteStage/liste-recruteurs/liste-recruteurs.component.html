@@ -1,0 +1,61 @@
+<h1 [ngStyle]="{'margin':'30px','font-weight':'bold'}">Liste des recruteurs </h1>
+<div class="card" [ngStyle]="{'margin':'30px'}">     
+ <div class="content-section implementation" >
+    <p-table [value]="recruteurs" dataKey="id"><!--sortField="niveau" sortMode="single" (onSort)="onSort()"-->
+       <ng-template pTemplate="header" let-columns>
+        <tr>
+         <th [ngStyle]="{'width':'40px'}"></th>
+            <th>Nom de la Société</th>
+            <th>Email</th>
+            <th>Description</th>
+            <th>Emplacement</th>   
+            <th>Matricule Fiscale</th>
+            <th>Secteur d'activité</th>
+            <th>Attestation Juridique</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>                      
+    </ng-template>
+    
+    <ng-template pTemplate="body" let-recruteur>
+        <tr>
+            <td>
+            </td>
+            <td>
+                {{recruteur.name}}
+            </td>
+            <td>
+                {{recruteur.email}}
+            </td>
+            <td>
+                {{recruteur.description}}
+            </td>
+            <td>
+                <span class="image-text">{{recruteur.emplacement}}</span>
+            </td>
+            <td>
+                {{recruteur.mfisc}}
+            </td>
+            <td>
+                 {{recruteur.secteuractivite}}  </td>
+                 <td>
+                    {{recruteur.attestationjuridique}} </td>
+            <td>                      
+              <span class="badge "
+                [ngClass]="{' bg-danger  mr-1' : recruteur.status.trim() == 'inactif' ,  ' bg-warning ': recruteur.status.trim() == 'en attente', 
+              'bg-success ': recruteur.status.trim() == 'actif'}">{{recruteur.status}}</span>
+              </td>
+            <td><p-inputSwitch  size="small"   
+                (click)="onChangeStatus($event, recruteur)"></p-inputSwitch></td>
+        </tr>
+    </ng-template>
+     
+     </p-table>
+   </div>
+</div>
+ 
+               
+         
+
+
+

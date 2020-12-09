@@ -13,20 +13,9 @@
             <th>etat</th>
             <th>Status</th>
             <th>Action</th>
-        </tr>
-
-                           
+        </tr>                      
     </ng-template>
-   <!--<ng-template pTemplate="body" let-etudiant let-rowIndex="rowIndex" let-expanded="expanded">
-        <tr *ngIf="rowGroupMetadata[etudiant.representative.name].index === rowIndex">
-            <td  colspan="6"> 
-                <a href="#" [pRowToggler]="etudiant">
-                <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
-                </a>
-                <span>{{etudiant.name}}</span>
-                </td>              
-        </tr>
-    </ng-template>-->
+    
     <ng-template pTemplate="body" let-etudiant>
         <tr>
             <td>
@@ -53,7 +42,7 @@
                  </td>
             <td>                      
               <span class="badge "
-                [ngClass]="{' bg-danger  mr-1' : etudiant.status.trim() == 'inactif' ,  ' bg-warning ': etudiant.status.trim() == 'en Attente', 
+                [ngClass]="{' bg-danger  mr-1' : etudiant.status.trim() == 'inactif' ,  ' bg-warning ': etudiant.status.trim() == 'en attente', 
               'bg-success ': etudiant.status.trim() == 'actif'}">{{etudiant.status}}</span>
               </td>
             <td><p-inputSwitch  size="small"   

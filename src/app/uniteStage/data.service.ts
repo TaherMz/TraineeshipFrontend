@@ -53,11 +53,9 @@ editProfile(f,id){
  return this.http.patch(environment.api+"users" +`/${id}`, f);
 }
 
-getCustomersSmall() {
-        return this.http.get<any>('assets/showcase/customers-medium.json')
-            .toPromise()
-            .then(res => <any[]>res.data)
-            .then(data => { return data; });
-    }
+public getRest(): Observable<any[]> 
+{
+     return this.http.get<any[]>(environment.api+"offers");
+}
 
 }

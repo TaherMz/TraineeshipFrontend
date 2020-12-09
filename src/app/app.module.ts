@@ -42,6 +42,7 @@ import { PostulerInOffreComponent } from './etudiant/postuler-in-offre/postuler-
 import {SidebarModule} from 'primeng/sidebar';
 import { ListeOffresComponent } from './recruteur/liste-offres/liste-offres.component';
 import {MatInputModule} from '@angular/material/input';
+import { ListeRecruteursComponent } from './uniteStage/liste-recruteurs/liste-recruteurs.component';
 import { DatePipe } from '@angular/common';
 
 @NgModule({
@@ -60,6 +61,7 @@ import { DatePipe } from '@angular/common';
     ProfileUnitestageComponent,
     ModifierOffreComponent,
     PostulerInOffreComponent,
+    ListeRecruteursComponent,
   ],
   exports:[MatFormFieldModule,MatInputModule,],
   imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,InputSwitchModule,

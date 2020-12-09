@@ -1,1 +1,36 @@
-<p>verif-listeoffres works!</p>
+<div style="background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+background: linear-gradient(to right, #25c481, #25b7c4);
+font-family: 'Roboto', sans-serif; height: 657px;" >
+<div class="container card-header" >
+
+<div style="background-color:a #f1f2f3;height: 500px;"class="card " >
+<h2 class="text-center " style="color: rgb(131, 179, 241); margin:20px; font-family: 'Times New Roman', Times, serif;">Liste des offres de stages</h2>
+<p-table [value]="cars" [scrollable]="true" scrollHeight="500px" >
+  <ng-template pTemplate="header" >
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Mission</th>
+      <th>Numéro Tel</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-car>
+    <tr>
+      <td>{{car.nomsociete}}</td>
+      <td>{{car.email}}</td>
+      <td>{{car.mission}}</td>
+      <td>{{car.tel}}</td>
+      <td><span class="badge text-white" [ngClass]="{' bg-danger  mr-1' : car.status.trim() == 'inactif' ,  ' bg-warning ': car.status.trim() == 'en attente', 
+        'bg-success ': car.status.trim() == 'actif'}">{{car.status}}</span></td>
+      <td>
+        <p-inputSwitch size="small" (click)="onChangeStatus($event, car)">
+        </p-inputSwitch>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+</div>
+</div>
+</div>
