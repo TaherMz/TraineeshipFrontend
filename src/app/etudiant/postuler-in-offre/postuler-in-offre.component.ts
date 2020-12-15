@@ -37,11 +37,9 @@ export class PostulerInOffreComponent implements OnInit {
   ngOnInit(): void {
     this.etudiant=this.dataService.user;
     console.log(this.etudiant);
-    //this.offre = this.dataService.offres.mission;
     this.identifiant= this.activatedRoute.snapshot.params['id'];
     this.http.get(environment.api+"offers" +`/${this.identifiant}`) .subscribe((res)=>{
       this.offre=res['data'];
-      //this.offre.status="actif";
       console.log(this.offre);
     }) 
 
