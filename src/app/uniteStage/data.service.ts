@@ -15,6 +15,7 @@ httpOptions = {
       }
 id:any;
 user:any;
+nomsociete:any;
 constructor(private http: HttpClient,private router:Router) { }
 
 getAllEtudiants(): Observable<any[]> {
@@ -63,6 +64,11 @@ public getRest(): Observable<any[]>
 }
 deleteOffer(id:any){
   return this.http.delete(environment.api+"/offers" +`/${id}`);
+}
+
+
+getMyOffers(): Observable<any[]> {
+  return this.http.get<any[]>(environment.api+"offers/getmyoffers" +`/${this.user.name}`);
 }
 
 }

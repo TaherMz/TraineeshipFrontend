@@ -15,14 +15,41 @@ export class ProfileSocieteComponent implements OnInit {
   identifiant:any;
   societe?:any;
   notSame:boolean=false;
-  msgs: Message[] = [];
-
+  msgs: Message[] = []; 
+  offers:any[]=[];
+  nomsociete:any;
   constructor(private activatedRoute:ActivatedRoute,private messageService:MessageService,private dataService:DataService,private router:Router,private http:HttpClient) { }
 
   ngOnInit(): void {
     this.societe=this.dataService.user;
     console.log(this.societe);
-  }
+
+    
+    this.dataService.getMyOffers().subscribe(data=>{
+      console.log(data['data']);
+       for(let i=0;i<data['data'].length;i++)
+       {
+         if(data['data'][i].status=="actif")
+         this.offers.push(data['data'][i]);
+       }
+  console.log(this.offers);
+  
+     });
+
+   /* this.dataService.getMyOffers().subscribe(data=>{
+      console.log(data['data']);
+       for(let i=0;i<data['data'].length;i++)
+       {
+         if(data['data'][i].status=="actif")
+         this.offers=data['data'][i];
+       }
+     
+  console.log(this.offers);
+  
+     });   */
+    }
+
+
   Submit(f){
     return this.dataService.editProfile(f.value,this.societe.id).subscribe(
       (Response) => {

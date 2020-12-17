@@ -18,7 +18,7 @@
                     <div class="p-field p-col-12 p-md-4">
                         <div class="p-inputgroup">
                            
-                            <mat-form-field class="example-full-width">
+                             <mat-form-field class="example-full-width">
                                 <mat-label>Adresse Mail</mat-label>
                                 <input type="mail" matInput name="email" [(ngModel)]="societe.email"><!--[placeholder]="societe.email" [placeholder]="societe.email"-->
                             </mat-form-field>
@@ -141,6 +141,40 @@
             </div>
         </div> 
       </form> </mat-tab>
+
+      <mat-tab label="Mes Offres" >
+        <div style="background: -webkit-linear-gradient(left, #1572a8, #25b7c4);
+        background: linear-gradient(to right, #40b6ec, #25b7c4);
+        font-family: 'Roboto', sans-serif; height: 657px;" >
+        <div class="container card-header" >
+        
+        <div style="background-color:a #f1f2f3;height: 500px;"class="card " >
+        <h2 class="text-center " style="color: rgb(131, 179, 241); margin:20px; font-family: 'Times New Roman', Times, serif;">Liste des offres de stages</h2>
+        <p-table [value]="offers" [scrollable]="true" scrollHeight="500px" >
+          <ng-template pTemplate="header" >
+            <tr>
+              <th>mission</th>
+              <th>periode</th>
+              <th>categories</th>
+              <th>Liste</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-offer>
+            <tr>
+
+              <td>{{offer.mission}}</td>
+              <td>{{offer.periode}}</td>
+              <td>{{offer.categories}}</td>
+              <td><button  class="btn btn-danger">Liste etudiants</button></td>
+              
+            </tr>
+          </ng-template>
+        </p-table>
+        </div>
+        </div>
+        </div>
+         </mat-tab>
+  
 
      </mat-tab-group>
 </div></div>
