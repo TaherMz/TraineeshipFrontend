@@ -46,6 +46,7 @@ import { ListeRecruteursComponent } from './uniteStage/liste-recruteurs/liste-re
 import { DatePipe } from '@angular/common';
 import { EtudiantNonaffComponent } from './uniteStage/etudiant-nonaff/etudiant-nonaff.component';
 import {CalendarModule} from 'primeng/calendar';
+import { EtudiantAffecteComponent } from './uniteStage/etudiant-affecte/etudiant-affecte.component';
 
 
 @NgModule({
@@ -65,9 +66,10 @@ import {CalendarModule} from 'primeng/calendar';
     ModifierOffreComponent,
     PostulerInOffreComponent,
     ListeRecruteursComponent,
+    EtudiantAffecteComponent,
     EtudiantNonaffComponent,
   ],
-  exports:[MatFormFieldModule,MatInputModule,],
+  exports:[MatFormFieldModule,MatInputModule],
   imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,InputSwitchModule,
     BrowserModule,BrowserAnimationsModule,RadioButtonModule,MatTabsModule,FontAwesomeModule,
     AppRoutingModule,TableModule,TabMenuModule,MessagesModule,MatFormFieldModule,SidebarModule,

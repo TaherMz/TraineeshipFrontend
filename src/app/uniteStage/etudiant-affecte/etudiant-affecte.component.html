@@ -1,0 +1,56 @@
+<h1 [ngStyle]="{'margin':'30px','font-weight':'bold'}">Liste des Etudiants affectés </h1>
+<div class="card" [ngStyle]="{'margin':'30px'}">     
+ <div class="content-section implementation" >
+    <p-table [value]="etudiants" dataKey="id"><!--sortField="niveau" sortMode="single" (onSort)="onSort()"-->
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex">
+                <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success p-mr-2"  pTooltip="XLS" tooltipPosition="bottom"></button>
+                <button type="button" pButton pRipple icon="pi pi-file-pdf" (click)="exportPdf()" class="p-button-warning p-mr-2" pTooltip="PDF" tooltipPosition="bottom"></button>
+            </div>
+        </ng-template>
+       <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th style="width: 3rem"></th>
+         
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+        </tr>                      
+    </ng-template>
+    
+    <ng-template pTemplate="body" let-expanded="expanded" let-etudiant>
+        <tr >
+            <td>
+                <button type="button" pButton pRipple pRowToggler="etudiant" (click)="getoffers(etudiant)" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+            </td>
+            <td>
+                {{etudiant.name}}
+            </td>
+            <td>
+                {{etudiant.prenom}}
+            </td>
+            <td>
+                {{etudiant.cin}}
+            </td>
+            <td>
+                <span class="image-text">{{etudiant.email}}</span>
+            </td>
+            <td>
+                {{etudiant.niveau}}
+            </td>
+            <td>                      
+                <span class="badge text-white"
+                  [ngClass]="{' bg-danger  mr-1' : etudiant.etat.trim() == 'Non Affecté' ,
+                'bg-success ': etudiant.etat.trim() == 'Affecté'}">{{etudiant.etat}}</span>
+                 </td>
+           
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="rowexpansion">
+        <div>
+{{offers.mission}}
+        </div>
+    </ng-template>
+     </p-table>
+   </div>
+</div>
