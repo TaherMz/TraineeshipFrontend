@@ -11,8 +11,7 @@
             <th>Mail</th>   
             <th>Niveau</th>
             <th>etat</th>
-            <th>Status</th>
-            <th>Action</th>
+          
         </tr>                      
     </ng-template>
     
@@ -40,13 +39,7 @@
                   [ngClass]="{' bg-danger  mr-1' : etudiant.etat.trim() == 'Non Affecté' ,
                 'bg-success ': etudiant.etat.trim() == 'affecte'}">{{etudiant.etat}}</span>
                  </td>
-            <td>                      
-              <span class="badge "
-                [ngClass]="{' bg-danger  mr-1' : etudiant.status.trim() == 'inactif' ,  ' bg-warning ': etudiant.status.trim() == 'en attente', 
-              'bg-success ': etudiant.status.trim() == 'actif'}">{{etudiant.status}}</span>
-              </td>
-            <td><p-inputSwitch  size="small"   
-                (click)="onChangeStatus($event, etudiant)"></p-inputSwitch></td>
+           
         </tr>
     </ng-template>
      

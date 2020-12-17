@@ -48,7 +48,6 @@ import { EtudiantNonaffComponent } from './uniteStage/etudiant-nonaff/etudiant-n
 import {CalendarModule} from 'primeng/calendar';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,ListeEtudiantsComponent,

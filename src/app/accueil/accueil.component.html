@@ -30,6 +30,9 @@
             <a  (click)="verifprofil()" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
               Mon Profil
           </a> 
+          <a [hidden]=unite  [routerLink]="['../listeEtudiantsNonAffecte']" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            Etudiants non affectés
+        </a>
           </div>
         </form>
       </div>
