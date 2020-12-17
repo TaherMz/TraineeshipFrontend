@@ -12,7 +12,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./liste-offres.component.css']
 })
 export class ListeOffresComponent implements OnInit {
-  etudiant:boolean=false;
+  etudiant:boolean=true;
   test:Observable<any[]>;
   user:any;
 orders=[];
@@ -30,7 +30,7 @@ prc=0;
       console.log(data['data']);
        for(let i=0;i<data['data'].length;i++)
        {
-        // if(data['data'][i].status=="actif")
+         if(data['data'][i].status=="actif")
          this.offers.push(data['data'][i]);
        }
   console.log(this.offers);
@@ -45,6 +45,6 @@ prc=0;
   onClick(offer)
   {
     console.log(offer)
-    this.router.navigate(['postulerInOffre',offer.id]);}
+    this.router.navigate(['postulerInOffre',offer._id]);}
 
 }

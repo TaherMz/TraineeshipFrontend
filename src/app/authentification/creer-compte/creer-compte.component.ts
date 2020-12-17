@@ -46,17 +46,16 @@ export class CreerCompteComponent implements OnInit {
   Submit(form) {
     
    console.log ("form.value", form.value)
-   // if (form.valid) {
         let addedData = JSON.stringify(form.value);
         console.log ("addedData", addedData);
        this.http.post(environment.api+"auth/signup", addedData,this.httpOptions).subscribe((res) => {
+        this.router.navigate(['/login']);
           this.messageService.add({severity:'success', summary: 'Message', detail:'Succes'});  
-          this.router.navigate(['/login']);
+         
         },
           error => {
             this.messageService.add({severity:'error', summary: ' Message', detail:'Erreur'});
           })
       ;
-    //}
   }
 }

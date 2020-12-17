@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -14,7 +15,7 @@ httpOptions = {
       }
 id:any;
 user:any;
-constructor(private http: HttpClient) { }
+constructor(private http: HttpClient,private router:Router) { }
 
 getAllEtudiants(): Observable<any[]> {
     return this.http.get<any[]>(environment.api+"users");
@@ -33,6 +34,7 @@ getCurrentUser(f:any){
           this.id=res.user;
           console.log(this.id);
           this.verify(this.id);
+          
          },
            error => {
              //this.messageService.add({severity:'error', summary: ' Message', detail:'Erreur'});
@@ -42,6 +44,7 @@ getCurrentUser(f:any){
        verify(id){
         this.http.get(environment.api+"users" +`/${id}`) .subscribe((res)=>{
           this.user=res['data'];
+          this.router.navigate(['/accueil']);
           console.log(this.user);
         }) 
        }
@@ -50,11 +53,9 @@ editProfile(f,id){
  return this.http.patch(environment.api+"users" +`/${id}`, f);
 }
 
-getCustomersSmall() {
-        return this.http.get<any>('assets/showcase/customers-medium.json')
-            .toPromise()
-            .then(res => <any[]>res.data)
-            .then(data => { return data; });
-    }
+public getRest(): Observable<any[]> 
+{
+     return this.http.get<any[]>(environment.api+"offers");
+}
 
 }
