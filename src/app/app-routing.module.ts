@@ -13,6 +13,7 @@ import { ListeEtudiantsComponent } from './uniteStage/liste-etudiants/liste-etud
 import {PostulerInOffreComponent} from './etudiant/postuler-in-offre/postuler-in-offre.component';
 import { VerifListeoffresComponent } from './uniteStage/verif-listeoffres/verif-listeoffres.component';
 import { ListeRecruteursComponent } from './uniteStage/liste-recruteurs/liste-recruteurs.component';
+import { ModifierOffreComponent } from './recruteur/modifier-offre/modifier-offre.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'listeRecruteurs',component:ListeRecruteursComponent},
   {path:'postuler-offre',component:PostulerOffreComponent},
   {path:'listeOffres',component:ListeOffresComponent},
+  {path:'modifierOffre/:id',component:ModifierOffreComponent},
   {path:'profilEtudiant',component:ProfileEtudiantComponent},
   {path:'postulerInOffre/:id', component:PostulerInOffreComponent},
   {path:'profilSociete',component:ProfileSocieteComponent},

@@ -49,6 +49,7 @@ getCurrentUser(f:any){
         }) 
        }
 
+       
 editProfile(f,id){
  return this.http.patch(environment.api+"users" +`/${id}`, f);
 }
@@ -56,6 +57,9 @@ editProfile(f,id){
 public getRest(): Observable<any[]> 
 {
      return this.http.get<any[]>(environment.api+"offers");
+}
+deleteOffer(id:any){
+  return this.http.delete(environment.api+"/offers" +`/${id}`);
 }
 
 }
