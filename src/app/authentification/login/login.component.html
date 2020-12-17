@@ -2,7 +2,7 @@
     <div [ngStyle]="{backgroundImage:'url(../../assets/img/bg1.jpg)'}" style="background-repeat: no-repeat;background-size: cover;">
 
     <div class="flex  align-items ">
-        <table style="margin:20px">
+        <table style="margin:20px ; opacity: 80%;" >
             <tr>
                 <td>
                     <form  #f="ngForm"  (ngSubmit)="Submit(f)" style="height: 452px;width: 400px" class="bg-white shadow-md  rounded px-8 pt-6">
@@ -26,7 +26,7 @@
                                 Connexion
                             </button>
                         </div><br>
-                        <a [routerLink]="['../signUp']">Vous n'avez pas de compte?</a>
+                        <a [routerLink]="['../signUp']" style="color:cornflowerblue;">Vous n'avez pas de compte?</a>
 
                     </form>
                 </td>

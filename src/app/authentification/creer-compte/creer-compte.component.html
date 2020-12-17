@@ -2,7 +2,7 @@
             <div [ngStyle]="{backgroundImage:'url(../assets/img/b.jpg)'}" style="background-repeat: no-repeat;background-size: cover;">
             <div class="container add">
             
-               <mat-tab-group class="card wizard-card" mat-stretch-tabs>
+               <mat-tab-group class="card wizard-card" mat-stretch-tabs style="opacity: 80%;">
                    <mat-tab label="Etudiant" >
                   <form #f="ngForm"  (ngSubmit)="Submit(f)"> 
                     <div class="p-field-radiobutton">
@@ -41,7 +41,7 @@
                                 <div class="p-field p-col-12 p-md-4">
                                     <div class="p-inputgroup">
                                         <span class="p-inputgroup-addon">
-                                            <i class="pi pi-user"></i>
+                                            <i class="pi pi-user" ></i>
                                         </span>
                                         <span class="p-float-label">
                                             <input type="text" id="pren" pInputText [(ngModel)]="prenom" name="prenom" #pm="ngModel" required> 
