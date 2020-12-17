@@ -44,12 +44,14 @@ import { ListeOffresComponent } from './recruteur/liste-offres/liste-offres.comp
 import {MatInputModule} from '@angular/material/input';
 import { ListeRecruteursComponent } from './uniteStage/liste-recruteurs/liste-recruteurs.component';
 import { DatePipe } from '@angular/common';
+import {CalendarModule} from 'primeng/calendar';
+
 
 @NgModule({
   declarations: [
     AppComponent,ListeEtudiantsComponent,
     CreerCompteComponent,ListeOffresComponent,
-    LoginComponent,
+    LoginComponent,ModifierOffreComponent,
     AccueilComponent,
     ErreurComponent,
     NavbarComponent,
@@ -68,7 +70,7 @@ import { DatePipe } from '@angular/common';
     BrowserModule,BrowserAnimationsModule,RadioButtonModule,MatTabsModule,FontAwesomeModule,
     AppRoutingModule,TableModule,TabMenuModule,MessagesModule,MatFormFieldModule,SidebarModule,
     ConfirmDialogModule,InputTextModule,MultiSelectModule,ReactiveFormsModule,MatInputModule,
-    FileUploadModule,
+    FileUploadModule,CalendarModule
   ],
   providers: [DataService, { provide: HTTP_INTERCEPTORS, useClass: GlobalHttpInterceptorService, multi: true  }],
   bootstrap: [AppComponent]
