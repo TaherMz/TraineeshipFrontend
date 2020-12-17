@@ -1,16 +1,17 @@
 <section>
-    
-  <div class="search-container" style="margin-top: 10px; padding: 10px;">
+    <p-messages [style]="{width: '200px','float':'right'}" [value]="msgs"></p-messages>
+    <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog>
+  <div class="search-container" style="margin-top: auto; padding: 10px;">
       <input type="text" id="search-bar" placeholder="Cherchez le stage souhaiter" (input)="tt.filterGlobal($event.target.value, 'contains')">
       <a href="#" class="search-icon">
           <i class="fa fa-search"></i>
       </a>
   </div> 
   
-  <div class="wrapper" style="margin-top: 20px;">
+  <div class="wrapper" style="margin-top: 10px;">
   <div class="box">
       <div>
-      <div class="text-center" style="border: 2px solid rgb(215, 227, 248);margin: 20px;width:220px;">
+      <div class="text-center" style="border: 2px solid rgb(215, 227, 248);margin: 10px;width:220px;">
           <h3 style="background-color: rgb(215, 227, 248);padding: 10px;">Filtrage :</h3>
           <div style="padding: 10px;">
               Nom de la Société
@@ -20,14 +21,15 @@
               <hr class="hr-light">
               Catégorie
               <select class="form-control" (change)="tt.filterGlobal($event.target.value, 'contains')" [(ngModel)]="prc">
-                  <option [selected]="product.categories" *ngFor="let product of offers" value="{{product.mission}}" style="width: 450px;" >{{ product.mission }}</option>
-              </select> 
+                <option *ngFor="let product of offers" [selected]="product.categories"  value="{{product.categories}}" style="width: 450px;" >{{ product.categories }}</option>
+            </select>
+              <!-- <p-calendar [(ngModel)]="date3" (change)="tt.filterGlobal($event.target.value, 'contains')" [showIcon]="true" inputId="icon"></p-calendar> -->
           </div>
       </div>
       </div>
   
       <div>
-          <div style=" margin: 20px;width:720px;padding: 20px;border-radius:50px;">
+          <div style=" margin: 20px;width:730px;padding: 20px;border-radius:50px;">
               <div style="display:flex">        
                  <p class="text-success flex-item bd">Tout les Stages</p>  
                  <p style="padding-left: 10px; font-size: 20px;" class="flex-item">
@@ -35,7 +37,7 @@
               </div>
           <hr class="hr-light">
           <h4 class="flex-item" style="margin-left: 25px;">Found {{offers.length}} offers</h4>  
-          <p-table #tt [columns]="cols" [value]="offers" [globalFilterFields]="['title','domaine.dmn','price']" [paginator]="true" [rows]="5"  [totalRecords]="120" [rowsPerPageOptions]="[5,10,25,50,100]" [showCurrentPageReport]="true">
+          <p-table #tt [columns]="cols" [value]="offers" [globalFilterFields]="['periode','nomsociete','categories']" [paginator]="true" [rows]="5"  [totalRecords]="120" [rowsPerPageOptions]="[5,10,25,50,100]" [showCurrentPageReport]="true">
               <ng-template pTemplate="body" let-offer let-expanded="expanded" let-columns="columns"  style="border: 1px solid rgb(215, 227, 248);margin: 20px;padding: 20px;border-radius: 20px;">
                   <tr>
                     <td style="margin: 20px;padding: 20px;">
@@ -55,6 +57,8 @@
                       </strong>
                       <strong style="font-size: 15px;padding: 10px;color:gray;"><i style="font-size: 20px;padding: 10px;" class=" fas fa-calendar-alt"></i> {{offer.categories}} </strong>
                       <button class="btn btn-default text-primary" style="float: right;border: 1px solid gray;" [hidden]=etudiant (click)="onClick(offer)">Postuler</button>
+                      <button class="btn btn-default text-primary" style="float: right;border: 1px solid gray;" [hidden]=recruteur (click)="onEdit(offer)">Modifier</button>
+                      <button type="button" pButton [ngStyle]="{'height':'40px','width':'50px'}" icon="pi pi-trash" iconPos="left" [hidden]=recruteur class="ui-button-danger" (click)="confirm2(offer)" style="float: left;"></button>
                     </td>
                   </tr>
               </ng-template> 
