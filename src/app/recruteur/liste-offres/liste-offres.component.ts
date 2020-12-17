@@ -41,6 +41,10 @@ date3:Date;
   console.log(this.offers);
   
      });
+
+     
+
+     
     
      if (this.user.role=='E')
       {
