@@ -1,0 +1,61 @@
+<h1 [ngStyle]="{'margin':'30px','font-weight':'bold'}">Liste des Etudiants </h1>
+<div class="card" [ngStyle]="{'margin':'30px'}">     
+ <div class="content-section implementation" >
+    <p-table [value]="etudiants" dataKey="id"><!--sortField="niveau" sortMode="single" (onSort)="onSort()"-->
+       <ng-template pTemplate="header" let-columns>
+        <tr>
+         <th [ngStyle]="{'width':'40px'}"></th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>cin</th>
+            <th>Mail</th>   
+            <th>Niveau</th>
+            <th>etat</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>                      
+    </ng-template>
+    
+    <ng-template pTemplate="body" let-etudiant>
+        <tr>
+            <td>
+            </td>
+            <td>
+                {{etudiant.name}}
+            </td>
+            <td>
+                {{etudiant.prenom}}
+            </td>
+            <td>
+                {{etudiant.cin}}
+            </td>
+            <td>
+                <span class="image-text">{{etudiant.email}}</span>
+            </td>
+            <td>
+                {{etudiant.niveau}}
+            </td>
+            <td>                      
+                <span class="badge text-white"
+                  [ngClass]="{' bg-danger  mr-1' : etudiant.etat.trim() == 'Non Affecté' ,
+                'bg-success ': etudiant.etat.trim() == 'affecte'}">{{etudiant.etat}}</span>
+                 </td>
+            <td>                      
+              <span class="badge "
+                [ngClass]="{' bg-danger  mr-1' : etudiant.status.trim() == 'inactif' ,  ' bg-warning ': etudiant.status.trim() == 'en attente', 
+              'bg-success ': etudiant.status.trim() == 'actif'}">{{etudiant.status}}</span>
+              </td>
+            <td><p-inputSwitch  size="small"   
+                (click)="onChangeStatus($event, etudiant)"></p-inputSwitch></td>
+        </tr>
+    </ng-template>
+     
+     </p-table>
+   </div>
+</div>
+ 
+               
+         
+
+
+

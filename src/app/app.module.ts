@@ -44,6 +44,7 @@ import { ListeOffresComponent } from './recruteur/liste-offres/liste-offres.comp
 import {MatInputModule} from '@angular/material/input';
 import { ListeRecruteursComponent } from './uniteStage/liste-recruteurs/liste-recruteurs.component';
 import { DatePipe } from '@angular/common';
+import { EtudiantNonaffComponent } from './uniteStage/etudiant-nonaff/etudiant-nonaff.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { DatePipe } from '@angular/common';
     ModifierOffreComponent,
     PostulerInOffreComponent,
     ListeRecruteursComponent,
+    EtudiantNonaffComponent,
   ],
   exports:[MatFormFieldModule,MatInputModule,],
   imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,InputSwitchModule,
