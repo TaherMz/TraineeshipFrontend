@@ -15,6 +15,8 @@ import { VerifListeoffresComponent } from './uniteStage/verif-listeoffres/verif-
 import { ListeRecruteursComponent } from './uniteStage/liste-recruteurs/liste-recruteurs.component';
 import { ModifierOffreComponent } from './recruteur/modifier-offre/modifier-offre.component';
 import { EtudiantAffecteComponent } from './uniteStage/etudiant-affecte/etudiant-affecte.component';
+import { EtudiantNonaffComponent } from './uniteStage/etudiant-nonaff/etudiant-nonaff.component';
+
 
 
 const routes: Routes = [
@@ -31,6 +33,7 @@ const routes: Routes = [
   {path:'etudiantAffecte',component:EtudiantAffecteComponent},
   {path:'postulerInOffre/:id', component:PostulerInOffreComponent},
   {path:'profilSociete',component:ProfileSocieteComponent},
+  {path:'listeEtudiantsNonAffecte',component:EtudiantNonaffComponent},
   {path:'profilUnite',component:ProfileUnitestageComponent},
 {path:'', redirectTo:'accueil', pathMatch:'full'},
 {path:'**',component:ErreurComponent}

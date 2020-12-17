@@ -1,0 +1,58 @@
+<h1 [ngStyle]="{'margin':'30px','font-weight':'bold'}">Liste des Etudiants Non affetcté </h1>
+<div class="card" [ngStyle]="{'margin':'30px'}">     
+ <div class="content-section implementation" >
+    <p-table [value]="etudiants" dataKey="id"><!--sortField="niveau" sortMode="single" (onSort)="onSort()"-->
+       <ng-template pTemplate="header" let-columns>
+        <tr>
+         <th [ngStyle]="{'width':'40px'}"></th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>cin</th>
+            <th>Mail</th>   
+            <th>Niveau</th>
+            <th>Etat</th>
+            <th>Action</th>
+        </tr>                      
+    </ng-template>
+    
+    <ng-template pTemplate="body" let-etudiant>
+        <tr>
+            <td>
+            </td>
+            <td>
+                {{etudiant.name}}
+            </td>
+            <td>
+                {{etudiant.prenom}}
+            </td>
+            <td>
+                {{etudiant.cin}}
+            </td>
+            <td>
+                <span class="image-text">{{etudiant.email}}</span>
+            </td>
+            <td>
+                {{etudiant.niveau}}
+            </td>
+            <td>                      
+                <span class="badge text-white"
+                  [ngClass]="{' bg-danger  mr-1' : etudiant.etat.trim() == 'Non Affecté' ,
+                'bg-success ': etudiant.etat.trim() == 'affecte'}">{{etudiant.etat}}</span>
+                 </td>
+                 <td>
+                    <button type="button" class="btn btn-primary"> Envoyer mail</button>
+                   
+                 </td>
+           
+        </tr>
+    </ng-template>
+     
+     </p-table>
+   </div>
+</div>
+ 
+               
+         
+
+
+

@@ -44,6 +44,7 @@ import { ListeOffresComponent } from './recruteur/liste-offres/liste-offres.comp
 import {MatInputModule} from '@angular/material/input';
 import { ListeRecruteursComponent } from './uniteStage/liste-recruteurs/liste-recruteurs.component';
 import { DatePipe } from '@angular/common';
+import { EtudiantNonaffComponent } from './uniteStage/etudiant-nonaff/etudiant-nonaff.component';
 import {CalendarModule} from 'primeng/calendar';
 import { EtudiantAffecteComponent } from './uniteStage/etudiant-affecte/etudiant-affecte.component';
 
@@ -66,6 +67,7 @@ import { EtudiantAffecteComponent } from './uniteStage/etudiant-affecte/etudiant
     PostulerInOffreComponent,
     ListeRecruteursComponent,
     EtudiantAffecteComponent,
+    EtudiantNonaffComponent,
   ],
   exports:[MatFormFieldModule,MatInputModule],
   imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,InputSwitchModule,

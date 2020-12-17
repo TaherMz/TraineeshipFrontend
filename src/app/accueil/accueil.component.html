@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xl-9 mx-auto">
-        <h1 class="mb-5">Trouvez les meilleurs services de Stage qui reponds a vos Besoins!</h1>
+        <h1 class="mb-5" style="color:white;">Trouvez les meilleurs services de Stage qui reponds a vos Besoins!</h1>
       </div>
       <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
         <form>
@@ -29,10 +29,17 @@
             </a>
             <a  (click)="verifprofil()" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
               Mon Profil
+
           </a>
           <a  [hidden]=unite [routerLink]="['../etudiantAffecte']"  class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
             etudiants Affectés
         </a> 
+
+          </a> 
+          <a [hidden]=unite  [routerLink]="['../listeEtudiantsNonAffecte']" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+            Etudiants non affectés
+        </a>
+
           </div>
         </form>
       </div>
@@ -47,7 +54,7 @@
       <div class="col-lg-4">
         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
           <div class="features-icons-icon d-flex">
-            <i class="icon-screen-desktop m-auto text-primary"></i>
+            <i class="pi pi-bell" style="z-index: auto;margin-left: 130px;"></i>  
           </div>
           <h3>Services</h3>
           <p class="lead mb-0">Trouvez des services de haute qualité à tous les prix. Pas de tarifs horaires, mais une tarification en fonction des projets.</p>
@@ -56,8 +63,7 @@
       <div class="col-lg-4">
         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
           <div class="features-icons-icon d-flex">
-            <i class="icon-layers m-auto text-primary"></i>
-          </div>
+            <i class="pi pi-palette" style="z-index: auto;margin-left: 120px;"></i>          </div>
           <h3>Qualité</h3>
           <p class="lead mb-0">Trouvez en quelques minutes le Stage idéal pour commencer à travailler sur votre projet.</p>
         </div>
@@ -65,8 +71,7 @@
       <div class="col-lg-4">
         <div class="features-icons-item mx-auto mb-0 mb-lg-3">
           <div class="features-icons-icon d-flex">
-            <i class="fa fa-check m-auto text-primary"></i>
-          </div>
+            <i class="pi pi-unlock" style="z-index: auto;margin-left: 120px;"></i>          </div>
           <h3>Sécurité</h3>
           <p class="lead mb-0">Vous savez toujours à l'avance ce que vous allez payer. Votre paiement n'est pas débloqué tant que vous n'avez pas approuvé le travail.</p>
         </div>
@@ -80,17 +85,18 @@
   <div class="container-fluid p-0">
     <div class="row no-gutters">
 
+
       <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-1.jpg');"></div>
       <div class="col-lg-6 order-lg-1 my-auto showcase-text">
         <h2>Soiez Confient !</h2>
-        <p class="lead mb-0">Mettez-vous en relation avec des encadreurs ayant une expérience confirmée dans le domaine des affaires</p>
+        <p class="lead mb-0">Mettez-vous en relation avec des encadreurs ayant une expérience confirmée dans le domaine des <strong>stages</strong>.</p>
       </div>
     </div>
     <div class="row no-gutters">
       <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/img/bg-showcase-2.jpg');"></div>
       <div class="col-lg-6 my-auto showcase-text">
         <h2>Plus que 200 Entreprise</h2>
-        <p class="lead mb-0">Trouvez le talent nécessaire au développement de votre entreprise.</p>
+        <p class="lead mb-0">Trouvez le talent nécessaire a la <strong>Réalisation</strong> de votre stage.</p>
       </div>
     </div>
     <div class="row no-gutters">
