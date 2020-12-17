@@ -21,6 +21,9 @@ getAllEtudiants(): Observable<any[]> {
     return this.http.get<any[]>(environment.api+"users");
 }
 
+getMyOffers(name:any): Observable<any[]> {
+  return this.http.get<any[]>(environment.api+"offers/getmyoffers" +`/${name}`);
+}
 
 getAllOffers(): Observable<any[]> {
   return this.http.get<any[]>(environment.api+"offers");
