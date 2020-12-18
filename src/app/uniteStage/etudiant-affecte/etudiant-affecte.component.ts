@@ -32,6 +32,8 @@ console.log(this.etudiants);
    });
 
    this.cols = [
+    { field: 'nomsociete', header: 'nomsociete' },
+    { field: 'mission', header: 'mission' },
     { field: 'name', header: 'name' },
     { field: 'prenom', header: 'prenom' },
     { field: 'cin', header: 'cin' },
@@ -52,10 +54,7 @@ getoffers(etudiant:any){
   console.log(etudiant.name);
   this.dataService.getMyOffers(etudiant.name).subscribe(data=>{
     console.log(data['data']);
-     for(let i=0;i<data['data'].length;i++)
-     {
-       this.offers.push(data['data'][i]);
-     }
+    this.offers=data['data'];
 console.log(this.offers);
 })
 }

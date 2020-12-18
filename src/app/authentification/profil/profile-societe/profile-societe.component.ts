@@ -25,7 +25,7 @@ export class ProfileSocieteComponent implements OnInit {
     console.log(this.societe);
 
     
-    this.dataService.getMyOffers().subscribe(data=>{
+    this.dataService.getMyOffer().subscribe(data=>{
       console.log(data['data']);
        for(let i=0;i<data['data'].length;i++)
        {
