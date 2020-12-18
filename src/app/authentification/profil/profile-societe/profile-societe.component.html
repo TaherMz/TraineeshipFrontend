@@ -1,4 +1,6 @@
 <p-toast position="top-right"></p-toast>
+<p-messages [style]="{width: '200px','float':'right'}" [value]="msgs"></p-messages>
+<p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog>
 <div style="background-color: rgb(243, 218, 186);">
 <div class="container add">
 
@@ -153,10 +155,12 @@
         <p-table [value]="offers" [scrollable]="true" scrollHeight="500px" >
           <ng-template pTemplate="header" >
             <tr>
-              <th>mission</th>
-              <th>periode</th>
-              <th>categories</th>
+              <th>Mission</th>
+              <th>Date début</th>
+              <th>Date fin</th>
+              <th>Categories</th>
               <th>Liste</th>
+              <th>Action</th>
             </tr>
           </ng-template>
           <ng-template pTemplate="body" let-offer>
@@ -166,7 +170,10 @@
               <td>{{offer.periode}}</td>
               <td>{{offer.categories}}</td>
               <td><button  class="btn btn-danger">Liste etudiants</button></td>
-              
+              <td>            
+                <button class="btn btn-default text-primary" style="float: right;border: 1px solid gray;" (click)="onEdit(offer)">Modifier</button>
+                <button type="button" pButton [ngStyle]="{'height':'40px','width':'50px'}" icon="pi pi-trash" iconPos="left" class="ui-button-danger" (click)="confirm2(offer)" style="float: left;"></button>
+            </td>
             </tr>
           </ng-template>
         </p-table>
