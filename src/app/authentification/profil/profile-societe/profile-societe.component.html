@@ -149,12 +149,13 @@
         <div class="container card-header" >
         
         <div style="background-color:a #f1f2f3;height: 500px;"class="card " >
-        <h2 class="text-center " style="color: rgb(131, 179, 241); margin:20px; font-family: 'Times New Roman', Times, serif;">Liste des offres de stages</h2>
+        <h2 class="text-center " style="color: rgb(228, 31, 31); margin:20px; font-family: 'Times New Roman', Times, serif;">Liste des offres de stages</h2>
         <p-table [value]="offers" [scrollable]="true" scrollHeight="500px" >
           <ng-template pTemplate="header" >
             <tr>
               <th>mission</th>
-              <th>periode</th>
+              <th>Date debut Stage</th>
+              <th>Date Fin Stage</th>
               <th>categories</th>
               <th>Liste</th>
             </tr>
@@ -163,9 +164,12 @@
             <tr>
 
               <td>{{offer.mission}}</td>
-              <td>{{offer.periode}}</td>
+              <td>{{offer.datedebut | date }}</td>
+              <td>{{offer.datefin | date}}</td>
               <td>{{offer.categories}}</td>
-              <td><button  class="btn btn-danger">Liste etudiants</button></td>
+              <td>
+                <button class="btn btn-danger" (click)="sendOffer(offer)">Liste des Etudiants</button> 
+            </td>
               
             </tr>
           </ng-template>

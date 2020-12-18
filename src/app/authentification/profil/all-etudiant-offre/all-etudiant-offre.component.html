@@ -1,0 +1,41 @@
+<div style="background: -webkit-linear-gradient(left, #1572a8, #25b7c4);
+background: linear-gradient(to right, #40b6ec, #25b7c4);
+font-family: 'Roboto', sans-serif; height: 657px;" >
+<div class="container card-header" >
+
+<div style="background-color:a #f1f2f3;height: 500px;"class="card " >
+<h2 class="text-center " style="color: rgb(228, 31, 31); margin:20px; font-family: 'Times New Roman', Times, serif;">Liste des offres de stages</h2>
+<p-table [value]="etudiants" [scrollable]="true" scrollHeight="500px" >
+  <ng-template pTemplate="header" >
+    <tr>
+      <th>nom Etudiant</th>
+      <th>E-mail</th>
+      <th>Numero de Telephone</th>
+      <th>CV Etudiant</th>
+      <th>Lettre de motivation</th>
+      <th>Etat</th>
+      <th>Decision</th>
+
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-etudiant>
+    <tr>
+   
+      <td>{{etudiant.nom}}</td>
+      <td>{{etudiant.email}}</td>
+      <td>{{etudiant.telephone}}</td>
+      <td>{{etudiant.cv}}</td>
+      <td> {{etudiant.lettre_motivation}}</td>
+      <td> <span class="badge "
+        [ngClass]="{' bg-danger  mr-1' : etudiant.status.trim() == 'Non Affecté' , 
+      'bg-success ': etudiant.status.trim() == 'Affecté'}">{{etudiant.etat}}</span>
+      </td>
+    <td><p-inputSwitch  size="small" (click)="onChangeStatus($event, etudiant)"></p-inputSwitch></td>
+      
+      
+    </tr> 
+  </ng-template>
+</p-table>
+</div>
+</div>
+</div>

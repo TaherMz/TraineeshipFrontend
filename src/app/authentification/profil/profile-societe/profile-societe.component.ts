@@ -20,12 +20,16 @@ export class ProfileSocieteComponent implements OnInit {
   nomsociete:any;
   constructor(private activatedRoute:ActivatedRoute,private messageService:MessageService,private dataService:DataService,private router:Router,private http:HttpClient) { }
 
-  ngOnInit(): void {
+sendOffer(offer){
+  this.router.navigate(['all-etudiant-offre',offer._id]);
+}
+
+  ngOnInit(): void { 
     this.societe=this.dataService.user;
     console.log(this.societe);
 
     
-    this.dataService.getMyOffers().subscribe(data=>{
+    this.dataService.getMyOffer().subscribe(data=>{
       console.log(data['data']);
        for(let i=0;i<data['data'].length;i++)
        {

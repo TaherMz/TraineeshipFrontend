@@ -16,6 +16,7 @@ import { ListeRecruteursComponent } from './uniteStage/liste-recruteurs/liste-re
 import { ModifierOffreComponent } from './recruteur/modifier-offre/modifier-offre.component';
 import { EtudiantAffecteComponent } from './uniteStage/etudiant-affecte/etudiant-affecte.component';
 import { EtudiantNonaffComponent } from './uniteStage/etudiant-nonaff/etudiant-nonaff.component';
+import { AllEtudiantOffreComponent } from './authentification/profil/all-etudiant-offre/all-etudiant-offre.component';
 
 
 
@@ -35,6 +36,7 @@ const routes: Routes = [
   {path:'profilSociete',component:ProfileSocieteComponent},
   {path:'listeEtudiantsNonAffecte',component:EtudiantNonaffComponent},
   {path:'profilUnite',component:ProfileUnitestageComponent},
+  {path:'all-etudiant-offre/:id',component:AllEtudiantOffreComponent},
 {path:'', redirectTo:'accueil', pathMatch:'full'},
 {path:'**',component:ErreurComponent}
 ];
