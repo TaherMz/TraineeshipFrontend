@@ -55,8 +55,8 @@ export class AllEtudiantOffreComponent implements OnInit {
     
   }
  
-   /*  onChangeStatus(e, etudiant) {
-      console.log(etudiant);
+   onChangeStatus(e, etudiant) {
+   /*   console.log(etudiant);
       etudiant.enabled = !etudiant.enabled;
       if (etudiant.enabled == false)  { etudiant.etat = 'Non Affecté'; etudiant.enabled=false; }
       else if (etudiant.enabled == true) { etudiant.etat= 'Affecté';etudiant.enabled=true;}
@@ -65,8 +65,8 @@ export class AllEtudiantOffreComponent implements OnInit {
       }, 
         (error) =>{
       console.log("error");
-    });
-    }*/
+    });*/
+    }
 
 
 }
