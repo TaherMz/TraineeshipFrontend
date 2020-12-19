@@ -24,7 +24,7 @@ export class EtudiantAffecteComponent implements OnInit {
     console.log(data['data']);
      for(let i=0;i<data['data'].length;i++)
      {
-       if(data['data'][i].role=='E' && data['data'][i].etat=="Affecté" )
+       if( data['data'][i].etat=="Affecté" )
        this.etudiants.push(data['data'][i]);
        console.log(this.etudiants);
      }
@@ -32,11 +32,13 @@ console.log(this.etudiants);
    });
 
    this.cols = [
-    { field: 'name', header: 'name' },
+    { field: 'nomsociete', header: 'nomsociete' },
+    { field: 'mission', header: 'mission' },
+    { field: 'nom', header: 'name' },
     { field: 'prenom', header: 'prenom' },
-    { field: 'cin', header: 'cin' },
     { field: 'email', header: 'email' },
-    { field: 'niveau', header: 'niveau' }
+    { field: 'etat', header: 'etat' },
+
 ];
 
 this.exportColumns = this.cols.map(col => ({title: col.header, dataKey: col.field}));
@@ -52,10 +54,7 @@ getoffers(etudiant:any){
   console.log(etudiant.name);
   this.dataService.getMyOffers(etudiant.name).subscribe(data=>{
     console.log(data['data']);
-     for(let i=0;i<data['data'].length;i++)
-     {
-       this.offers.push(data['data'][i]);
-     }
+    this.offers=data['data'];
 console.log(this.offers);
 })
 }

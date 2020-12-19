@@ -19,15 +19,13 @@ nomsociete:any;
 constructor(private http: HttpClient,private router:Router) { }
 
 getAllEtudiants(): Observable<any[]> {
-    return this.http.get<any[]>(environment.api+"users");
+   // return this.http.get<any[]>(environment.api+"users");
+   return this.http.get<any[]>(environment.api+"PostInOffer");
 }
 
-getAllEtudiant(): Observable<any[]> {
-  return this.http.get<any[]>(environment.api+"PostInOffer");
-}
 
-getMyOffers(name:any): Observable<any[]> {
-  return this.http.get<any[]>(environment.api+"offers/getmyoffers" +`/${name}`);
+getMyOffers(name:any) {
+  return this.http.get(environment.api+"offers/getmyoffers" +`/${name}`);
 }
 
 getAllOffers(): Observable<any[]> {
@@ -71,7 +69,10 @@ deleteOffer(id:any){
 }
 
 
-getMyOffer(): Observable<any[]> {
+
+public getMyOffer(): Observable<any[]> {
+
+
   return this.http.get<any[]>(environment.api+"offers/getmyoffers" +`/${this.user.name}`);
 }
 

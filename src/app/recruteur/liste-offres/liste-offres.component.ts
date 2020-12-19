@@ -61,32 +61,6 @@ date3:Date;
     console.log(offer)
     this.router.navigate(['postulerInOffre',offer._id]);
   }
-  onEdit(offer)
-  {
-    console.log(offer)
-    this.router.navigate(['modifierOffre',offer._id]);
-  }
-
-  confirm2(offre) {
-    this.confirmationService.confirm({
-        message: 'Voulez vous la supprimer?',
-        header: 'Confirmation',
-        icon: 'pi pi-info-circle',
-        accept: () => {
-          this.msgs = [{severity:'info', summary:'confirmé', detail:'Offre supprimé'}];
-          this.dataService.deleteOffer(offre._id).subscribe(
-            (Response) => {
-              console.log("success");
-            },
-            (error) => {
-              console.log("error");
-           })
-            this.msgs = [{severity:'info', summary:'confirmé', detail:'Offre supprimé'}];
-        },
-        reject: () => {
-            this.msgs = [{severity:'info', summary:'Annulation', detail:''}];
-        }
-    });
-}
+ 
 
 }
