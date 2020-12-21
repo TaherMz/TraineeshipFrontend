@@ -1,3 +1,4 @@
+<p-toast position="top-right"></p-toast>
 <div style="background: -webkit-linear-gradient(left, #1572a8, #25b7c4);
 background: linear-gradient(to right, #40b6ec, #25b7c4);
 font-family: 'Roboto', sans-serif; height: 657px;" >
@@ -34,7 +35,7 @@ font-family: 'Roboto', sans-serif; height: 657px;" >
       </td>
     <td><p-inputSwitch  size="small" (click)="onChangeetat($event, etudiant)"></p-inputSwitch></td>
     
-    <td><button class="btn btn-danger" >Notifier</button> </td>
+    <td><button class="btn btn-danger" (click)="notify(etudiant)" >Notifier</button> </td>
       
       
     </tr> 

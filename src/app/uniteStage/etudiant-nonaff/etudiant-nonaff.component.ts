@@ -1,12 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'primeng/api';
 import { environment } from 'src/environments/environment';
 import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-etudiant-nonaff',
   templateUrl: './etudiant-nonaff.component.html',
-  styleUrls: ['./etudiant-nonaff.component.css']
+  styleUrls: ['./etudiant-nonaff.component.css'],
+  providers: [MessageService]
 })
 export class EtudiantNonaffComponent implements OnInit {
   etudiants:any[]=[];
@@ -15,7 +17,7 @@ export class EtudiantNonaffComponent implements OnInit {
       'Content-Type': 'application/json',
     })
   }
-  constructor(private dataService: DataService,private http:HttpClient) { }
+  constructor(private dataService: DataService,private http:HttpClient,private messageService:MessageService) { }
 
   ngOnInit() {
    this.dataService.getAllEtudiant().subscribe(data=>{
@@ -42,17 +44,14 @@ console.log(this.etudiants);
     {
       ch+=str[i];
     }
-   console.log(ch);
-    let addedData = JSON.stringify(str);
-    let object=JSON.stringify({"to":ch,"sub":"Avertissement","text":"Cher etudiant chouf stage nikomk"});
-    console.log(object);
+    let object={"to":ch,"sub":"Avertissement","text":"Cher etudiant veuillez chercher un stage dans le plus tot possible"};
     return this.http.post(environment.api+"users", object).subscribe((res:any) => {
       console.log("success");
-      
+      this.messageService.add({severity:'success', summary: 'Succes', detail:'Avertissement Envoyé'});  
+
      },
        error => {
         console.log("error");
-
     })
   } 
 }

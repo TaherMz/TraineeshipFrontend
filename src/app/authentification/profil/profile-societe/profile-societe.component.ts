@@ -58,7 +58,6 @@ sendOffer(offer){
     return this.dataService.editProfile(f.value,this.societe.id).subscribe(
       (Response) => {
             this.msgs = [{severity:'info', summary:'Succés de modification', detail:''}];
-        console.log(f.value);
         console.log("success");
         this.router.navigate(['/accueil']);
       },
