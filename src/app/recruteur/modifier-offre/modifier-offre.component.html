@@ -11,7 +11,7 @@
               <div class="  row" >
                 <div class="card-header container">
                 <h4 class="card-title text-dark text-center">
-                INFORMATIONS DU L'OFFRE 
+                INFORMATIONS DE L'OFFRE
                 </h4>
                 </div>
                 <div class="card-body ">
@@ -76,7 +76,7 @@
                                 </div>
                             </div>
                             <div *ngIf="ml.errors?.pattern" class="alert alert-danger">
-                                La forme du mail doit etre valide
+                                La format du mail doit etre valide
                               </div>
                            </div>
                           
@@ -88,7 +88,7 @@
                                 </span>
                                 <span class="p-float-label">
                                     <input type="text" id="niv" pInputText [(ngModel)]="offre.profil" name="profil" #nv="ngModel" required> 
-                                    <label for="niv">Profil demandé</label>
+                                    <label for="niv">Le Profil demandé</label>
                                 </span>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                                     </span>
                                     <span class="p-float-label">
                                         <input type="text" id="tel" pInputText [(ngModel)]="offre.tel" name="tel" #tl="ngModel" required pattern="[0-9]+"> 
-                                        <label for="tel">Telephone</label>
+                                        <label for="tel">Télephone</label>
                                     </span>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@
                                     </span>
                                     <span class="p-float-label">
                                         <input type="text" id="cod" pInputText [(ngModel)]="offre.categories" name="categories" #cd="ngModel" required> 
-                                        <label for="cod">Categories</label>
+                                        <label for="cod">Catégories</label>
                                     </span>
                                 </div>
                             </div>

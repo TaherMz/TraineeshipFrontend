@@ -40,7 +40,7 @@ export class AllEtudiantOffreComponent implements OnInit {
 
 
     
-    this.dataService.getAllEtudiant().subscribe(data=>{
+    this.dataService.getAllEtudiants().subscribe(data=>{
       console.log(data['data']);
        for(let i=0;i<data['data'].length;i++)
        {
