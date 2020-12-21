@@ -1,18 +1,23 @@
+<app-navbar [user]="user"></app-navbar>
 <p-toast position="top-right"></p-toast>
-<div style="background: -webkit-linear-gradient(left, #1572a8, #25b7c4);
-background: linear-gradient(to right, #40b6ec, #25b7c4);
+<div style="background: -webkit-linear-gradient(left, #c0c8cc, #5e6263);
+background: linear-gradient(to right, #8c9092, #686b6b);
 font-family: 'Roboto', sans-serif; height: 657px;" >
 <div class="container card-header" >
 
-<div style="background-color:a #f1f2f3;height: 500px;"class="card " >
-<h2 class="text-center " style="color: rgb(228, 31, 31); margin:20px; font-family: 'Times New Roman', Times, serif;">Liste des offres de stages</h2>
+<div style="background-color:a #8a8d91;height: 500px;"class="card " >
+  <div class="card-header container">
+    <h4 class="card-title text-dark text-center" style="font-weight: bold;">
+    Liste des CANDIDATURES
+    </h4>
+    </div>
 <p-table [value]="etudiants" [scrollable]="true" scrollHeight="500px" >
   <ng-template pTemplate="header" >
     <tr>
       <th>nom Etudiant</th>
       <th>E-mail</th>
       <th>Numero de Telephone</th>
-      <th>CV Etudiant</th>
+      <th>CV Etudiant</th> 
       <th>Lettre de motivation</th>
       <th>Etat</th>
       <th>Decision</th>

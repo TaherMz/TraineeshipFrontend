@@ -19,12 +19,12 @@ nomsociete:any;
 constructor(private http: HttpClient,private router:Router) { }
 
 getAllEtudiants(): Observable<any[]> {
-   // return this.http.get<any[]>(environment.api+"users");
-   return this.http.get<any[]>(environment.api+"PostInOffer");
+   return this.http.get<any[]>(environment.api+"users");
+  // return this.http.get<any[]>(environment.api+"PostInOffer");
 }
 
 getAllEtudiant(): Observable<any[]> {
-   return this.http.get<any[]>(environment.api+"users");
+   return this.http.get<any[]>(environment.api+"PostInOffer");
 }
 
 getMyOffers(name:any) {

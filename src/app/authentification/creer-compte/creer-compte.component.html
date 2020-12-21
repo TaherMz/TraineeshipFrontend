@@ -5,7 +5,7 @@
             
                <mat-tab-group class="card wizard-card" mat-stretch-tabs style="opacity: 80%;">
                    <mat-tab label="Etudiant" >
-                  <form #f="ngForm"  (ngSubmit)="Submit(f)"> 
+                  <form #f="ngForm"  (ngSubmit)="Submit(f)">  
                     <div class="p-field-radiobutton">
                         <p-radioButton name="role" value="E" [hidden]="true" [(ngModel)]="role" inputId="groupname" #rl="ngModel"></p-radioButton>
                     </div>      
