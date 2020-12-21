@@ -11,10 +11,12 @@
     <i class="pi pi-list " (click)="display = true" style="font-size: 2em;cursor: pointer;color:floralwhite"></i>
     
     <div class="push"><div class="text-sm lg:flex-grow">
+ 
     <a [routerLink]="['../login']" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
       S'authentifier
     </a>
-      <a [routerLink]="['../signUp']" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+ 
+      <a [hidden]= "deco" [routerLink]="['../signUp']" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
           Creer un compte
       </a>
       <a (click)="logout()" [hidden]="test" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">

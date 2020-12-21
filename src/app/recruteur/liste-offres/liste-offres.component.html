@@ -36,14 +36,15 @@
               </div>
           <hr class="hr-light">
           <h4 class="flex-item" style="margin-left: 25px;">Found {{offers.length}} offers</h4>  
-          <p-table #tt [columns]="cols" [value]="offers" [globalFilterFields]="['periode','nomsociete','categories']" [paginator]="true" [rows]="5"  [totalRecords]="120" [rowsPerPageOptions]="[5,10,25,50,100]" [showCurrentPageReport]="true">
+          <p-table #tt [columns]="cols" [value]="offers" [globalFilterFields]="['datedebut', 'datefin','nomsociete','categories']" [paginator]="true" [rows]="5"  [totalRecords]="120" [rowsPerPageOptions]="[5,10,25,50,100]" [showCurrentPageReport]="true">
               <ng-template pTemplate="body" let-offer let-expanded="expanded" let-columns="columns"  style="border: 1px solid rgb(215, 227, 248);margin: 20px;padding: 20px;border-radius: 20px;">
                   <tr>
                     <td style="margin: 20px;padding: 20px;">
                       <h5 class="text-primary"> {{offer.nomsociete}} </h5>
                       <p style="margin-top: 20px;">
-                           <span class="bg-success text-white" style="border-radius: 4px; padding: 5px; color: black;" >{{offer.periode}}</span>
+                           <span class="bg-success text-white" style="border-radius: 4px; padding: 5px; color: black ;" >{{offer.datedebut | date}}</span> <span class="bg-danger text-white" style="border-radius: 4px; padding: 5px; color: black; " >{{offer.datefin | date}}</span>
                       </p>
+                      
                       <p>{{ offer.mission }}</p>
                       <h5>Profil demandé:</h5>
                       <p>{{ offer.profil }}</p>

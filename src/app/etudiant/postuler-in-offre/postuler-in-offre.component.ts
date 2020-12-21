@@ -26,7 +26,7 @@ export class PostulerInOffreComponent implements OnInit {
   cv?:any=""; 
   enabled?:boolean=false;
 
-  uploadedFiles: any[] = [];
+  uploadedFiles: any ="" ;
   offre:any;
   httpOptions = {
     headers: new HttpHeaders({
@@ -45,7 +45,7 @@ export class PostulerInOffreComponent implements OnInit {
     }) 
 
   }
-  onUpload(event) {
+ onUpload(event) {
     for(let file of event.files) {
         this.uploadedFiles.push(file);
     }

@@ -3,7 +3,7 @@
     <div class="container add">
     
        <mat-tab-group class="card wizard-card" mat-stretch-tabs>
-           <mat-tab label="Etudiant" >
+           <mat-tab label=" MON OFFRE" >
           <form #f="ngForm"  (ngSubmit)="Submit(f)">    
             <input type="hidden" pInputText [(ngModel)]="offre.status" name="status"  required #st="ngModel"> 
             <input type="hidden" pInputText [(ngModel)]="offre.enabled" name="enabled"  required #en="ngModel"> 
@@ -51,12 +51,27 @@
                                         <i class="pi pi-user"></i>
                                     </span>
                                     <span class="p-float-label">
-                                        <input type="text" id="c" pInputText [(ngModel)]="offre.periode" name="periode" #cn="ngModel" required> 
-                                        <label for="c">Periode du l'offre</label>
+                                        <input type="text" id="c" pInputText [(ngModel)]="offre.datedebut" name="datedebut" #cn="ngModel" required> 
+                                        <label for="c">Date debut</label>
                                     </span>
                                 </div>
                             </div>
                          </div>
+
+                         <div class="form-group">
+                            <div class="p-field p-col-12 p-md-4">
+                                <div class="p-inputgroup">
+                                    <span class="p-inputgroup-addon">
+                                        <i class="pi pi-user"></i>
+                                    </span>
+                                    <span class="p-float-label">
+                                        <input type="text" id="f" pInputText [(ngModel)]="offre.datefin" name="datefin" #cf="ngModel" required> 
+                                        <label for="f">Date debut</label>
+                                    </span>
+                                </div>
+                            </div>
+                         </div>
+    
     
                   </div> 
                 </div>

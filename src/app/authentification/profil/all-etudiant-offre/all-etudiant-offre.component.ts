@@ -49,13 +49,13 @@ export class AllEtudiantOffreComponent implements OnInit {
          console.log(this.etudiants);
        }
   console.log(this.etudiants);
-     });
-
-
+     }); 
+ 
+   
     
   }
  
-   /*  onChangeStatus(e, etudiant) {
+     onChangeetat(e, etudiant) {
       console.log(etudiant);
       etudiant.enabled = !etudiant.enabled;
       if (etudiant.enabled == false)  { etudiant.etat = 'Non Affecté'; etudiant.enabled=false; }
@@ -66,7 +66,18 @@ export class AllEtudiantOffreComponent implements OnInit {
         (error) =>{
       console.log("error");
     });
-    }*/
+    }
 
-
+    notify(etudiant){
+      let msg="Cher etudiant on a l honneur de vous informer qu on vous a accepté dans notre societe "+this.societe.name;
+      let object={"to":etudiant.email,"sub":"Acceptation dans Le Stage","text":msg};
+      return this.http.post(environment.api+"users", object).subscribe((res:any) => {
+        console.log("success");
+        this.messageService.add({severity:'success', summary: 'Succes', detail:'Notfication Envoyé'});  
+  
+       },
+         error => {
+          console.log("error");
+      })
+    } 
 }

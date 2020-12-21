@@ -58,7 +58,6 @@ sendOffer(offer){
     return this.dataService.editProfile(f.value,this.societe.id).subscribe(
       (Response) => {
             this.msgs = [{severity:'info', summary:'Succés de modification', detail:''}];
-        console.log(f.value);
         console.log("success");
         this.router.navigate(['/accueil']);
       },
@@ -72,7 +71,7 @@ sendOffer(offer){
   onKeyUpEvent(confirmPass:any){
     console.log(confirmPass.target.value);
     if(confirmPass.target.value!=this.societe.password)
-    {this.notSame=true;}
+    {this.notSame=true;} 
     else
     this.notSame=false;
     //return this.societe.password === confirmPass.target.value ? null : { notSame: true }  

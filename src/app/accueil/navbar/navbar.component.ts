@@ -12,6 +12,8 @@ import { environment } from 'src/environments/environment';
 export class NavbarComponent implements OnInit {
   @Input()user:any;
 test:boolean=true;
+deco:boolean=false;
+decon:boolean=false;
   visibleSidebar1;
   constructor(private http:HttpClient,private dataService:DataService,private router:Router) { }
 
@@ -35,8 +37,11 @@ verifprofil(){
   ngOnInit(): void {
    if(this.user!=null)
    {
+
      console.log(this.user);
      this.test=false;
+     this.deco=true;
+    
    }
    //ken l user unite de stage
   /* this.dataService.getAllEtudiants().subscribe(data=>{

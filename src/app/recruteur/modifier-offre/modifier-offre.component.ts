@@ -14,7 +14,8 @@ import { environment } from 'src/environments/environment';
 })
 export class ModifierOffreComponent implements OnInit {
   email?:any="";
-  periode?:any="";
+  datedebut?:any;
+  datefin?:any;
   tel?:any="";
   profil?:any="";
   nomsociete?:any="";
