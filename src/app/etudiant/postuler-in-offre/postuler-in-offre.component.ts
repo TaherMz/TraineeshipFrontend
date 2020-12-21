@@ -17,6 +17,7 @@ export class PostulerInOffreComponent implements OnInit {
   etudiant?:any;
   
   telephone?:any="";
+  etat?:any="Non Affecté"; 
   specialite?:any="";
   motiv?:any="";
   n1?:any="1";

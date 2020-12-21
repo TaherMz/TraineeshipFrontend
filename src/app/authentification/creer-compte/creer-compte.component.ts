@@ -22,7 +22,9 @@ export class CreerCompteComponent implements OnInit {
   numtel?:any="";
   cin?:any="";
   prenom?:any="";
-  niveau?:any="";
+  n1?:any="";
+  n2?:any="";
+  n3?:any="";
   mfisc?:any="";
   secteuractivite?:any="";
   emplacement?:any="";

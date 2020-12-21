@@ -16,7 +16,7 @@ import { environment } from 'src/environments/environment';
 export class ListeEtudiantsComponent implements OnInit  {
 
   customers: any[];
-unite:any[]=["DSI","RSI","SEM"];
+unite:any[]=["DSI","RSI","SEM"]; 
   rowGroupMetadata: any;
 etudiants:any[]=[];
 

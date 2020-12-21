@@ -10,6 +10,7 @@ import { ErreurComponent } from './authentification/erreur/erreur.component';
 import { NavbarComponent } from './accueil/navbar/navbar.component';
 import { FooterComponent } from './accueil/footer/footer.component';
 import { PrimeNGConfig } from 'primeng/api';
+import {ToggleButtonModule} from 'primeng/togglebutton';
 import { ListeEtudiantsComponent } from './uniteStage/liste-etudiants/liste-etudiants.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { DataService } from './uniteStage/data.service';
@@ -46,6 +47,8 @@ import { ListeRecruteursComponent } from './uniteStage/liste-recruteurs/liste-re
 import { DatePipe } from '@angular/common';
 import { EtudiantNonaffComponent } from './uniteStage/etudiant-nonaff/etudiant-nonaff.component';
 import {CalendarModule} from 'primeng/calendar';
+import { EtudiantAffecteComponent } from './uniteStage/etudiant-affecte/etudiant-affecte.component';
+import { AllEtudiantOffreComponent } from './authentification/profil/all-etudiant-offre/all-etudiant-offre.component';
 
 
 @NgModule({
@@ -65,14 +68,16 @@ import {CalendarModule} from 'primeng/calendar';
     ModifierOffreComponent,
     PostulerInOffreComponent,
     ListeRecruteursComponent,
+    EtudiantAffecteComponent,
     EtudiantNonaffComponent,
+    AllEtudiantOffreComponent,
   ],
-  exports:[MatFormFieldModule,MatInputModule,],
+  exports:[MatFormFieldModule,MatInputModule],
   imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,InputSwitchModule,
     BrowserModule,BrowserAnimationsModule,RadioButtonModule,MatTabsModule,FontAwesomeModule,
     AppRoutingModule,TableModule,TabMenuModule,MessagesModule,MatFormFieldModule,SidebarModule,
     ConfirmDialogModule,InputTextModule,MultiSelectModule,ReactiveFormsModule,MatInputModule,
-    FileUploadModule,CalendarModule
+    FileUploadModule,CalendarModule,ToggleButtonModule
   ],
   providers: [DataService, { provide: HTTP_INTERCEPTORS, useClass: GlobalHttpInterceptorService, multi: true  }],
   bootstrap: [AppComponent]
