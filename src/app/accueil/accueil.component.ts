@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api';
 import { IconProp } from '@fortawesome/fontawesome-svg-core'; 
 import { DataService } from '../uniteStage/data.service';
