@@ -40,7 +40,7 @@ export class AllEtudiantOffreComponent implements OnInit {
 
 
     
-    this.dataService.getAllEtudiant().subscribe(data=>{
+    this.dataService.getAllEtudiants().subscribe(data=>{
       console.log(data['data']);
        for(let i=0;i<data['data'].length;i++)
        {
@@ -49,13 +49,13 @@ export class AllEtudiantOffreComponent implements OnInit {
          console.log(this.etudiants);
        }
   console.log(this.etudiants);
-     });
-
-
+     }); 
+ 
+   
     
   }
  
-   /*  onChangeStatus(e, etudiant) {
+     onChangeetat(e, etudiant) {
       console.log(etudiant);
       etudiant.enabled = !etudiant.enabled;
       if (etudiant.enabled == false)  { etudiant.etat = 'Non Affecté'; etudiant.enabled=false; }
@@ -66,7 +66,7 @@ export class AllEtudiantOffreComponent implements OnInit {
         (error) =>{
       console.log("error");
     });
-    }*/
+    }
 
 
 }

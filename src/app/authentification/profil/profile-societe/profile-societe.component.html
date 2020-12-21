@@ -171,14 +171,15 @@
               <td>{{offer.datedebut | date }}</td>
               <td>{{offer.datefin | date}}</td>
               <td>{{offer.categories}}</td>
-              <td><button  class="btn btn-danger">Liste etudiants</button></td>
+              
+              <td>
+                <button class="btn btn-danger" (click)="sendOffer(offer)">Liste des Etudiants</button> 
+            </td>
               <td>            
                 <button class="btn btn-default text-primary" style="float: right;border: 1px solid gray;" (click)="onEdit(offer)">Modifier</button>
                 <button type="button" pButton [ngStyle]="{'height':'40px','width':'50px'}" icon="pi pi-trash" iconPos="left" class="ui-button-danger" (click)="confirm2(offer)" style="float: left;"></button>
             </td>
-              <td>
-                <button class="btn btn-danger" (click)="sendOffer(offer)">Liste des Etudiants</button> 
-            </td>
+             
 
             </tr>
           </ng-template>
