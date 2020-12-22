@@ -26,6 +26,9 @@ i{  color:rgb(29, 138, 120);
     width: 30px;
     height: 30px;
 }
+.example-full-width {
+    width: 100%;
+  }
 .mat-tab-label {
     text-align: center;
     min-width: 25px !important;
