@@ -1,3 +1,4 @@
+<app-navbar [user]="user"></app-navbar>
 <p-toast position="top-right"></p-toast>
 <p-messages [style]="{width: '200px','float':'right'}" [value]="msgs"></p-messages>
 <p-confirmDialog [style]="{width: '50vw'}" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text"></p-confirmDialog>
@@ -12,7 +13,7 @@
             <div class="card-header container">
             <h4 class="card-title text-dark text-center">
                 Pour modifier le mot de passe actuel, saisissez le nouveau mot de passe dans les deux champs de texte.
-            </h4>
+            </h4> 
             </div>
             <div class="card-body ">
               <div class=" col-g-5" >
@@ -145,16 +146,21 @@
       </form> </mat-tab>
 
       <mat-tab label="Mes Offres" >
-        <div style="background: -webkit-linear-gradient(left, #1572a8, #25b7c4);
-        background: linear-gradient(to right, #40b6ec, #25b7c4);
+        <div style="background: -webkit-linear-gradient(left, #c0c8cc, #5e6263);
+        background: linear-gradient(to right, #8c9092, #686b6b);
         font-family: 'Roboto', sans-serif; height: 657px;" >
         <div class="container card-header" >
         
         <div style="background-color:a #f1f2f3;height: 500px;"class="card " >
-        <h2 class="text-center " style="color: rgb(228, 31, 31); margin:20px; font-family: 'Times New Roman', Times, serif;">Liste des offres de stages</h2>
+            <div class="card-header container">
+                <h4 class="card-title text-dark text-center">
+                MES OFFRES
+                </h4>
+                </div>
         <p-table [value]="offers" [scrollable]="true" scrollHeight="500px" >
           <ng-template pTemplate="header" >
             <tr>
+
 
               <th>Mission</th>
               <th>Date début</th>
@@ -171,15 +177,15 @@
               <td>{{offer.datedebut | date }}</td>
               <td>{{offer.datefin | date}}</td>
               <td>{{offer.categories}}</td>
-
-              <td><button  class="btn btn-danger">Liste etudiants</button></td>
+              
+              <td>
+                <button class="btn btn-danger" (click)="sendOffer(offer)">Liste des Etudiants</button> 
+            </td>
               <td>            
                 <button class="btn btn-default text-primary" style="float: right;border: 1px solid gray;" (click)="onEdit(offer)">Modifier</button>
                 <button type="button" pButton [ngStyle]="{'height':'40px','width':'50px'}" icon="pi pi-trash" iconPos="left" class="ui-button-danger" (click)="confirm2(offer)" style="float: left;"></button>
             </td>
 
-              
-              
 
             </tr>
           </ng-template>

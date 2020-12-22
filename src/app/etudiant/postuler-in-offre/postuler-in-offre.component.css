@@ -12,6 +12,12 @@
     margin: 10px;
     border-radius: 20px;
   }
+  i{  color:rgb(29, 138, 120); 
+    width: 30px;
+    height: 30px;
+}
+
+  
   .a{
     width:1230px;
     font-weight: bolder;
@@ -115,13 +121,8 @@
       color: #fff;
       background-color: #5cb85c;
     }
-    input.ng-valid{
-      border-left: 2px solid green;
-  }
-  
-  input.ng-invalid{
-      border-left: 2px solid red;
-  }
+    input.ng-valid { border-left: 2px solid green; }
+    input.ng-invalid { border-left: 2px solid red; }
 .b{
   font-weight: bolder;
   font-family: 'Times New Roman', Times, serif;

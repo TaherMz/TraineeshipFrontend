@@ -1,10 +1,10 @@
-
+<app-navbar></app-navbar>
 <div class="container add">
    
     <div class='c'>
     <div class="row" >
        
-       <div class="card-header container ">
+       <div class="card-header container " [ngStyle]="{backgroundImage:'url(../assets/img/b.jpg)'}" >
           <h1 class="card-title text-dark text-center">
           FORMULAIRE DE CANDIDATURE DE STAGE 
           </h1>
@@ -13,9 +13,9 @@
     
 
     
-    <div class=" d-flex justify-content-center">
-     
-        <form class="example-form" #f="ngForm"  (ngSubmit)="Submit(f)">
+    <div class=" d-flex justify-content-center" [ngStyle]="{backgroundImage:'url(../assets/img/b.jpg)'}">
+     <div>
+        <form class="example-form" #f="ngForm"  (ngSubmit)="Submit(f)" style="background-color: rgba(243, 243, 243, 0.363);">
           <h2 class="card-header container ">
       
             <mat-label class="b">Postuler dans l'offre de la société :</mat-label>
@@ -28,42 +28,45 @@
             
               <mat-label class="b">Votre sujet choisi :</mat-label>
               
-      <input  matInput  [(ngModel)]="offre.mission" name="mission" >
+      <textarea  matInput  [(ngModel)]="offre.mission" name="mission" rows=5 cols=50></textarea>
       <input  matInput [hidden]=true [(ngModel)]="offre._id" name="id_offer" >
       <input  matInput [hidden]=true [(ngModel)]="etat" name="etat" >
       <input  matInput [hidden]=true [(ngModel)]="enabled" name="enabled" >
             
             </div>
-           <mat-form-field class="full-width" appearance="outline">
-                  <mat-label>Nom </mat-label>
-                  
-    <input  matInput  [(ngModel)]="etudiant.name"   id="nom" name="nom"   >
-       <i class="pi pi-user"></i>
-    
+            <div style="background-color: rgba(243, 243, 243, 0.363);">
+               
+           <mat-form-field class="full-width" appearance="outline" style="background-color: rgba(243, 243, 243, 0.363);">
+                 <mat-label >Nom </mat-label>
+    <input  matInput  [(ngModel)]="etudiant.name" id="nom" name="nom">
     </mat-form-field>
-    <mat-form-field class="full-width" appearance="outline">
+
+    
+    <mat-form-field class="full-width" appearance="outline" style="background-color: rgba(243, 243, 243, 0.363);">
       <mat-label>Prenom </mat-label>
+     
       
 <input  matInput  [(ngModel)]="etudiant.prenom"  name="prenom"   >
-<i class="pi pi-user"></i>
+
 
 </mat-form-field>
             <p>
               
-               <mat-form-field class="full-width" appearance="outline">
+               <mat-form-field class="full-width" appearance="outline" style="background-color: rgba(243, 243, 243, 0.363);">
                   <mat-label>Email</mat-label>
+                 
                   <input  matInput  [(ngModel)]="etudiant.email" id="email" name="email"  >
-                   <i class="pi pi-Email"></i>
+                  
              
                 </mat-form-field>
-                <mat-form-field class="full-width" appearance="outline">
+                <mat-form-field class="full-width" appearance="outline" style="background-color: rgba(243, 243, 243, 0.363);">
                 
                    
           
                   <mat-label>Télèphone</mat-label>
                  
                   <input  matInput  placeholder="+216" id="telephone" name="telephone" [(ngModel)]="telephone" #tele="ngModel" required>
-                
+                 
                    <i class="pi pi-phone"></i>
                 
                 </mat-form-field>
@@ -76,8 +79,9 @@
             
               
              
-               <mat-form-field class="full-width" appearance="outline">
+               <mat-form-field class="full-width" appearance="outline" style="background-color: rgba(243, 243, 243, 0.363);">
                 <mat-label>Spécialité</mat-label>
+               
                 <input  matInput  placeholder="DSI" id="specialite" name="specialite" [(ngModel)]="specialite" #spec="ngModel" required>
                 
              </mat-form-field>
@@ -89,11 +93,11 @@
             
             
         
-             <div class="card">
+             <div class="card" style="background-color: rgba(243, 243, 243, 0.363);">
                 <h5>CV</h5>
     <p-fileUpload name="cv" url="./upload.php" (onUpload)="onUpload($event)"
             multiple="multiple"  maxFileSize="1000000" [(ngModel)]="uploadedFiles">
-            <ng-template pTemplate="content">
+            <ng-template pTemplate="content" style="background-color: rgba(243, 243, 243, 0.363);">
                 <ul *ngIf="uploadedFiles.length">
                     <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
                 </ul>
@@ -101,7 +105,7 @@
     </p-fileUpload>
             
              </div>
-             <mat-form-field class="full-width" appearance="outline">
+             <mat-form-field class="full-width" appearance="outline" style="background-color: rgba(243, 243, 243, 0.363);">
                 <mat-label>Lettre de motivation</mat-label>
                 <textarea matInput placeholder="Votre lettre" id="motiv" name="lettre_motivation" [(ngModel)]="motiv" #mo="ngModel" required></textarea>
               </mat-form-field>
@@ -112,7 +116,10 @@
              <div  [ngStyle]="{'float':'right','margin':'20px'}">
                 <button type="submit"  pButton  label="Envoyer" class="ui-button-success"></button>
               </div>
+
+            </div>
         </form>
+      </div>
         
     
       
