@@ -24,12 +24,8 @@ export class PostulerOffreComponent implements OnInit {
 
 nomsociete?:any="";
 tel?:any="";
-
 datedebut?:any;
 datefin?:any;
-periode?:any;
-
-
 mission?:any="";
 categories?:any="";
 profil?:any="";
