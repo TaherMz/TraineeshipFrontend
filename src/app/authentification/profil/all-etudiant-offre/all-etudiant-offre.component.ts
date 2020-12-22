@@ -58,8 +58,8 @@ export class AllEtudiantOffreComponent implements OnInit {
      onChangeetat(e, etudiant) {
       console.log(etudiant);
       etudiant.enabled = !etudiant.enabled;
-      if (etudiant.enabled == false)  { etudiant.etat = 'Non Affecté'; etudiant.enabled=false; }
-      else if (etudiant.enabled == true) { etudiant.etat= 'Affecté';etudiant.enabled=true;}
+      if (etudiant.enabled == false)  { etudiant.etat = 'Non Affecté'}
+      else if (etudiant.enabled == true) { etudiant.etat= 'Affecté'}
      this.http.patch(environment.api+"PostInOffer" +`/${etudiant._id}`, etudiant).subscribe(data=>{
     console.log("success"+etudiant.enabled);    
       }, 

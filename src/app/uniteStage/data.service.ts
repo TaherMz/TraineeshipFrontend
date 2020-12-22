@@ -13,7 +13,7 @@ httpOptions = {
           'Content-Type': 'application/json',
         })
       }
-id:any;
+id:any; 
 user:any;
 nomsociete:any;
 constructor(private http: HttpClient,private router:Router) { }

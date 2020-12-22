@@ -20,11 +20,11 @@ export class EtudiantNonaffComponent implements OnInit {
   constructor(private dataService: DataService,private http:HttpClient,private messageService:MessageService) { }
 
   ngOnInit() {
-   this.dataService.getAllEtudiants().subscribe(data=>{
+   this.dataService.getAllEtudiant().subscribe(data=>{
     console.log(data['data']);
      for(let i=0;i<data['data'].length;i++)
      {
-       if(data['data'][i].role=='E' && data['data'][i].etat=="Non Affecté" )
+       if(data['data'][i].etat=="Non Affecté" )
        this.etudiants.push(data['data'][i]);
        console.log(this.etudiants);
      }
