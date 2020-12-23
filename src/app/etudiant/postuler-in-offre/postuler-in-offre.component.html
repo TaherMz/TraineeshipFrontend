@@ -15,7 +15,7 @@
     
     <div class=" d-flex justify-content-center" [ngStyle]="{backgroundImage:'url(../assets/img/b.jpg)'}">
      <div>
-        <form class="example-form" #f="ngForm"  (ngSubmit)="Submit(f)" style="background-color: rgba(243, 243, 243, 0.363);">
+        <form class="example-form" #f="ngForm"  (ngSubmit)="Submit(f)" style="background-color: rgba(243, 243, 243, 0.363);" enctype="mulipart/form-data">
           <h2 class="card-header container ">
       
             <mat-label class="b">Postuler dans l'offre de la société :</mat-label>
@@ -95,14 +95,17 @@
         
              <div class="card" style="background-color: rgba(243, 243, 243, 0.363);">
                 <h5>CV</h5>
-    <p-fileUpload name="cv" url="./upload.php" (onUpload)="onUpload($event)"
+                <input type="file" id="image"
+                       name="cv" value="">
+              <!-- <button type="button" (click)="onUpload()">Upload</button> 
+    <p-fileUpload name="cv" (onUpload)="onUpload($event)"
             multiple="multiple"  maxFileSize="1000000" [(ngModel)]="uploadedFiles">
             <ng-template pTemplate="content" style="background-color: rgba(243, 243, 243, 0.363);">
                 <ul *ngIf="uploadedFiles.length">
                     <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
                 </ul>
             </ng-template>
-    </p-fileUpload>
+   </p-fileUpload> -->
             
              </div>
              <mat-form-field class="full-width" appearance="outline" style="background-color: rgba(243, 243, 243, 0.363);">
