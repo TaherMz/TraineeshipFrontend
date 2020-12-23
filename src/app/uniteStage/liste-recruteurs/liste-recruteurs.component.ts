@@ -11,9 +11,12 @@ import { DataService } from '../data.service';
 export class ListeRecruteursComponent implements OnInit {
   rowGroupMetadata: any;
 recruteurs:any[]=[];
+rec:any;
   constructor(private dataService: DataService,private http:HttpClient) { }
 
   ngOnInit() {
+    this.rec=this.dataService.user;
+
    this.dataService.getAllEtudiants().subscribe(data=>{
     console.log(data['data']);
      for(let i=0;i<data['data'].length;i++)
