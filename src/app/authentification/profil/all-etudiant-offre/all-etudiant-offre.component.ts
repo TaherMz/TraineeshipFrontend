@@ -21,7 +21,7 @@ export class AllEtudiantOffreComponent implements OnInit {
   identifiant:any;
 user:any;
   userid:any;
-  pdfSource =  "./assets/test.pdf";
+  pdfSource:object; //./assets/test.pdf
 etud: any;
   constructor(private activatedRoute:ActivatedRoute,private messageService:MessageService,private dataService:DataService,private router:Router,private http:HttpClient) { }
   ngOnInit(): void {
@@ -75,8 +75,6 @@ etud: any;
   console.log(this.etudiants);
      }); 
  
-   
-    
   }
  
    onChangeStatus(e, etudiant) {
@@ -90,6 +88,16 @@ etud: any;
         (error) =>{
       console.log("error");
     });*/
+    }
+
+    s(){
+      console.log(this.etudiants[2].cv);
+     this.http.get( "localhost:3000"+`/${this.etudiants[2].cv}`).subscribe(data=>{
+      console.log(data);    
+        }, 
+          (error) =>{
+        console.log("error");
+      });
     }
 
      onChangeetat(e, etudiant) {
@@ -147,7 +155,8 @@ etud: any;
       FileSaver.saveAs(pdfUrl, pdfName);
     }
     openDoc(pdfUrl: string, startPage: number ) {
-      window.open(pdfUrl + '#page=' + startPage, '_blank', '', true);
+    //+ '#page=' + startPage
+      window.open("localhost:3000"+`/${pdfUrl}` , '_blank', '', true);
     }
     
     verifprofil(){
