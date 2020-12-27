@@ -60,7 +60,7 @@ httpOptions = {
          console.log ("addedData", addedData);
         this.http.post(environment.api+"offers", addedData,this.httpOptions).subscribe((res) => {
            this.messageService.add({severity:'success', summary: 'Message', detail:'Succes'});  
-           this.router.navigate(['/listeOffres']);
+           
          },
            error => {
              this.messageService.add({severity:'error', summary: ' Message', detail:'Erreur'});

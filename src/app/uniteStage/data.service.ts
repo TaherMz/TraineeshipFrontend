@@ -13,9 +13,10 @@ httpOptions = {
           'Content-Type': 'application/json',
         })
       }
-id:any;
+id:any; 
 user:any;
 nomsociete:any;
+
 constructor(private http: HttpClient,private router:Router) { }
 
 getAllEtudiants(): Observable<any[]> {
@@ -44,7 +45,7 @@ getAllOffers(): Observable<any[]> {
 }
 
 getCurrentUser(f:any){
-  let addedData = JSON.stringify(f.value);
+  /*let addedData = JSON.stringify(f.value);
          console.log ("addedData", addedData);
     return this.http.post(environment.api+"auth/login", addedData,this.httpOptions).subscribe((res:any) => {
           localStorage.setItem("token",res.token)
@@ -63,7 +64,8 @@ getCurrentUser(f:any){
           this.user=res['data'];
           this.router.navigate(['/accueil']);
           console.log(this.user);
-        }) 
+        }) */
+        this.user=f;
        }
 
        

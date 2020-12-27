@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar [user]="etudiant"></app-navbar>
 <section>
   <div class="search-container" style="margin-top: auto; padding: 10px;">
       <input type="text" id="search-bar" placeholder="Cherchez le stage souhaiter" (input)="tt.filterGlobal($event.target.value, 'contains')">
@@ -36,6 +36,15 @@
               </div>
           <hr class="hr-light">
           <h4 class="flex-item" style="margin-left: 25px;">Found {{offers.length}} offers</h4>  
+          
+            <button type="button" class="btn btn-primary btn-sm" (click)="openDoc(pdfSource, test)">
+                View Cv
+            </button>
+        
+            <button type="button" class="btn btn-success btn-sm" (click)="downloadPdf(pdfSource, test)">
+                Save Cv
+            </button>
+        
           <p-table #tt [columns]="cols" [value]="offers" [globalFilterFields]="['datedebut', 'datefin','nomsociete','categories']" [paginator]="true" [rows]="5"  [totalRecords]="120" [rowsPerPageOptions]="[5,10,25,50,100]" [showCurrentPageReport]="true">
               <ng-template pTemplate="body" let-offer let-expanded="expanded" let-columns="columns"  style="border: 1px solid rgb(215, 227, 248);margin: 20px;padding: 20px;border-radius: 20px;">
                   <tr>

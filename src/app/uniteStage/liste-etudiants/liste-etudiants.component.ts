@@ -16,18 +16,20 @@ import { environment } from 'src/environments/environment';
 export class ListeEtudiantsComponent implements OnInit  {
 
   customers: any[];
-unite:any[]=["DSI","RSI","SEM"]; 
+unite:any; 
   rowGroupMetadata: any;
 etudiants:any[]=[];
 
   constructor(private dataService: DataService,private http:HttpClient) { }
 
   ngOnInit() {
+    
+    this.unite=this.dataService.user;
    this.dataService.getAllEtudiants().subscribe(data=>{
     console.log(data['data']);
      for(let i=0;i<data['data'].length;i++)
      {
-       if(data['data'][i].role=='E')
+       if(data['data'][i].role=='E' && data['data'][i].code==this.unite.code)
        this.etudiants.push(data['data'][i]);
        console.log(this.etudiants);
      }
