@@ -10,15 +10,17 @@ import { DataService } from '../data.service';
 })
 export class VerifListeoffresComponent implements OnInit {
 cars:any[]=[];
+ut:any;
   constructor(private dataService:DataService,private http:HttpClient) { }
 
   ngOnInit() {
+    this.ut=this.dataService.user;
 
     this.dataService.getRest().subscribe (cars=>{
       console.log(cars);
       this.cars=cars['data'] }
       )
-    }
+    } 
 
     onChangeStatus(e, offre) {
       console.log(offre);

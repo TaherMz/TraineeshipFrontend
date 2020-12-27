@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 })
 export class AccueilComponent implements OnInit {
 unite:boolean=true;
-user:any;
 societe:boolean=true;
+user:any;
 
   constructor(private dataService:DataService,private router:Router) { }
 

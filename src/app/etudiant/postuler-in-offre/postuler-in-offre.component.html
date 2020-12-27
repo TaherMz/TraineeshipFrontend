@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar [user]="etudiant"></app-navbar>
 <div class="container add">
    
     <div class='c'>
@@ -67,7 +67,7 @@
                  
                   <input  matInput  placeholder="+216" id="telephone" name="telephone" [(ngModel)]="telephone" #tele="ngModel" required>
                  
-                   <i class="pi pi-phone"></i>
+                  
                 
                 </mat-form-field>
                 

@@ -49,6 +49,7 @@ import { EtudiantNonaffComponent } from './uniteStage/etudiant-nonaff/etudiant-n
 import {CalendarModule} from 'primeng/calendar';
 import { EtudiantAffecteComponent } from './uniteStage/etudiant-affecte/etudiant-affecte.component';
 import { AllEtudiantOffreComponent } from './authentification/profil/all-etudiant-offre/all-etudiant-offre.component';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -77,7 +78,7 @@ import { AllEtudiantOffreComponent } from './authentification/profil/all-etudian
     BrowserModule,BrowserAnimationsModule,RadioButtonModule,MatTabsModule,FontAwesomeModule,
     AppRoutingModule,TableModule,TabMenuModule,MessagesModule,MatFormFieldModule,SidebarModule,
     ConfirmDialogModule,InputTextModule,MultiSelectModule,ReactiveFormsModule,MatInputModule,
-    FileUploadModule,CalendarModule,ToggleButtonModule
+    FileUploadModule,CalendarModule,ToggleButtonModule,MatListModule
   ],
   providers: [DataService, { provide: HTTP_INTERCEPTORS, useClass: GlobalHttpInterceptorService, multi: true  }],
   bootstrap: [AppComponent]
