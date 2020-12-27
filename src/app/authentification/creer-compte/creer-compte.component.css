@@ -4,7 +4,7 @@ input.ng-invalid { border-left: 2px solid red; }
     padding: 25px;
 }
 .card-content{
-    background-color:white;
+    background-color:white; 
     margin: 10px;
     border-radius: 20px;
 }

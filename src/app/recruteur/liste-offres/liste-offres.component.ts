@@ -5,6 +5,8 @@ import { ConfirmationService, Message, MessageService } from 'primeng/api';
 import { Observable } from 'rxjs/internal/Observable';
 import { DataService } from 'src/app/uniteStage/data.service';
 import { environment } from 'src/environments/environment';
+declare var require: any
+const FileSaver = require('file-saver');
 
 
 @Component({
@@ -14,6 +16,7 @@ import { environment } from 'src/environments/environment';
   providers: [ConfirmationService,MessageService]
 
 })
+
 export class ListeOffresComponent implements OnInit {
   etudiant:boolean=true;
   recruteur:boolean=true;
@@ -25,6 +28,7 @@ prc:String="";
 date3:Date;
   offers:any[]=[];
   msgs: Message[] = [];
+  pdfSource =  "./assets/test.pdf";
 
   constructor(private messageService: MessageService,private confirmationService: ConfirmationService,private dataService: DataService, private http:HttpClient,private router:Router) { }
 
@@ -55,38 +59,20 @@ date3:Date;
       {this.recruteur=false;}
      
   }
+  downloadPdf(pdfUrl: string, pdfName: string ) {
+    //const pdfUrl = './assets/sample.pdf';
+    //const pdfName = 'your_pdf_file';
+    FileSaver.saveAs(pdfUrl, pdfName);
+  }
+  openDoc(pdfUrl: string, startPage: number ) {
+    window.open(pdfUrl + '#page=' + startPage, '_blank', '', true);
+  }
   
   onClick(offer)
   {
     console.log(offer)
     this.router.navigate(['postulerInOffre',offer._id]);
   }
-  onEdit(offer)
-  {
-    console.log(offer)
-    this.router.navigate(['modifierOffre',offer._id]);
-  }
-
-  confirm2(offre) {
-    this.confirmationService.confirm({
-        message: 'Voulez vous la supprimer?',
-        header: 'Confirmation',
-        icon: 'pi pi-info-circle',
-        accept: () => {
-          this.msgs = [{severity:'info', summary:'confirmé', detail:'Offre supprimé'}];
-          this.dataService.deleteOffer(offre._id).subscribe(
-            (Response) => {
-              console.log("success");
-            },
-            (error) => {
-              console.log("error");
-           })
-            this.msgs = [{severity:'info', summary:'confirmé', detail:'Offre supprimé'}];
-        },
-        reject: () => {
-            this.msgs = [{severity:'info', summary:'Annulation', detail:''}];
-        }
-    });
-}
+ 
 
 }

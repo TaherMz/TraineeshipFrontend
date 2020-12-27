@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api';
 import { IconProp } from '@fortawesome/fontawesome-svg-core'; 
 import { DataService } from '../uniteStage/data.service';
@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 })
 export class AccueilComponent implements OnInit {
 unite:boolean=true;
-user:any;
 societe:boolean=true;
+user:any;
 
   constructor(private dataService:DataService,private router:Router) { }
 

@@ -4,7 +4,7 @@ input.ng-invalid { border-left: 2px solid red; }
     padding: 25px;
 }
 .card-content{
-    background-color:white;
+    background-color:white; 
     margin: 10px;
     border-radius: 20px;
 }
@@ -15,7 +15,7 @@ ul{
     min-height: 410px;
     box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2); }
     
-h1{ 
+h1{
     color:black;
 }
 input{
@@ -26,8 +26,7 @@ i{  color:rgb(29, 138, 120);
     width: 30px;
     height: 30px;
 }
-  
-  .example-full-width {
+.example-full-width {
     width: 100%;
   }
 .mat-tab-label {

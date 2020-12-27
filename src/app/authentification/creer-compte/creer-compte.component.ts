@@ -17,12 +17,14 @@ import { environment } from 'src/environments/environment';
 export class CreerCompteComponent implements OnInit {
   name?:any="";
   email?:any="";
-  code?:any="";
+  code?:any="DSI";
   password?:any="";
   numtel?:any="";
   cin?:any="";
   prenom?:any="";
-  niveau?:any="";
+  n1?:any="";
+  n2?:any="";
+  n3?:any="";
   mfisc?:any="";
   secteuractivite?:any="";
   emplacement?:any="";
@@ -33,6 +35,12 @@ export class CreerCompteComponent implements OnInit {
   role1?:any="S";
   role2?:any="US";
   enabled?:boolean=false;
+  test?:boolean=false;
+  selectedHero: any;
+  categories: string[] = ['Angular', 'Vue', 'React', 'PHP', 'Laravel'];
+   object: any[] = [
+    { name: 'Dr Nice' },
+    {  name: 'Narco' }];
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -43,12 +51,15 @@ export class CreerCompteComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.role);
   }
+  onSelect(hero: any): void {
+    this.selectedHero = hero;
+  }
   Submit(form) {
     
    console.log ("form.value", form.value)
         let addedData = JSON.stringify(form.value);
         console.log ("addedData", addedData);
-       this.http.post(environment.api+"auth/signup", addedData,this.httpOptions).subscribe((res) => {
+      this.http.post(environment.api+"auth/signup", addedData,this.httpOptions).subscribe((res) => {
         this.router.navigate(['/login']);
           this.messageService.add({severity:'success', summary: 'Message', detail:'Succes'});  
          
