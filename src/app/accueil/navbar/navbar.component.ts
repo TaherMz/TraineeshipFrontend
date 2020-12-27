@@ -16,7 +16,7 @@ deco:boolean=false;
 decon:boolean=false;
 unite:boolean=true;
 societe:boolean=true;
-  visibleSidebar1;
+  msg:String;
   constructor(private http:HttpClient,private dataService:DataService,private router:Router) { }
 
 logout(){
@@ -39,7 +39,7 @@ verifprofil(){
   ngOnInit(): void {
    if(this.user!=null)
    {
-
+this.msg=this.user.name;
      console.log(this.user);
      this.test=false;
      this.deco=true;
