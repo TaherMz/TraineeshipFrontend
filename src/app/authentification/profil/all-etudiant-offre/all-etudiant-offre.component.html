@@ -34,11 +34,11 @@ font-family: 'Roboto', sans-serif; height: 657px;" >
       <td>{{etudiant.telephone}}</td>
       <td> 
         <div style="display: flex;">
-          <button pButton pRipple type="button" label=" Voir Cv" class="p-button-raised p-button-secondary p-button-text btn-sm" (click)="openDoc(pdfSource, test)">
+          <button pButton pRipple type="button" label=" Voir Cv" class="p-button-raised p-button-secondary p-button-text btn-sm" (click)="openDoc(etudiant.cv, test)">
        
     </button>
 
-    <button pButton pRipple type="button" label="Telecharger" class="p-button-raised p-button-danger p-button-text " (click)="downloadPdf(pdfSource, test)">
+    <button pButton pRipple type="button" label="Telecharger" class="p-button-raised p-button-danger p-button-text " (click)="downloadPdf(etudiant.cv, test)">
         
     </button>
     </div>
