@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, UrlSerializer } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { DataService } from 'src/app/uniteStage/data.service';
@@ -13,12 +13,20 @@ import { environment } from 'src/environments/environment';
 })
 export class AllEtudiantOffreComponent implements OnInit {
   etudiants:any[]=[];
+  userset:any[]=[];
   societe?:any;
   offers:any[]=[];
   identifiant:any;
-
+  @Input()user:any;
+  userid:any;
+etud: any;
   constructor(private activatedRoute:ActivatedRoute,private messageService:MessageService,private dataService:DataService,private router:Router,private http:HttpClient) { }
   ngOnInit(): void {
+    this.user=this.dataService.user;
+      console.log(this.user);
+      
+
+    
 
     this.identifiant= this.activatedRoute.snapshot.params['id'];
     this.societe=this.dataService.user;
@@ -34,6 +42,19 @@ export class AllEtudiantOffreComponent implements OnInit {
        }
   console.log(this.offers);
   
+     });
+
+
+
+     this.dataService.getAllEtudiants().subscribe(data=>{
+      console.log(data['data']);
+       for(let i=0;i<data['data'].length;i++)
+       {
+         if(data['data'][i].role=="E")
+         this.userset.push(data['data'][i]);
+         console.log(this.userset);
+       }
+  console.log(this.userset);
      });
 
 
@@ -57,16 +78,40 @@ export class AllEtudiantOffreComponent implements OnInit {
  
      onChangeetat(e, etudiant) {
       console.log(etudiant);
-      etudiant.enabled = !etudiant.enabled;
-      if (etudiant.enabled == false)  { etudiant.etat = 'Non Affecté'}
-      else if (etudiant.enabled == true) { etudiant.etat= 'Affecté'}
-     this.http.patch(environment.api+"PostInOffer" +`/${etudiant._id}`, etudiant).subscribe(data=>{
-    console.log("success"+etudiant.enabled);    
+      
+    for(let i=0;i<this.userset.length;i++)
+      { if(etudiant.email==this.userset[i].email)
+       {
+      this.userid=this.userset[i]._id;
+      this.etud=this.userset[i];
+      break;
+       }}
+       this.etud.test = !this.etud.test;
+      if (this.etud.test == false)  { this.etud.etat = 'Non Affecté'}
+      else if (this.etud.test == true) { this.etud.etat= 'Affecté'}
+       console.log(this.etud);
+       console.log(this.userid);
+     this.http.patch(environment.api+"users" +`/${this.userid}`, this.etud).subscribe(data=>{
+    console.log("success "+etudiant.enabled);    
+    console.log(etudiant.email); 
+    console.log(this.userid); 
       }, 
         (error) =>{
       console.log("error");
     });
-    }
+    etudiant.enabled = !etudiant.enabled;
+    if (etudiant.enabled == false)  { etudiant.etat = 'Non Affecté'}
+    else if (etudiant.enabled == true) { etudiant.etat= 'Affecté'}
+    console.log(etudiant);
+    this.http.patch(environment.api+"PostInOffer" +`/${etudiant._id}`, etudiant).subscribe(data=>{
+      console.log("success "+etudiant.enabled);    
+      console.log(etudiant.email); 
+      console.log(this.userid); 
+        }, 
+          (error) =>{
+        console.log("error");
+      });
+  }
 
     notify(etudiant){
       let msg="Cher etudiant on a l honneur de vous informer qu on vous a accepté dans notre societe "+this.societe.name;
@@ -79,5 +124,16 @@ export class AllEtudiantOffreComponent implements OnInit {
          error => {
           console.log("error");
       })
-    } 
+    }
+    
+    verifprofil(){
+      if (this.user.role=='US')
+     {this.router.navigate(['/profilUnite']);  }
+     else
+      if (this.user.role=='E')
+      {this.router.navigate(['/profilEtudiant']); }  
+      else
+      if (this.user.role=='S')
+      {this.router.navigate(['/profilSociete']);  } 
+    }
 }
