@@ -3,10 +3,27 @@
       <a [routerLink]="['../accueil']" class="x" style="font-size: 1.5em;" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white ">
         Accueil
     </a>
-    <a [routerLink]="['../listeOffres']" style="font-size: 1.5em;" class="block mt-4 lg:mt-0 text-teal-200 hover:text-white ">
+    <a [routerLink]="['../listeOffres']" [hidden]="test" style="font-size: 1.5em;" class="block mt-4 lg:mt-0 text-teal-200 hover:text-white ">
       Liste Des Offres
   </a>
-     
+  <a  [hidden]=unite [routerLink]="['../etudiantAffecte']" style="font-size: 1.5em;" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+    etudiants Affectés
+  </a> 
+  <a [hidden]=unite  [routerLink]="['../listeEtudiantsNonAffecte']" style="font-size: 1.5em;" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+    Etudiants non affectés
+</a>
+<a [hidden]=unite [routerLink]="['../listeEtudiants']" style="font-size: 1.5em;" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+  Approuver Etudiant
+</a>
+<a [hidden]=unite [routerLink]="['../listeRecruteurs']" style="font-size: 1.5em;" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+  Approuver Recruteur
+</a>
+<a [hidden]=unite [routerLink]="['../VerifOffres']" style="font-size: 1.5em;" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+  Approuver Offre
+</a>
+<a [hidden]=societe [routerLink]="['../postuler-offre']" style="font-size: 1.5em;" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+  Publier une Offre 
+</a>
      </p-sidebar>
     <i class="pi pi-list " (click)="display = true" style="font-size: 2em;cursor: pointer;color:floralwhite"></i>
     
@@ -22,5 +39,11 @@
       <a (click)="logout()" [hidden]="test" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
         Se deconnecter
     </a>
+   
+    <button pButton pRipple type="button" label="Mon Profil" (click)="verifprofil()" [hidden]="test" class="p-button-outlined text-white p-button-secondary">
+      
+    </button>
+ 
+
   </div></div>
   </div>

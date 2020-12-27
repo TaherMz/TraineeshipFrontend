@@ -14,7 +14,7 @@ httpOptions = {
         })
       }
 id:any; 
-user:any;
+user:any=null;
 nomsociete:any;
 
 constructor(private http: HttpClient,private router:Router) { }

@@ -4,6 +4,8 @@ import { ActivatedRoute, Router, UrlSerializer } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { DataService } from 'src/app/uniteStage/data.service';
 import { environment } from 'src/environments/environment';
+declare var require: any
+const FileSaver = require('file-saver');
 
 @Component({
   selector: 'app-all-etudiant-offre',
@@ -17,8 +19,9 @@ export class AllEtudiantOffreComponent implements OnInit {
   societe?:any;
   offers:any[]=[];
   identifiant:any;
-  @Input()user:any;
+user:any;
   userid:any;
+  pdfSource =  "./assets/test.pdf";
 etud: any;
   constructor(private activatedRoute:ActivatedRoute,private messageService:MessageService,private dataService:DataService,private router:Router,private http:HttpClient) { }
   ngOnInit(): void {
@@ -137,6 +140,14 @@ etud: any;
          error => {
           console.log("error");
       })
+    }
+    downloadPdf(pdfUrl: string, pdfName: string ) {
+      //const pdfUrl = './assets/sample.pdf';
+      //const pdfName = 'your_pdf_file';
+      FileSaver.saveAs(pdfUrl, pdfName);
+    }
+    openDoc(pdfUrl: string, startPage: number ) {
+      window.open(pdfUrl + '#page=' + startPage, '_blank', '', true);
     }
     
     verifprofil(){

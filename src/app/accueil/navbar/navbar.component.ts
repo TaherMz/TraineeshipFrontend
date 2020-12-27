@@ -14,6 +14,8 @@ export class NavbarComponent implements OnInit {
 test:boolean=true;
 deco:boolean=false;
 decon:boolean=false;
+unite:boolean=true;
+societe:boolean=true;
   visibleSidebar1;
   constructor(private http:HttpClient,private dataService:DataService,private router:Router) { }
 
@@ -41,8 +43,13 @@ verifprofil(){
      console.log(this.user);
      this.test=false;
      this.deco=true;
-    
+     if (this.user.role=='US')
+   {this.unite=false;}
+
+   if (this.user.role=='S')
+   {this.societe=false;}
    }
+  
    //ken l user unite de stage
   /* this.dataService.getAllEtudiants().subscribe(data=>{
      for(let i=0;i<data['data'].length;i++)

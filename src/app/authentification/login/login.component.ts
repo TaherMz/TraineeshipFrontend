@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
   constructor(private messageService:MessageService,private dataService:DataService,private router:Router,private http:HttpClient) { }
 
   ngOnInit(): void {
+    this.user=null;
   }
   Submit(form) {
        
