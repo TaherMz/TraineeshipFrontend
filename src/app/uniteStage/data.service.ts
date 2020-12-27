@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -14,11 +14,20 @@ httpOptions = {
         })
       }
 id:any; 
-user:any;
+user:any=null;
 nomsociete:any;
+private fileList: string[] = new Array<string>();
+private fileList$: Subject<string[]> = new Subject<string[]>();
 
 constructor(private http: HttpClient,private router:Router) { }
+public upload(fileName: string, fileContent: string): void {
+  this.fileList.push(fileName);
+  this.fileList$.next(this.fileList);
+}
 
+public download(fileName: string): void {
+
+}
 getAllEtudiants(): Observable<any[]> {
    return this.http.get<any[]>(environment.api+"users");
   // return this.http.get<any[]>(environment.api+"PostInOffer");

@@ -5,8 +5,6 @@ import { ConfirmationService, Message, MessageService } from 'primeng/api';
 import { Observable } from 'rxjs/internal/Observable';
 import { DataService } from 'src/app/uniteStage/data.service';
 import { environment } from 'src/environments/environment';
-declare var require: any
-const FileSaver = require('file-saver');
 
 
 @Component({
@@ -28,7 +26,6 @@ prc:String="";
 date3:Date;
   offers:any[]=[];
   msgs: Message[] = [];
-  pdfSource =  "./assets/test.pdf";
 
   constructor(private messageService: MessageService,private confirmationService: ConfirmationService,private dataService: DataService, private http:HttpClient,private router:Router) { }
 
@@ -59,14 +56,7 @@ date3:Date;
       {this.recruteur=false;}
      
   }
-  downloadPdf(pdfUrl: string, pdfName: string ) {
-    //const pdfUrl = './assets/sample.pdf';
-    //const pdfName = 'your_pdf_file';
-    FileSaver.saveAs(pdfUrl, pdfName);
-  }
-  openDoc(pdfUrl: string, startPage: number ) {
-    window.open(pdfUrl + '#page=' + startPage, '_blank', '', true);
-  }
+  
   
   onClick(offer)
   {

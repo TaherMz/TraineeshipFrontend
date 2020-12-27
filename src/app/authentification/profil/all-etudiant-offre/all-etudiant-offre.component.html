@@ -32,7 +32,17 @@ font-family: 'Roboto', sans-serif; height: 657px;" >
       <td>{{etudiant.nom}}</td>
       <td>{{etudiant.email}}</td>
       <td>{{etudiant.telephone}}</td>
-      <td>{{etudiant.cv}}</td>
+      <td> 
+        <div style="display: flex;">
+          <button pButton pRipple type="button" label=" Voir Cv" class="p-button-raised p-button-secondary p-button-text btn-sm" (click)="openDoc(etudiant.cv, test)">
+       
+    </button>
+
+    <button pButton pRipple type="button" label="Telecharger" class="p-button-raised p-button-danger p-button-text " (click)="downloadPdf(etudiant.cv, test)">
+        
+    </button>
+    </div>
+</td>
       <td> {{etudiant.lettre_motivation}}</td>
       <td> <span class="badge "
         [ngClass]="{' bg-danger  mr-1' : etudiant.etat.trim() == 'Non Affecté' , 
