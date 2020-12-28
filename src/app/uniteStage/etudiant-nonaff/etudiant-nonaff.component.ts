@@ -17,14 +17,16 @@ export class EtudiantNonaffComponent implements OnInit {
       'Content-Type': 'application/json',
     })
   }
+  user:any;
   constructor(private dataService: DataService,private http:HttpClient,private messageService:MessageService) { }
 
   ngOnInit() {
-   this.dataService.getAllEtudiant().subscribe(data=>{
+    this.user=this.dataService.user;
+   this.dataService.getAllEtudiants().subscribe(data=>{
     console.log(data['data']);
      for(let i=0;i<data['data'].length;i++)
      {
-       if(data['data'][i].etat=="Non Affecté" )
+       if(data['data'][i].role=="E" && data['data'][i].code==this.user.code && data['data'][i].etat=="Non Affecté" && data['data'][i].status=="actif" )
        this.etudiants.push(data['data'][i]);
        console.log(this.etudiants);
      }
