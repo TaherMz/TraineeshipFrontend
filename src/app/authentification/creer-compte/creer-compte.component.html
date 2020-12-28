@@ -5,13 +5,15 @@
             
                <mat-tab-group class="card wizard-card" mat-stretch-tabs style="opacity: 80%;">
                    <mat-tab label="Etudiant" >
-                  <form #f="ngForm"  (ngSubmit)="Submit(f)"> 
+                  <form #f="ngForm"  (ngSubmit)="Submit(f)">  
                     <div class="p-field-radiobutton">
                         <p-radioButton name="role" value="E" [hidden]="true" [(ngModel)]="role" inputId="groupname" #rl="ngModel"></p-radioButton>
                     </div>      
                     <input type="hidden" pInputText [(ngModel)]="cin" name="mfisc"  required #t="ngModel">        
                     <input type="hidden" pInputText [(ngModel)]="status" name="status"  required #st="ngModel"> 
                     <input type="hidden" pInputText [(ngModel)]="enabled" name="enabled"  required #en="ngModel"> 
+                    <input type="hidden" pInputText [(ngModel)]="test" name="test"  required #te="ngModel"> 
+
             
                       <div class="  row" >
                         <div class="card-header container">
@@ -79,11 +81,14 @@
                                                 <i class="pi pi-user"></i>
                                             </span>
                                             <span class="p-float-label">
-                                                <input type="text" id="c" pInputText [(ngModel)]="cin" name="cin" #cn="ngModel" required> 
+                                                <input type="text" id="c" pInputText [(ngModel)]="cin" name="cin" #cn="ngModel" pattern="[0-9]{8}" required> 
                                                 <label for="c">Cin</label>
                                             </span>
                                         </div>
                                     </div>
+                                    <div *ngIf="cn.errors?.pattern && cn.dirty" class="alert alert-danger">
+                                        La cin doit être un nombre de 8 chiffres
+                                        </div>
                                   <div [hidden]="!cn.errors?.required || cn.pristine"
                                 class="alert alert-danger">
                                 La cin est un champ obligatoire
@@ -139,7 +144,7 @@
                                                 <i class="pi pi-user"></i>
                                             </span>
                                             <span class="p-float-label">
-                                                <input type="text" id="tel" pInputText [(ngModel)]="numtel" name="numtel" #tl="ngModel" required pattern="[0-9]+"> 
+                                                <input type="text" id="tel" pInputText [(ngModel)]="numtel" name="numtel" #tl="ngModel" required pattern="[0-9]{8}"> 
                                                 <label for="tel">Telephone</label>
                                             </span>
                                         </div>
@@ -148,26 +153,36 @@
                                   class="alert alert-danger">
                                   Le telephone est un champ obligatoire
                                   </div>
+                                  
                                   <div *ngIf="tl.errors?.pattern && tl.dirty" class="alert alert-danger">
-                                  Le numero de telephone doit être un nombre
+                                  Le numero de telephone doit être un nombre de 8 chiffres
                                   </div></div>
-            
-                                  <div class="form-group">
+                            
+                                 <div class="form-group">
                                     <div class="p-field p-col-12 p-md-4">
                                         <div class="p-inputgroup">
                                             <span class="p-inputgroup-addon">
                                                 <i class="pi pi-user"></i>
                                             </span>
-                                            <span class="p-float-label">
-                                                <input type="text" id="cod" pInputText [(ngModel)]="code" name="code" #cd="ngModel" required> 
-                                                <label for="cod">Code</label>
-                                            </span>
+                                            <select [(ngModel)]="code" name="code" class="form-control">
+                                                <optgroup label="TI">
+                                                <option value="DSI">DSI</option>
+                                                <option value="RSI">RSI</option>
+                                                <option value="SEM">SEM</option>
+                                                <option value="TI">TRONC COMMUN</option>
+                                            </optgroup>
+                                                <optgroup label="AA">
+                                                    <option value="LTI">LTI</option>
+                                                <option value="PME">PME</option>
+                                                <option value="PG">SEM</option>
+                                                <option value="AA">TRONC COMMUN</option>
+
+                                                </optgroup>
+                                              </select>
+                                           
                                         </div>
                                     </div>
-                                     <div [hidden]="!cd.errors?.required || cd.pristine"
-                                     class="alert alert-danger">
-                                     Le code est un champ obligatoire
-                                     </div></div>
+                                    </div>
                                
                             </div>
                             <div  [ngStyle]="{'float':'right','margin':'20px'}">
@@ -184,6 +199,8 @@
                         <input type="hidden" pInputText [(ngModel)]="mfisc" name="code"  required #t="ngModel">               
                         <input type="hidden" pInputText [(ngModel)]="status" name="status"  required #st="ngModel"> 
                         <input type="hidden" pInputText [(ngModel)]="enabled" name="enabled"  required #en="ngModel"> 
+                        <input type="hidden" pInputText [(ngModel)]="test" name="test"  required #te="ngModel"> 
+
                     <div class="  row" >
                       <div class="card-header container">
                       <h4 class="card-title text-dark text-center">
@@ -372,6 +389,8 @@
                         <input type="hidden" pInputText [(ngModel)]="code" name="mfisc"  required #t="ngModel">        
                         <input type="hidden" pInputText [(ngModel)]="status" name="status"  required #st="ngModel"> 
                         <input type="hidden" pInputText [(ngModel)]="enabled" name="enabled"  required #en="ngModel"> 
+                        <input type="hidden" pInputText [(ngModel)]="test" name="test"  required #te="ngModel"> 
+
                       <div class="  row" >
                         <div class="card-header container">
                         <h4 class="card-title text-dark text-center">
@@ -421,16 +440,25 @@
                                             <span class="p-inputgroup-addon">
                                                 <i class="pi pi-user"></i>
                                             </span>
-                                            <span class="p-float-label">
-                                                <input type="text" id="sd" pInputText [(ngModel)]="code" name="code" #cd="ngModel" required> 
-                                                <label for="sd">Code</label>
-                                            </span>
+                                            <select [(ngModel)]="code" name="code" class="form-control">
+                                                <optgroup label="TI">
+                                                <option value="DSI">DSI</option>
+                                                <option value="RSI">RSI</option>
+                                                <option value="SEM">SEM</option>
+                                                <option value="TI">TRONC COMMUN</option>
+                                            </optgroup>
+                                                <optgroup label="AA">
+                                                    <option value="LTI">LTI</option>
+                                                <option value="PME">PME</option>
+                                                <option value="PG">SEM</option>
+                                                <option value="AA">TRONC COMMUN</option>
+
+                                                </optgroup>
+                                              </select>
+                                           
                                         </div>
                                     </div>
-                                  <div [hidden]="!cd.errors?.required || cd.pristine"
-                                class="alert alert-danger">
-                                Le code est un champ obligatoire
-                                </div></div>
+                                   </div>
             
                           </div> 
                         </div>

@@ -26,7 +26,7 @@ export class PostulerInOffreComponent implements OnInit {
   cv?:any=""; 
   enabled?:boolean=false;
 
-  uploadedFiles: any[] = [];
+  uploadedFiles: any []=[] ;
   offre:any;
   httpOptions = {
     headers: new HttpHeaders({
@@ -45,19 +45,36 @@ export class PostulerInOffreComponent implements OnInit {
     }) 
 
   }
-  onUpload(event) {
+
+  /*onFileSelected(event){
+    this.cv=event.target.files[0]
+  }
+
+  onUpload(){
+    
+    this.http.post(environment.api+"PostInOffer",this.httpOptions).subscribe(res => {
+    console.log(res);})
+  }*/
+  
+  
+
+
+ onUpload(event) {
     for(let file of event.files) {
         this.uploadedFiles.push(file);
     }
 
     this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
 }
+
+
 Submit(form) {
     
   console.log ("form.value", form.value)
   // if (form.valid) {
        let addedData = JSON.stringify(form.value);
        console.log ("addedData", addedData);
+
       this.http.post(environment.api+"PostInOffer", addedData,this.httpOptions).subscribe((res) => {
          this.messageService.add({severity:'success', summary: 'Message', detail:'Succes'});  
          this.router.navigate(['/listeOffres']);

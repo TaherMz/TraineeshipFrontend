@@ -10,21 +10,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent implements OnInit {
-unite:boolean=true;
-user:any;
-societe:boolean=true;
+
 
   constructor(private dataService:DataService,private router:Router) { }
-
+user:any;
   items: MenuItem[];
     ngOnInit() {
       this.user=this.dataService.user;
       console.log(this.user);
-      if (this.user.role=='US')
-      {this.unite=false;}
-
-      if (this.user.role=='S')
-      {this.societe=false;}
+     
       
         this.items = [
             {label: 'Home', icon: 'pi pi-fw pi-home'},
@@ -34,14 +28,5 @@ societe:boolean=true;
             {label: 'Settings', icon: 'pi pi-fw pi-cog'}
         ];
     }
-    verifprofil(){
-      if (this.user.role=='US')
-     {this.router.navigate(['/profilUnite']);  }
-     else
-      if (this.user.role=='E')
-      {this.router.navigate(['/profilEtudiant']); }  
-      else
-      if (this.user.role=='S')
-      {this.router.navigate(['/profilSociete']);  } 
-    }
+   
 }

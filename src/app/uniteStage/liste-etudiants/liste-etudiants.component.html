@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar [user]="unite"></app-navbar>
 <h1 [ngStyle]="{'margin':'30px','font-weight':'bold'}">Liste des Etudiants </h1>
 <div class="card" [ngStyle]="{'margin':'30px'}">     
  <div class="content-section implementation" >
@@ -39,7 +39,7 @@
             <td>                      
                 <span class="badge text-white"
                   [ngClass]="{' bg-danger  mr-1' : etudiant.etat.trim() == 'Non Affecté' ,
-                'bg-success ': etudiant.etat.trim() == 'affecte'}">{{etudiant.etat}}</span>
+                'bg-success ': etudiant.etat.trim() == 'Affecte'}">{{etudiant.etat}}</span>
                  </td>
             <td>                      
               <span class="badge "

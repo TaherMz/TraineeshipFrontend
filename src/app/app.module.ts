@@ -49,6 +49,10 @@ import { EtudiantNonaffComponent } from './uniteStage/etudiant-nonaff/etudiant-n
 import {CalendarModule} from 'primeng/calendar';
 import { EtudiantAffecteComponent } from './uniteStage/etudiant-affecte/etudiant-affecte.component';
 import { AllEtudiantOffreComponent } from './authentification/profil/all-etudiant-offre/all-etudiant-offre.component';
+import  {  PdfViewerModule  }  from  'ng2-pdf-viewer';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+import {MatListModule} from '@angular/material/list';
+
 
 
 @NgModule({
@@ -73,11 +77,11 @@ import { AllEtudiantOffreComponent } from './authentification/profil/all-etudian
     AllEtudiantOffreComponent,
   ],
   exports:[MatFormFieldModule,MatInputModule],
-  imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,InputSwitchModule,
-    BrowserModule,BrowserAnimationsModule,RadioButtonModule,MatTabsModule,FontAwesomeModule,
+  imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,InputSwitchModule,PdfViewerModule,
+    BrowserModule,BrowserAnimationsModule,RadioButtonModule,MatTabsModule,FontAwesomeModule,NgxExtendedPdfViewerModule ,
     AppRoutingModule,TableModule,TabMenuModule,MessagesModule,MatFormFieldModule,SidebarModule,
     ConfirmDialogModule,InputTextModule,MultiSelectModule,ReactiveFormsModule,MatInputModule,
-    FileUploadModule,CalendarModule,ToggleButtonModule
+    FileUploadModule,CalendarModule,ToggleButtonModule,MatListModule
   ],
   providers: [DataService, { provide: HTTP_INTERCEPTORS, useClass: GlobalHttpInterceptorService, multi: true  }],
   bootstrap: [AppComponent]

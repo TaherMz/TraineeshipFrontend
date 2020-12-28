@@ -14,6 +14,7 @@ import { environment } from 'src/environments/environment';
   providers: [ConfirmationService,MessageService]
 
 })
+
 export class ListeOffresComponent implements OnInit {
   etudiant:boolean=true;
   recruteur:boolean=true;
@@ -55,6 +56,7 @@ date3:Date;
       {this.recruteur=false;}
      
   }
+  
   
   onClick(offer)
   {
