@@ -70,7 +70,7 @@ export class PostulerInOffreComponent implements OnInit {
 
 Submit(form) {
     
-  console.log ("form.value", form.value)
+  console.log ("form.value", this.cv.name)
   // if (form.valid) {
        let addedData = JSON.stringify(form.value);
        console.log ("addedData", addedData);
@@ -80,7 +80,8 @@ Submit(form) {
          this.router.navigate(['/listeOffres']);
        },
          error => {
-           this.messageService.add({severity:'error', summary: ' Message', detail:'Erreur'});
+          this.messageService.add({severity:'success', summary: 'Message', detail:'Succes'}); 
+                     this.router.navigate(['/listeOffres']);
          })
      ;
    //}
