@@ -1,4 +1,26 @@
 <app-navbar [user]="etudiant"></app-navbar>
+<!--<div>
+  <form [formGroup] = "uploadForm" (ngSubmit)="Submit()">      
+    <div>
+      <input  matInput  [(ngModel)]="offre.nomsociete"  formControlName="nomsociete">
+      <input type="file" formControlName="cv" (change)="onFileSelect($event)" />
+      <textarea  matInput  [(ngModel)]="offre.mission" formControlName="mission" rows=5 cols=50></textarea>
+      <input  matInput [hidden]=true [(ngModel)]="offre._id" formControlName="id_offer" >
+      <input  matInput [hidden]=true [(ngModel)]="etat" formControlName="et" >
+      <input  matInput [hidden]=true [(ngModel)]="enabled" formControlName="enab" >
+      <input  matInput  [(ngModel)]="etudiant.name" id="nom" formControlName="nom">
+      <input  matInput  [(ngModel)]="etudiant.prenom"  formControlName="prenom"   >
+      <input  matInput  [(ngModel)]="etudiant.email" id="email" formControlName="email"  >
+      <input  matInput  placeholder="+216" id="telephone" formControlName="telephone" [(ngModel)]="tel" required>
+      <input  matInput  placeholder="DSI" id="specialite" formControlName="specialite" [(ngModel)]="spec" required>
+      <textarea matInput placeholder="Votre lettre" id="motiv" formControlName="lettre_motivation" [(ngModel)]="motiv" required></textarea>
+
+    </div>
+    <div>
+      <button type="submit">Upload</button>
+    </div>
+  </form>
+</div>-->
 <div class="container add">
   <p-toast position="top-right"></p-toast>
     <div class='c'>
@@ -11,16 +33,14 @@
           </div>
     </div>
     
-
-    
-    <div class=" d-flex justify-content-center" [ngStyle]="{backgroundImage:'url(../assets/img/b.jpg)'}">
+<div class=" d-flex justify-content-center" [ngStyle]="{backgroundImage:'url(../assets/img/b.jpg)'}">
      <div>
-        <form class="example-form" #f="ngForm"  (ngSubmit)="Submit(f)" style="background-color: rgba(243, 243, 243, 0.363);" enctype="mulipart/form-data">
+        <form class="example-form" [formGroup] = "uploadForm" (ngSubmit)="Submit()" style="background-color: rgba(243, 243, 243, 0.363);">
           <h2 class="card-header container ">
       
             <mat-label class="b">Postuler dans l'offre de la société :</mat-label>
             
-      <input  matInput  [(ngModel)]="offre.nomsociete" name="nomsociete" >
+            <input  matInput  [(ngModel)]="offre.nomsociete"  formControlName="nomsociete">
       
           
           </h2>
@@ -28,93 +48,53 @@
             
               <mat-label class="b">Votre sujet choisi :</mat-label>
               
-      <textarea  matInput  [(ngModel)]="offre.mission" name="mission" rows=5 cols=50></textarea>
-      <input  matInput [hidden]=true [(ngModel)]="offre._id" name="id_offer" >
-      <input  matInput [hidden]=true [(ngModel)]="etat" name="etat" >
-      <input  matInput [hidden]=true [(ngModel)]="enabled" name="enabled" >
+      <textarea  matInput  [(ngModel)]="offre.mission" formControlName="mission" rows=5 cols=50></textarea>
+      <input  matInput [hidden]=true [(ngModel)]="offre._id" formControlName="id_offer" >
+      <input  matInput [hidden]=true [(ngModel)]="et" formControlName="etat" >
+      <input  matInput [hidden]=true [(ngModel)]="enab" formControlName="enabled" >
             
             </div>
             <div style="background-color: rgba(243, 243, 243, 0.363);">
                
            <mat-form-field class="full-width" appearance="outline" style="background-color: rgba(243, 243, 243, 0.363);">
                  <mat-label >Nom </mat-label>
-    <input  matInput  [(ngModel)]="etudiant.name" id="nom" name="nom">
+      <input  matInput  [(ngModel)]="etudiant.name" id="nom" formControlName="nom">
     </mat-form-field>
 
     
     <mat-form-field class="full-width" appearance="outline" style="background-color: rgba(243, 243, 243, 0.363);">
       <mat-label>Prenom </mat-label>
-     
-      
-<input  matInput  [(ngModel)]="etudiant.prenom"  name="prenom"   >
-
-
+      <input  matInput  [(ngModel)]="etudiant.prenom"  formControlName="prenom"   >
 </mat-form-field>
             <p>
               
                <mat-form-field class="full-width" appearance="outline" style="background-color: rgba(243, 243, 243, 0.363);">
                   <mat-label>Email</mat-label>
-                 
-                  <input  matInput  [(ngModel)]="etudiant.email" id="email" name="email"  >
-                  
-             
+      <input  matInput  [(ngModel)]="etudiant.email" id="email" formControlName="email"  >
                 </mat-form-field>
                 <mat-form-field class="full-width" appearance="outline" style="background-color: rgba(243, 243, 243, 0.363);">
                 
                    
           
                   <mat-label>Télèphone</mat-label>
-                 
-                  <input  matInput  placeholder="+216" id="telephone" name="telephone" [(ngModel)]="telephone" #tele="ngModel" required>
-                 
-                  
-                
-                </mat-form-field>
-                
+      <input  matInput  placeholder="+216" id="telephone" formControlName="telephone" [(ngModel)]="tel" required>                            
+                </mat-form-field>        
                 </p>
-               <div  [hidden]="!tele.errors?.required || tele.pristine" class="alert alert-danger">
-                Le téléphone est un champ obligatoire
-            </div> 
-          
-            
-              
+        
              
                <mat-form-field class="full-width" appearance="outline" style="background-color: rgba(243, 243, 243, 0.363);">
                 <mat-label>Spécialité</mat-label>
-               
-                <input  matInput  placeholder="DSI" id="specialite" name="specialite" [(ngModel)]="specialite" #spec="ngModel" required>
-                
+      <input  matInput  placeholder="DSI" id="specialite" formControlName="specialite" [(ngModel)]="spec" required>                
              </mat-form-field>
-             <div  [hidden]="!spec.errors?.required || spec.pristine" class="alert alert-danger">
-                La spécialite est un champ obligatoire
-            </div> 
-    
-             
-            
-            
-        
-             <div class="card" style="background-color: rgba(243, 243, 243, 0.363);">
-                <h5>CV</h5>
-                <input type="file" id="image"
-                       name="cv" value="">
-              <!-- <button type="button" (click)="onUpload()">Upload</button> 
-    <p-fileUpload name="cv" (onUpload)="onUpload($event)"
-            multiple="multiple"  maxFileSize="1000000" [(ngModel)]="uploadedFiles">
-            <ng-template pTemplate="content" style="background-color: rgba(243, 243, 243, 0.363);">
-                <ul *ngIf="uploadedFiles.length">
-                    <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
-                </ul>
-            </ng-template>
-   </p-fileUpload> -->
-            
+                      
+             <div class="card" style="background-color: rgba(243, 243, 243, 0.363);">   
+               <input type="file" name="cv" (change)="onFileSelect($event)" />
              </div>
+
              <mat-form-field class="full-width" appearance="outline" style="background-color: rgba(243, 243, 243, 0.363);">
                 <mat-label>Lettre de motivation</mat-label>
-                <textarea matInput placeholder="Votre lettre" id="motiv" name="lettre_motivation" [(ngModel)]="motiv" #mo="ngModel" required></textarea>
+      <textarea matInput placeholder="Votre lettre" id="motiv" formControlName="lettre_motivation" [(ngModel)]="motiv" required></textarea>
               </mat-form-field>
-              <div  [hidden]="!mo.errors?.required || mo.pristine" class="alert alert-danger">
-                La lettre de motivation est un champ obligatoire
-            </div> 
              
              <div  [ngStyle]="{'float':'right','margin':'20px'}">
                 <button type="submit"  pButton  label="Envoyer" class="ui-button-success"></button>
@@ -129,5 +109,3 @@
     </div>
     </div>
     </div>
-    
-    

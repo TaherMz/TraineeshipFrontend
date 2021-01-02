@@ -52,12 +52,13 @@ import { AllEtudiantOffreComponent } from './authentification/profil/all-etudian
 import  {  PdfViewerModule  }  from  'ng2-pdf-viewer';
 import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 import {MatListModule} from '@angular/material/list';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,ListeEtudiantsComponent,
+    AppComponent,ListeEtudiantsComponent,FileSelectDirective,
     CreerCompteComponent,ListeOffresComponent,
     LoginComponent,ModifierOffreComponent,
     AccueilComponent,
