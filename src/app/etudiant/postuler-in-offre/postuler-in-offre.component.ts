@@ -91,6 +91,7 @@ export class PostulerInOffreComponent implements OnInit {
   }
 
 
+
 Submit() {
      const formData = new FormData();
      formData.append('nomsociete',this.uploadForm.get('nomsociete').value);
@@ -110,8 +111,12 @@ Submit() {
        (res) => console.log(res),
        (err) => console.log(err)
      );
-   //}
- }
+
+    this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
+}
+
+
+
 
 
 
