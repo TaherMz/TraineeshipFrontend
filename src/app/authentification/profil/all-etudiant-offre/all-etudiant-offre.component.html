@@ -32,7 +32,17 @@ font-family: 'Roboto', sans-serif; height: 657px;" >
       <td>{{etudiant.nom}}</td>
       <td>{{etudiant.email}}</td>
       <td>{{etudiant.telephone}}</td>
-      <td>{{etudiant.cv}}</td>
+      <td> 
+        <div style="display: flex;">
+          <button pButton pRipple type="button" label=" Voir Cv" class="p-button-raised p-button-secondary p-button-text btn-sm" (click)="openDoc(etudiant.cv, test)">
+       
+    </button>
+    <button type="button" (click)="downloadPdf(etudiant.cv, test)" class="p-button-rounded p-button-danger">
+      <i class="pi pi-download"></i>
+    </button>
+    
+    </div>
+</td>
       <td> {{etudiant.lettre_motivation}}</td>
       <td> <span class="badge "
         [ngClass]="{' bg-danger  mr-1' : etudiant.etat.trim() == 'Non Affecté' , 
@@ -40,7 +50,8 @@ font-family: 'Roboto', sans-serif; height: 657px;" >
       </td>
     <td><p-inputSwitch  size="small" (click)="onChangeetat($event, etudiant)"></p-inputSwitch></td>
     
-    <td><button class="btn btn-danger" (click)="notify(etudiant)" >Notifier</button> </td>
+    <td><button (click)="notify(etudiant)"  pButton pRipple type="button" icon="pi pi-bell" class="p-button-rounded p-button-warning">
+</button> </td>
       
       
     </tr> 

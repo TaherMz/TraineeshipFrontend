@@ -4,6 +4,8 @@ import { ActivatedRoute, Router, UrlSerializer } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { DataService } from 'src/app/uniteStage/data.service';
 import { environment } from 'src/environments/environment';
+declare var require: any
+const FileSaver = require('file-saver');
 
 @Component({
   selector: 'app-all-etudiant-offre',
@@ -17,8 +19,9 @@ export class AllEtudiantOffreComponent implements OnInit {
   societe?:any;
   offers:any[]=[];
   identifiant:any;
-  @Input()user:any;
+user:any;
   userid:any;
+  pdfSource:object; //./assets/test.pdf
 etud: any;
   constructor(private activatedRoute:ActivatedRoute,private messageService:MessageService,private dataService:DataService,private router:Router,private http:HttpClient) { }
   ngOnInit(): void {
@@ -72,10 +75,31 @@ etud: any;
   console.log(this.etudiants);
      }); 
  
-   
-    
   }
  
+   onChangeStatus(e, etudiant) {
+   /*   console.log(etudiant);
+      etudiant.enabled = !etudiant.enabled;
+      if (etudiant.enabled == false)  { etudiant.etat = 'Non Affecté'; etudiant.enabled=false; }
+      else if (etudiant.enabled == true) { etudiant.etat= 'Affecté';etudiant.enabled=true;}
+     this.http.patch(environment.api+"PostInOffer" +`/${etudiant._id}`, etudiant).subscribe(data=>{
+    console.log("success"+etudiant.enabled);    
+      }, 
+        (error) =>{
+      console.log("error");
+    });*/
+    }
+
+    s(){
+      console.log(this.etudiants[2].cv);
+     this.http.get( "localhost:3000"+`/${this.etudiants[2].cv}`).subscribe(data=>{
+      console.log(data);    
+        }, 
+          (error) =>{
+        console.log("error");
+      });
+    }
+
      onChangeetat(e, etudiant) {
       console.log(etudiant);
       
@@ -124,6 +148,15 @@ etud: any;
          error => {
           console.log("error");
       })
+    }
+    downloadPdf(pdfUrl: string, pdfName: string ) {
+      //const pdfUrl = './assets/sample.pdf';
+      //const pdfName = 'your_pdf_file';
+      FileSaver.saveAs(pdfUrl, pdfName);
+    }
+    openDoc(pdfUrl: string, startPage: number ) {
+    //+ '#page=' + startPage
+      window.open("localhost:3000"+`/${pdfUrl}` , '_blank', '', true);
     }
     
     verifprofil(){
