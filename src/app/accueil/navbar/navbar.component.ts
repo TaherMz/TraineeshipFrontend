@@ -16,7 +16,7 @@ deco:boolean=false;
 decon:boolean=false;
 unite:boolean=true;
 societe:boolean=true;
-  msg:String;
+  msg:String="";
   constructor(private http:HttpClient,private dataService:DataService,private router:Router) { }
 
 logout(){

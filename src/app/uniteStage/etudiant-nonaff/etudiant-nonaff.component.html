@@ -1,10 +1,10 @@
 
 <p-toast position="top-right"></p-toast>
-<app-navbar></app-navbar>
+<app-navbar [user]=user></app-navbar>
 
 <h1 [ngStyle]="{'margin':'30px','font-weight':'bold'}">Liste des Etudiants Non Affecté </h1>
 <div class="card" [ngStyle]="{'margin':'30px'}">     
-    <button style="float: right;margin:2%;" (click)="notify()" class="btn btn-primary"> Envoyer mail</button>
+    <button style="float: right;margin:2%;" (click)="notify()" class="btn btn-primary"> Notifier tous les etudiants </button>
 
  <div class="content-section implementation" >
     <p-table [value]="etudiants" dataKey="id"><!--sortField="niveau" sortMode="single" (onSort)="onSort()"-->
