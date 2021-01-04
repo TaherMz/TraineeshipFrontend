@@ -82,12 +82,20 @@ deleteOffer(id:any){
   return this.http.delete(environment.api+"/offers" +`/${id}`);
 }
 
+deleteMyOffer(id:any){
+  return this.http.delete(environment.api+"/PostInOffer"+`/${id}`)
+}
+
 
 
 public getMyOffer(): Observable<any[]> {
 
 
   return this.http.get<any[]>(environment.api+"offers/getmyoffers" +`/${this.user.name}`);
+}
+
+public getAllmyoffers(name:any): Observable<any[]> {
+  return this.http.get<any[]>(environment.api+"PostInOffer/getAllmyoffers" +`/${name}`);
 }
 
 }
