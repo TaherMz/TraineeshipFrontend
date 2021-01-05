@@ -36,10 +36,10 @@
           <button pButton pRipple type="button" label=" Voir Cv" class="p-button-raised p-button-secondary p-button-text btn-sm" (click)="openDoc(etudiant.cv, test)">
        
     </button>
-
-    <button pButton pRipple type="button" label="Telecharger" class="p-button-raised p-button-danger p-button-text " (click)="downloadPdf(etudiant.cv, test)">
-        
+    <button type="button" (click)="downloadPdf(etudiant.cv, test)" class="p-button-rounded p-button-danger">
+      <i class="pi pi-download"></i>
     </button>
+    
     </div>
 </td>
       <td> {{etudiant.lettre_motivation}}</td>
@@ -49,7 +49,11 @@
       </td>
     <td><p-inputSwitch  size="small" (click)="onChangeetat($event, etudiant)"></p-inputSwitch></td>
     
-    <td><button class="btn btn-danger" (click)="notify(etudiant)" >Notifier</button> </td>
+
+    <td><button (click)="notify(etudiant)"  pButton pRipple type="button" icon="pi pi-bell" class="p-button-rounded p-button-warning">
+</button> </td>
+      
+      
     </tr> 
   </ng-template>
 </p-table>
