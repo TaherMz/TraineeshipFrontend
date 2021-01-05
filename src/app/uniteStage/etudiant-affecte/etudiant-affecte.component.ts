@@ -4,6 +4,20 @@ import { DataService } from '../data.service';
 import autoTable from 'jspdf-autotable';
 import jsPDF from 'jspdf';
 
+export interface Poster{
+nom:String,
+prenom:String,
+email:String,
+telephone:String,
+specialite:String,
+cv:String,
+lettre_motivation:String,
+id_offer:String,
+nomsociete:String,
+mission:String,
+etat:String,
+enabled:boolean
+}
 
 @Component({
   selector: 'app-etudiant-affecte',
