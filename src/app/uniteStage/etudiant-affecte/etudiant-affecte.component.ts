@@ -25,8 +25,9 @@ enabled:boolean
   styleUrls: ['./etudiant-affecte.component.css']
 })
 export class EtudiantAffecteComponent implements OnInit {
-
+  user:any;
   etudiants:any[]=[];
+  etds:any[]=[];
   offers:any[]=[];
   cols: any[];
 
@@ -34,6 +35,7 @@ export class EtudiantAffecteComponent implements OnInit {
   constructor(private dataService: DataService,private http:HttpClient) { }
 
   ngOnInit() {
+    this.user=this.dataService.user;
    this.dataService.getAllEtudiant().subscribe(data=>{
     console.log(data['data']);
      for(let i=0;i<data['data'].length;i++)
@@ -45,6 +47,20 @@ export class EtudiantAffecteComponent implements OnInit {
 console.log(this.etudiants);
    });
 
+   
+   this.dataService.getAllEtudiants().subscribe(data=>{
+    console.log(data['data']);
+     for(let i=0;i<data['data'].length;i++)
+     {
+       if( data['data'][i].etat=="Affecté" )
+      for(let j=0; j<this.etudiants.length;j++){
+        if(data['data'][i].email==this.etudiants[j].email){
+          this.etds.push(this.etudiants[j]);
+        }
+      }
+     }
+console.log(this.etds);
+   });
    this.cols = [
     { field: 'nomsociete', header: 'nomsociete' },
     { field: 'mission', header: 'mission' },

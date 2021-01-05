@@ -97,8 +97,15 @@
                          La Categorie de l'offre est un champ obligatoire
                          </div></div>
 
+
                          <div class="form-group">
                             <!--div class="p-field p-col-12 p-md-4">
+
+                        <div class="form-group">
+                            <div class="p-field p-col-12 p-md-4">
+
+                         <div class="form-group">
+                            <div class="p-field p-col-12 p-md-4">
 
                                 <div class="p-inputgroup">
                                     <span class="p-inputgroup-addon">
@@ -144,7 +151,6 @@
                              La date fin de stage est un champ obligatoire
                              </div>
                          </div>
-
                     <!--  <div class="form-group">
                         <div class="p-field p-col-12 p-md-4">
                             <div class="p-inputgroup">
@@ -160,16 +166,29 @@
                          <div [hidden]="!de.errors?.required || de.pristine"
                          class="alert alert-danger">
                          LA Mission de l'offre est un champ obligatoire
-                         </div></div>
--->
-                     
-                            
+                         </div></div!-->
 
-
-
-
-                            
-                           
+                             <div class="form-group">
+                                <p> Le stage Fini Le</p>
+                                <div class="p-field p-col-12 p-md-4">
+                                    <div class="p-inputgroup">
+                        
+                                        <span class="p-inputgroup-addon">
+                                            <i class="pi pi-user"></i>
+                                        </span>
+                                        <span class="p-float-label">
+                                            
+                                            <input type="date" id="per" pInputText [(ngModel)]="datefin" name="datefin" #pr="ngModel" rows=5 cols=50 maxlength=250 required> 
+                                            <label for="per"></label>
+                                        </span>
+                                    </div>
+                                </div>
+                                 <div [hidden]="!pr.errors?.required || pr.pristine"
+                                 class="alert alert-danger">
+                                 La date fin de stage est un champ obligatoire
+                                 </div>
+                                 </div>
+                                      
 
                              <div class="form-group">
                                 <div class="p-field p-col-12 p-md-4">

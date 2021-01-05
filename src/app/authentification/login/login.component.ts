@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
        let addedData = JSON.stringify(form.value);
        console.log ("addedData", addedData);
   return this.http.post(environment.api+"auth/login", addedData,this.httpOptions).subscribe((res:any) => {
-        localStorage.setItem("token",res.token)
+        localStorage.setItem("token",res.token) 
         this.id=res.user;
         console.log(this.id);
         this.verify(this.id);
