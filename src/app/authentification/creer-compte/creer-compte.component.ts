@@ -70,7 +70,8 @@ export class CreerCompteComponent implements OnInit {
       secteuractivite:"",
       email:"",
       emplacement:"",
-      attestationjuridique: [null],
+
+      attestationjuridique:[null],
       numtel:"",
       description:"",
       mfisc:"",
@@ -98,10 +99,11 @@ export class CreerCompteComponent implements OnInit {
   uploadFile(event) {
     const file = (event.target as HTMLInputElement).files[0];
     this.uploadForm.patchValue({
-      attestationjuridique : file
+      attestationjuridique: file
     });
     this.uploadForm.get('attestationjuridique').updateValueAndValidity()
   }
+
   Submit() {
     
     const formData = new FormData();
@@ -109,17 +111,19 @@ export class CreerCompteComponent implements OnInit {
     formData.append('cin',this.uploadForm.get('cin').value);
     formData.append('code',this.uploadForm.get('code').value);
     formData.append('status',this.uploadForm.get('status').value);
-    formData.append('name',this.uploadForm.get('name').value);
+
     formData.append('test',this.uploadForm.get('test').value);
+     formData.append('name',this.uploadForm.get('name').value);
+
      formData.append('password',this.uploadForm.get('password').value);
      formData.append('secteuractivite',this.uploadForm.get('secteuractivite').value);
      formData.append('email',this.uploadForm.get('email').value);
      formData.append('emplacement',this.uploadForm.get('emplacement').value);
-    
+     formData.append(' attestationjuridique',this.uploadForm.get(' attestationjuridique').value);
      formData.append('numtel',this.uploadForm.get('numtel').value);
      formData.append('description',this.uploadForm.get('description').value);
      formData.append('mfisc',this.uploadForm.get('mfisc').value);
-     formData.append('attestationjuridique',this.uploadForm.get('attestationjuridique').value);
+
      
  console.log(this.uploadForm.value);
     return this.http.post(environment.api+"auth/signup", formData).subscribe(
