@@ -142,5 +142,55 @@
         </div> 
       </form> </mat-tab>
 
+      
+   
+    <mat-tab label="Mes Offres" >
+        <div style="background: -webkit-linear-gradient(left, #c0c8cc, #5e6263);
+        background: linear-gradient(to right, #8c9092, #686b6b);
+        font-family: 'Roboto', sans-serif; height: 657px;" >
+        <div class="container card-header" >
+            <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+        <div style="background-color:a #f1f2f3;height: 500px;"class="card " >
+            <div class="card-header container">
+                <h4 class="card-title text-dark text-center">
+                MES OFFRES
+                </h4>
+                </div>
+        <p-table [value]="offers" [scrollable]="true" scrollHeight="500px" >
+          <ng-template pTemplate="header" >
+            <tr>
+            <th>Nom Societe</th>
+            <th>Mission</th>
+            <th>Etat</th>
+            <th>Action</th>
+           
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-offer>
+            <tr>
+                <td>{{offer.nomsociete}}</td>
+              <td>{{offer.mission}}</td>
+             
+              <td>
+              <span class="badge text-white"
+              [ngClass]="{' bg-danger  mr-1' : offer.etat.trim() == 'Non Affecté' ,
+            'bg-success ': offer.etat.trim() == 'Affecté'}">{{offer.etat}}</span></td>
+              <td>  
+                <button type="button" pButton [disabled]="offer.etat.trim() == 'Non Affecté'" [ngStyle]="{'height':'40px','width':'50px'}" icon="pi pi-check" iconPos="left" class="ui-button-danger" (click)="confirm(offer)" label="Accepter?" style="float: left;"></button>
+              
+               
+                <!--<button [disabled]="offer.etat.trim() == 'Non Affecté'" (click)="confirm(offer)" pButton icon="pi pi-check" label="Confirm"></button>-->
+            </td>
+            
+             
+
+            </tr>
+          </ng-template>
+        </p-table>
+        </div>
+        </div>
+        </div>
+    </mat-tab>
+
      </mat-tab-group>
 </div></div>

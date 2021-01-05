@@ -1,15 +1,14 @@
+<app-navbar [user]="user"></app-navbar>
 <h1 [ngStyle]="{'margin':'30px','font-weight':'bold'}">Liste des Etudiants affectés </h1>
 <div class="card" [ngStyle]="{'margin':'30px'}">     
  <div class="content-section implementation" >
     
-    <p-table [value]="etudiants" dataKey="id"><!--sortField="niveau" sortMode="single" (onSort)="onSort()"-->
+    <p-table [value]="etds" dataKey="id"><!--sortField="niveau" sortMode="single" (onSort)="onSort()"-->
         <ng-template pTemplate="caption">
             <div class="p-d-flex">
                 <button type="button" pButton pRipple icon="pi pi-file-excel" (click)="exportExcel()" class="p-button-success "  pTooltip="XLS" tooltipPosition="bottom" style="height:50px;"></button>
                 <!--<button type="button" pButton pRipple icon="pi pi-file-pdf" (click)="exportPdf()" class="p-button-warning " pTooltip="PDF" tooltipPosition="bottom" style="height:50px;"></button>-->
-                    <a [routerLink]="['../accueil']" class="boutton" style="float: right;">
-                        Accueil
-                    </a>    
+                     
                    
                 </div>
         </ng-template>
@@ -27,7 +26,7 @@
            
             <td>
                 {{etudiant.nomsociete}}
-                
+                 
             </td>
             <td>
                 {{etudiant.mission}}
