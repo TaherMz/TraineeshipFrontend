@@ -25,7 +25,7 @@ sendOffer(offer){
 }
 
   ngOnInit(): void { 
-    this.societe=this.dataService.user;
+    this.societe=this.dataService.user; 
     console.log(this.societe);
 
     

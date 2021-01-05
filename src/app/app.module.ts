@@ -56,6 +56,7 @@ import { FileSelectDirective } from 'ng2-file-upload';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,ListeEtudiantsComponent,FileSelectDirective,
@@ -76,6 +77,7 @@ import { FileSelectDirective } from 'ng2-file-upload';
     EtudiantAffecteComponent,
     EtudiantNonaffComponent,
     AllEtudiantOffreComponent,
+ 
   ],
   exports:[MatFormFieldModule,MatInputModule],
   imports: [HttpClientModule,FormsModule,StepsModule,ToastModule,InputSwitchModule,PdfViewerModule,

@@ -108,11 +108,13 @@ Submit() {
      formData.append('cv',this.uploadForm.get('cv').value);
  console.log(this.uploadForm.value);
     return this.http.post(environment.api+"PostInOffer", formData).subscribe(
-       (res) => console.log(res),
+       (res) => {console.log(res);
+        this.router.navigate(['/profilEtudiant']);
+        this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
+      },
        (err) => console.log(err)
      );
 
-    this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
 }
 
 

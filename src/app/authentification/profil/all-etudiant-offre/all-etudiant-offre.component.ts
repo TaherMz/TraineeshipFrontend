@@ -115,14 +115,14 @@ etud: any;
       else if (this.etud.test == true) { this.etud.etat= 'Affecté'}
        console.log(this.etud);
        console.log(this.userid);
-     this.http.patch(environment.api+"users" +`/${this.userid}`, this.etud).subscribe(data=>{
+     /*this.http.patch(environment.api+"users" +`/${this.userid}`, this.etud).subscribe(data=>{
     console.log("success "+etudiant.enabled);    
     console.log(etudiant.email); 
     console.log(this.userid); 
       }, 
         (error) =>{
       console.log("error");
-    });
+    });*/
     etudiant.enabled = !etudiant.enabled;
     if (etudiant.enabled == false)  { etudiant.etat = 'Non Affecté'}
     else if (etudiant.enabled == true) { etudiant.etat= 'Affecté'}
