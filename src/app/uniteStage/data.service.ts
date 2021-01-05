@@ -33,13 +33,21 @@ getAllEtudiants(): Observable<any[]> {
   // return this.http.get<any[]>(environment.api+"PostInOffer");
 }
 
+getMyOffers(name:any) {
+  return this.http.get(environment.api+"offers/getmyoffers" +`/${name}`);}
+
 getAllEtudiant(): Observable<any[]> {
    return this.http.get<any[]>(environment.api+"PostInOffer");
 }
 
-getMyOffers(name:any) {
+
+/*getMyOffers(name:any): Observable<any[]> {
+  return this.http.get<any[]>(environment.api+"offers/getmyoffers" +`/${name}`);
+}*/
+/*getMyOffers(name:any) {
   return this.http.get(environment.api+"offers/getmyoffers" +`/${name}`);
-}
+}*/
+
 
 getAllOffers(): Observable<any[]> {
   return this.http.get<any[]>(environment.api+"offers");
@@ -82,11 +90,7 @@ deleteOffer(id:any){
   return this.http.delete(environment.api+"/offers" +`/${id}`);
 }
 
-
-
 public getMyOffer(): Observable<any[]> {
-
-
   return this.http.get<any[]>(environment.api+"offers/getmyoffers" +`/${this.user.name}`);
 }
 
