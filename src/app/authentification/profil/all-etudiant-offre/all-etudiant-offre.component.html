@@ -1,8 +1,8 @@
-<app-navbar [user]="user"></app-navbar>
-<p-toast position="top-right"></p-toast>
-<div style="background: -webkit-linear-gradient(left, #c0c8cc, #5e6263);
-background: linear-gradient(to right, #8c9092, #686b6b);
-font-family: 'Roboto', sans-serif; height: 657px;" >
+<app-navbar [user]="societe"></app-navbar>
+<p-toast position="top-right"></p-toast><!--background: -webkit-linear-gradient(left, #c0c8cc, #5e6263);
+  background: linear-gradient(to right, #8c9092, #686b6b);-->
+<div style="font-family: 'Roboto', sans-serif; height: 657px;" >
+
 <div class="container card-header" >
 
 <div style="background-color:a #8a8d91;height: 500px;"class="card " >
@@ -21,8 +21,8 @@ font-family: 'Roboto', sans-serif; height: 657px;" >
       <th>Lettre de motivation</th>
       <th>Etat</th>
       <th>Decision</th>
-   
-      <th></th>
+   <th></th>
+     
 
     </tr>
   </ng-template>
@@ -50,6 +50,7 @@ font-family: 'Roboto', sans-serif; height: 657px;" >
       </td>
     <td><p-inputSwitch  size="small" (click)="onChangeetat($event, etudiant)"></p-inputSwitch></td>
     
+
     <td><button (click)="notify(etudiant)"  pButton pRipple type="button" icon="pi pi-bell" class="p-button-rounded p-button-warning">
 </button> </td>
       
@@ -59,6 +60,18 @@ font-family: 'Roboto', sans-serif; height: 657px;" >
 </p-table>
 </div>
 </div>
- 
- 
+
+<button class="open-button" (click)="openForm()">Chat</button>
+<div class="chat-popup" id="myForm">
+  <div class="chat-messages-show-container">
+    <ul class="chat-messages-show-list" id="message-list">
+    </ul>
+  </div>
+  <div class="chat-messages-create-container"> 
+    <input class="chat-messages-create-input" type="text" [(ngModel)]="message">
+    <button  class="chat-messages-create-button" (click)="SendMessage()"> Send </button>
+    <button type="button" class="btn cancel" (click)="closeForm()">Close</button>
+  </div>
+</div>
+
 </div>

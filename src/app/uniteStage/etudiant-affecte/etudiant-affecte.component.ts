@@ -4,6 +4,20 @@ import { DataService } from '../data.service';
 import autoTable from 'jspdf-autotable';
 import jsPDF from 'jspdf';
 
+export interface Poster{
+nom:String,
+prenom:String,
+email:String,
+telephone:String,
+specialite:String,
+cv:String,
+lettre_motivation:String,
+id_offer:String,
+nomsociete:String,
+mission:String,
+etat:String,
+enabled:boolean
+}
 
 @Component({
   selector: 'app-etudiant-affecte',
@@ -75,9 +89,9 @@ console.log(this.offers);
 })
 }
 exportExcel() {
-  let etud:any[]=[];
+  let etud:any[]=[this.etudiants];
     import("xlsx").then(xlsx => {
-        const worksheet = xlsx.utils.json_to_sheet(this.etudiants);
+        const worksheet = xlsx.utils.json_to_sheet(this.etudiants[0].nom,this.etudiants[0].prenom);
         const workbook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
         const excelBuffer: any = xlsx.write(workbook, { bookType: 'xlsx', type: 'array' });
         this.saveAsExcelFile(excelBuffer, "products");

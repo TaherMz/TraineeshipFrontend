@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import  {io} from 'socket.io-client';
+
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -18,12 +20,29 @@ user:any=null;
 nomsociete:any;
 private fileList: string[] = new Array<string>();
 private fileList$: Subject<string[]> = new Subject<string[]>();
+socket: any;
 
-constructor(private http: HttpClient,private router:Router) { }
+constructor(private http: HttpClient,private router:Router) { 
+ //this.socket = io('http://localhost:3200');
+
+}
+/*private url = 'localhost:3200';  
+
+listen(eventname: string) : Observable<any> {
+  return new Observable((subscriber) => {
+      this.socket.on(eventname, (data) => {
+          subscriber.next(data);
+      })
+  })
+}
+
+emit(eventname: string, data: any) {
+  this.socket.emit(eventname, data);
+}
 public upload(fileName: string, fileContent: string): void {
   this.fileList.push(fileName);
   this.fileList$.next(this.fileList);
-}
+}*/
 
 public download(fileName: string): void {
 

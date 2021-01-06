@@ -76,7 +76,13 @@ etud: any;
      }); 
  
   }
- 
+  openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+   closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
    onChangeStatus(e, etudiant) {
    /*   console.log(etudiant);
       etudiant.enabled = !etudiant.enabled;
