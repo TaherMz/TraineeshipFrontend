@@ -5,7 +5,7 @@
             
                <mat-tab-group class="card wizard-card" mat-stretch-tabs style="opacity: 80%;">
                    <mat-tab label="Etudiant" >
-                  <form #f="ngForm"  (ngSubmit)="Submit(f)">  
+                  <form #f="ngForm"  (ngSubmit)="SubmitForm(f)">  
                     <div class="p-field-radiobutton">
                         <p-radioButton name="role" value="E" [hidden]="true" [(ngModel)]="role" inputId="groupname" #rl="ngModel"></p-radioButton>
                     </div>      
@@ -13,7 +13,7 @@
                     <input type="hidden" pInputText [(ngModel)]="status" name="status"  required #st="ngModel"> 
                     <input type="hidden" pInputText [(ngModel)]="enabled" name="enabled"  required #en="ngModel"> 
                     <input type="hidden" pInputText [(ngModel)]="test" name="test"  required #te="ngModel"> 
-
+                    <input type="hidden" pInputText [(ngModel)]="etat" name="etat"  required #e="ngModel"> 
             
                       <div class="  row" >
                         <div class="card-header container">
@@ -195,12 +195,13 @@
                    <mat-tab label="Recruteur">
                        <form [formGroup] = "uploadForm" (ngSubmit)="Submit()"> 
                         <input type="hidden" pInputText [(ngModel)]="role1" formControlName="role"  >  
-                        <input type="hidden" pInputText [(ngModel)]="mfisc" formControlName="cin"  >  
-                        <input type="hidden" pInputText [(ngModel)]="mfisc" formControlName="code"  >               
-                        <input type="hidden" pInputText [(ngModel)]="status" formControlName="status"  > 
-                        <input type="hidden" pInputText [(ngModel)]="enabled" formControlName="enabled"  > 
-                        <input type="hidden" pInputText [(ngModel)]="test" formControlName="test"  > 
-
+                        <input type="hidden" pInputText [(ngModel)]="mfsc" formControlName="cin"  >  
+                        <input type="hidden" pInputText [(ngModel)]="mfsc" formControlName="code"  >               
+                        <input type="hidden" pInputText [(ngModel)]="stat" formControlName="status"  > 
+                        <input type="hidden" pInputText [(ngModel)]="enab" formControlName="enabled"  > 
+                        <input type="hidden" pInputText [(ngModel)]="et" formControlName="etat"  > 
+                        <input type="hidden" pInputText [(ngModel)]="tst" formControlName="test"  > 
+<!---->
                     <div class="  row" >
                       <div class="card-header container">
                       <h4 class="card-title text-dark text-center">
@@ -217,7 +218,7 @@
                                           <i class="pi pi-user"></i>
                                       </span>
                                       <span class="p-float-label">
-                                          <input type="text" id="Name" pInputText [(ngModel)]="name" formControlName="name"  required> 
+                                          <input type="text" id="Name" pInputText [(ngModel)]="nom" formControlName="name"  required> 
                                           <label for="Name">Nom</label>
                                       </span>
                                   </div>
@@ -231,7 +232,7 @@
                                               <i class="pi pi-user"></i>
                                           </span>
                                           <span class="p-float-label">
-                                              <input type="password" id="pass" pInputText [(ngModel)]="password" formControlName="password"  required > 
+                                              <input type="password" id="pass" pInputText [(ngModel)]="pass" formControlName="password"  required > 
                                               <label for="pass">password</label>
                                           </span>
                                       </div>
@@ -245,7 +246,7 @@
                                               <i class="pi pi-user"></i>
                                           </span>
                                           <span class="p-float-label">
-                                              <input type="text" id="sec" pInputText [(ngModel)]="secteuractivite" formControlName="secteuractivite"  required> 
+                                              <input type="text" id="sec" pInputText [(ngModel)]="secteur" formControlName="secteuractivite"  required> 
                                               <label for="sec">secteur activité</label>
                                           </span>
                                       </div>
@@ -259,7 +260,7 @@
                                               <i class="pi pi-user"></i>
                                           </span>
                                           <span class="p-float-label">
-                                              <input type="mail" id="mail" pInputText  [(ngModel)]="email" formControlName="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"> 
+                                              <input type="mail" id="mail" pInputText  [(ngModel)]="mail" formControlName="email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"> 
                                               <label for="mail">Email</label>
                                           </span>
                                       </div>
@@ -273,7 +274,7 @@
                                               <i class="pi pi-user"></i>
                                           </span>
                                           <span class="p-float-label">
-                                              <input type="text" id="emp" pInputText [(ngModel)]="emplacement" formControlName="emplacement"  required> 
+                                              <input type="text" id="emp" pInputText [(ngModel)]="emplace" formControlName="emplacement"  required> 
                                               <label for="emp">emplacement</label>
                                           </span>
                                       </div>
@@ -285,7 +286,7 @@
                           <div class=" col-g-12 ">
                           
                             <div class="card" style="background-color: rgba(243, 243, 243, 0.363);">
-                                <input type="file" name=" attestationjuridique" (change)="onFileSelect($event)" />
+                                <input type="file" name=" attestationjurdique" (change)="onFileSelect($event)" />
                               </div>
                             
                               <div class="form-group">
@@ -295,7 +296,7 @@
                                               <i class="pi pi-user"></i>
                                           </span>
                                           <span class="p-float-label">
-                                              <input type="text" id="tel" pInputText [(ngModel)]="numtel" formControlName="numtel"  required pattern="[0-9]+"> 
+                                              <input type="text" id="tel" pInputText [(ngModel)]="tel" formControlName="numtel"  required pattern="[0-9]+"> 
                                               <label for="tel">Telephone</label>
                                           </span>
                                       </div>
@@ -310,7 +311,7 @@
                                               <i class="pi pi-user"></i>
                                           </span>
                                           <span class="p-float-label">
-                                              <input type="text" id="des" pInputText [(ngModel)]="description" formControlName="description"  required> 
+                                              <input type="text" id="des" pInputText [(ngModel)]="desc" formControlName="description"  required> 
                                               <label for="des">description</label>
                                           </span>
                                       </div>
@@ -324,7 +325,7 @@
                                                   <i class="pi pi-user"></i>
                                               </span>
                                               <span class="p-float-label">
-                                                  <input type="text" id="ma" pInputText  [(ngModel)]="mfisc" formControlName="mfisc" required> 
+                                                  <input type="text" id="ma" pInputText  [(ngModel)]="mfsc" formControlName="mfisc" required> 
                                                   <label for="ma">matricule Fiscale </label>
                                               </span>
                                           </div>
@@ -341,13 +342,14 @@
                   </form> </mat-tab>
             
                    <mat-tab label="unite de stage">
-                     <form #f2="ngForm"  (ngSubmit)="Submit(f2)">    
+                     <form #f2="ngForm"  (ngSubmit)="SubmitForm(f2)">    
                         <input type="hidden" pInputText [(ngModel)]="role2" name="role"  required #x="ngModel"> 
-                        <input type="hidden" pInputText [(ngModel)]="code" name="cin"  required #t="ngModel">  
-                        <input type="hidden" pInputText [(ngModel)]="code" name="mfisc"  required #t="ngModel">        
+                        <input type="hidden" pInputText [(ngModel)]="role2" name="cin"  required #t="ngModel">  
+                        <input type="hidden" pInputText [(ngModel)]="role2" name="mfisc"  required #t="ngModel">        
                         <input type="hidden" pInputText [(ngModel)]="status" name="status"  required #st="ngModel"> 
                         <input type="hidden" pInputText [(ngModel)]="enabled" name="enabled"  required #en="ngModel"> 
                         <input type="hidden" pInputText [(ngModel)]="test" name="test"  required #te="ngModel"> 
+                        <input type="hidden" pInputText [(ngModel)]="etat" name="etat"  required #te="ngModel"> 
 
                       <div class="  row" >
                         <div class="card-header container">

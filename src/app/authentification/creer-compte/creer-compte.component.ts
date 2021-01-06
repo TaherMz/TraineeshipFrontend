@@ -20,7 +20,7 @@ export class CreerCompteComponent implements OnInit {
   SERVER_URL = "localhost:3000/uploads";
 
   public uploader: FileUploader = new FileUploader({
-    itemAlias: ' attestationjuridique',
+    itemAlias: 'attestationjurdique',
     url:environment.api+"auth/signup",
   });
   uploadForm: FormGroup;  
@@ -29,7 +29,18 @@ export class CreerCompteComponent implements OnInit {
   password?:any="";
   email?:any="";
   code?:any="DSI";
-  
+  mail:any="";
+  mfsc:any="";
+  tel:any="";
+  pass:any="";
+  emplace:any="";
+  secteur:any="";
+  desc:any="";
+  nom:any="";
+  stat:any="inactif";
+  et:any="Non Affceté";
+  tst:any="false";
+  enab:any="false";
   numtel?:any="";
   cin?:any="";
   prenom?:any="";
@@ -39,7 +50,7 @@ export class CreerCompteComponent implements OnInit {
   mfisc?:any="";
   secteuractivite?:any="";
   emplacement?:any="";
-  attestationjuridique?:any="";
+  attestationjurdique?:any;
   description?="";
   status?:any="en attente";
   role?:any="E";
@@ -49,9 +60,7 @@ export class CreerCompteComponent implements OnInit {
   test?:boolean=false;
   selectedHero: any;
   categories: string[] = ['Angular', 'Vue', 'React', 'PHP', 'Laravel'];
-   object: any[] = [
-    { name: 'Dr Nice' },
-    {  name: 'Narco' }];
+  etat:String="Non Affecté";
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
@@ -64,14 +73,14 @@ export class CreerCompteComponent implements OnInit {
       code:"",
       status:"en attente",
       enabled:"false",
-      test:"",
+      etat:"Non Affecté",
+      test:"false",
       name:"",
       password:"",
       secteuractivite:"",
       email:"",
       emplacement:"",
-
-      attestationjuridique:[null],
+      attestationjurdique:[null],
       numtel:"",
       description:"",
       mfisc:"",
@@ -93,19 +102,13 @@ export class CreerCompteComponent implements OnInit {
   onFileSelect(event) {
     if (event.target.files.length > 0) {
       const file = event.target.files[0];
-      this.uploadForm.get('attestationjuridique').setValue(file);
+      this.uploadForm.get('attestationjurdique').setValue(file);
     }
   }
-  uploadFile(event) {
-    const file = (event.target as HTMLInputElement).files[0];
-    this.uploadForm.patchValue({
-      attestationjuridique: file
-    });
-    this.uploadForm.get('attestationjuridique').updateValueAndValidity()
-  }
-
+ 
   Submit() {
-    
+    console.log(this.uploadForm.get('attestationjurdique').value.name);
+    console.log(this.uploadForm.value);
     const formData = new FormData();
     formData.append('role',this.uploadForm.get('role').value);
     formData.append('cin',this.uploadForm.get('cin').value);
@@ -119,20 +122,32 @@ export class CreerCompteComponent implements OnInit {
      formData.append('secteuractivite',this.uploadForm.get('secteuractivite').value);
      formData.append('email',this.uploadForm.get('email').value);
      formData.append('emplacement',this.uploadForm.get('emplacement').value);
-     formData.append(' attestationjuridique',this.uploadForm.get(' attestationjuridique').value);
+     formData.append(' attestationjurdique',this.uploadForm.get('attestationjurdique').value);
      formData.append('numtel',this.uploadForm.get('numtel').value);
      formData.append('description',this.uploadForm.get('description').value);
      formData.append('mfisc',this.uploadForm.get('mfisc').value);
 
      
- console.log(this.uploadForm.value);
+ 
     return this.http.post(environment.api+"auth/signup", formData).subscribe(
       
-       (res) => console.log(res),
-       (err) => console.log(err)
-     );
-     this.router.navigate(['/login']);
+       (res) => {console.log(res);
+        this.router.navigate(['/login']);
+        this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});},
+       (err) => {console.log(err);
+        this.messageService.add({severity:'error', summary: ' Message', detail:'Erreur'});
+      });
+    }
 
-    this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
-}
+     SubmitForm(f:any){
+      let addedData = JSON.stringify(f.value);
+      console.log ("addedData", addedData);
+ return this.http.post(environment.api+"auth/signup", addedData,this.httpOptions).subscribe((res:any) => {
+  this.router.navigate(['/login']);     
+       this.messageService.add({severity:'success', summary: ' Message', detail:'success'});
+      },
+        error => {
+          this.messageService.add({severity:'error', summary: ' Message', detail:'Erreur'});
+        })
+     }
 }
